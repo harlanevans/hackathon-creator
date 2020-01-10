@@ -3,6 +3,10 @@ class Api::TasksController < ApplicationController
   def index
     render json: Task.all 
   end
+  
+  def student_task
+    render json: Task.all 
+  end
 
   def create
     task = Task.new(task_params)
