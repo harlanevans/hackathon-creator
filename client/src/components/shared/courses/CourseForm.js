@@ -1,8 +1,10 @@
+
 import React from 'react';
 import axios from 'axios';
-import Course from 'Course';
+import Courses from './Courses';
+import {Form} from 'semantic-ui-react';
 
-class Course extends React.Component {
+class CourseForm extends React.Component {
   state = { name: '' };
   handleChange = (e) => {
     this.setState({ name: e.target.value });
@@ -10,7 +12,7 @@ class Course extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.addCourse(this.state.name);
-    this.setState({ '' })
+    this.setState({ name: '' })
   }
   render() {
     return (
@@ -26,4 +28,4 @@ class Course extends React.Component {
     )
   }
 }
-export default Course;
+export default CourseForm;
