@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import CourseForm from "./CourseForm";
+import Course from './Course';
 import { Button } from "semantic-ui-react";
 
 class Courses extends Component {
@@ -61,12 +62,8 @@ class Courses extends Component {
 
   renderCourses() {
     return this.state.courses.map(course => (
-      <div>
-
-      <div style={{ fontSize: "2em" }}>{course.name}</div>
-      <button onClick={() => this.deleteCourse(course.id)}>Delete me</button>
-      <button>Edit me</button>
-      </div>
+      <Course key={course.id} {...course} deleteCourse={this.deleteCourse} />
+      
     ));
   }
 
