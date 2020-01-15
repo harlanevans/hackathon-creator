@@ -1,10 +1,10 @@
 import React from 'react';
-import Task from '../shared/task/Task'
+import Tasks from './task/Tasks'
 
 const Home = () => (
   <div>
     <h1>Home Page</h1>
-    <Task />
+    <Tasks />
   </div>
 )
 
