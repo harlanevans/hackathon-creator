@@ -1,10 +1,8 @@
 import React from 'react';
-import Courses from '../shared/courses/Courses';
 
 const Justanything = () => (
   <>
-    <h1>This is Something</h1>
-    <Courses />
+    <h1>This is only viewed by people who are signed in</h1>
   </>
 )
 
