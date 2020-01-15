@@ -71,7 +71,7 @@ class Courses extends Component {
     const { adding } = this.state;
     return (
       <div className="course-page">
-        <h1 className="course-header">words go here</h1>
+        <h1 className="course-header">Courses Header</h1>
         <h4>Click the button below to start a new course!</h4>
         <div className="add-course">
           {adding ? (

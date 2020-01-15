@@ -1,99 +1,58 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import {withRouter} from 'react-router-dom';
-import { AuthConsumer } from '../../../providers/AuthProvider';
-import { List, Button, Icon, Header } from 'semantic-ui-react';
-import TaskForm from '../task/TaskForm'
+import { List, Icon } from 'semantic-ui-react';
+import TaskForm from './TaskForm'
+
 
 class Task extends Component {
 
-  state = { 
-    tasks: [],
-    adding: false
+  state = {
+    editing: false,
   }
 
-  componentDidMount() {
-    if (this.props.auth.user) {
-      axios.get(`/api/users/${this.props.auth.user.id}/tasks`)
-      .then( res => {
-        this.setState({ tasks: res.data })
-      })
-      .catch( err => {
-        console.log(err)
-      })
-    }
-  }
-
-  addTask = (task) => {
-    axios.post(`/api/users/${this.props.auth.user.id}/tasks`, task)
-    .then( res => {
-      this.setState({ tasks: [...this.state.tasks, res.data] })
-    })
-    .catch( err => {
-      console.log(err)
-    })
-  }   
-
-  toggleAdd = () => {this.setState({adding: !this.state.adding})}
-
-  deleteTask = (user_id, id) => {
-    axios.delete(`/api/trips/${user_id}/locations/${id}`)
-    .then( res => {
-      const { tasks } = this.state
-      this.setState({tasks: tasks.filter( t => t.id !== id)})
-    })
-    .catch( err => {
-      console.log(err)
-    })
-  }
+  toggleEdit = () => {this.setState({editing: !this.state.editing})}
 
   render(){
+    const {complete, name, staff, id, completeTask, deleteTask, updateTask, user_id} = this.props
+    const task = {complete, name, staff, id, user_id}
     return(
-      <List>
-        <Header size='large'>Tasks</Header>
-          {
-            this.props.auth.user ? 
-            <>
-              <Button onClick={this.toggleAdd}>{this.state.adding ? <>Cancel</> : <>Add Task</> }</Button>
-              {this.state.adding ? 
-              <TaskForm addTask={this.addTask} adding={this.state.adding} toggleAdd={this.toggleAdd}/>
-              : 
-              <></>
-              }
-              {this.state.tasks.map( t => 
-                <List.Item>
-                  {t.complete ? <Icon name='check'/> : <Icon name='x'/>}
-                  <List.Content>
-                    <List.Header>
-                      {t.name}
-                    </List.Header>
-                    <List.Description>
-                      Assigned to: {t.staff}
-                    </List.Description>
-                  </List.Content>
-                </List.Item>
-              )}
-            </>
-            : 
-            <List.Item>Sign in to create tasks</List.Item>
-          }
-      </List>
+      this.state.editing ? 
+      <TaskForm 
+        updateTask={updateTask}
+        toggleEdit={this.toggleEdit}
+        {...task}
+      />
+      :
+      <List.Item>
+      {complete ? 
+        <Icon 
+        onClick={() => completeTask({complete,name,staff,id})} 
+          name='check circle'
+          /> 
+          : 
+        <Icon 
+        onClick={() => completeTask({complete,name,staff,id})} 
+        name='circle outline'
+        />
+      }
+      <List.Content>
+        <List.Header>
+          {name}
+        </List.Header>
+        <List.Description>
+          {staff}
+        </List.Description>
+        <Icon 
+          name='trash'
+          onClick={() => deleteTask(user_id, id)}
+          />
+        <Icon 
+          name='pencil'
+          onClick={this.toggleEdit}
+          />
+      </List.Content>
+    </List.Item>
     )
   }
 }
 
-
-export class ConnectedTask extends Component {
-  render(){
-    return(
-      <AuthConsumer>
-        {
-          auth =>
-          <Task {...this.props} auth={auth} />
-        }
-      </AuthConsumer>
-    )
-  }
-}
-
-export default withRouter(ConnectedTask)
+export default Task
