@@ -8,7 +8,7 @@ class TaskForm extends Component {
   state = {
     name: null,
     staff: null,
-    complete: false
+    complete: false,
   } 
 
   handleChange = (e) => {
@@ -26,8 +26,7 @@ class TaskForm extends Component {
   render() {
     const { name, staff } = this.state
     return(
-      <Form onSubmit={ this.handleSumbit }>
-        <Form.Group>
+      <Form onSubmit={ this.handleSumbit }>     
           <Form.Input 
             name='name'
             value={name}
@@ -40,7 +39,6 @@ class TaskForm extends Component {
             onChange={this.handleChange}
             label='Assigned To'
             />
-        </Form.Group>
         <Form.Button>Create Task</Form.Button>
       </Form>
     )
