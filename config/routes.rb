@@ -5,10 +5,10 @@ Rails.application.routes.draw do
 
     resources :courses
 
+  end
     resources :users do
       resources :tasks
 
-    end
   end
 
 end

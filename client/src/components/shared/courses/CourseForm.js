@@ -6,14 +6,17 @@ import {Form} from 'semantic-ui-react';
 
 class CourseForm extends React.Component {
   state = { name: '' };
+  
   handleChange = (e) => {
     this.setState({ name: e.target.value });
   }
+
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addCourse(this.state.name);
+    this.props.addCourse(this.state);
     this.setState({ name: '' })
   }
+
   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
