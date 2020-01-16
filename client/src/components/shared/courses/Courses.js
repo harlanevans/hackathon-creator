@@ -62,8 +62,7 @@ class Courses extends Component {
 
   renderCourses() {
     return this.state.courses.map(course => (
-      <Course key={course.id} {...course} deleteCourse={this.deleteCourse} />
-      
+      <Course key={course.id} {...course} deleteCourse={this.deleteCourse} updateCourse={this.updateCourse} />
     ));
   }
 
@@ -71,8 +70,8 @@ class Courses extends Component {
     const { adding } = this.state;
     return (
       <div className="course-page">
-        <h1 className="course-header">Courses Header</h1>
-        <h4>Click the button below to start a new course!</h4>
+        <h1 className="course-header">Courses</h1>
+        <h4>Click the button below to add a new course!</h4>
         <div className="add-course">
           {adding ? (
             <div className="adding-course">
@@ -91,7 +90,7 @@ class Courses extends Component {
             </Button>
           )}
         </div>
-        <div style={{ border: "solid 2px black" }}>{this.renderCourses()}</div>
+        <div style={{paddingTop: '2em', width: "50%"}}>{this.renderCourses()}</div>
       </div>
     );
   }
