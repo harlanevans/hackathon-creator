@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import CourseForm from "./CourseForm";
 import { Button } from "semantic-ui-react";
+import Students from '../students/Students';
 
 class Courses extends Component {
   state = {
@@ -23,7 +24,6 @@ class Courses extends Component {
   toggleAdd = () => this.setState({ adding: !this.state.adding });
 
   addCourse = course => {
-    debugger;
     axios
       .post("/api/courses", { course })
       .then(res => {
