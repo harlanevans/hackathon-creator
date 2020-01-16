@@ -13,7 +13,6 @@ class EventForm extends Component {
 
   componentDidMount() {
     const { id, name, rubric } = this.props
-    debugger
     if (id) {
       this.setState({
         name,
