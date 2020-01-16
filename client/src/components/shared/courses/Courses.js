@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import CourseForm from "./CourseForm";
-import Course from './Course';
+import Course from "./Course";
 import { Button } from "semantic-ui-react";
-import Students from '../students/Students';
+import Students from "../students/Students";
 
 class Courses extends Component {
   state = {
@@ -37,8 +37,8 @@ class Courses extends Component {
   };
 
   updateCourse = (id, course) => {
-    axios.put(`/api/courses${id}`, course).then(res => {
-      const courses = this.state.course.map(c => {
+    axios.put(`/api/courses/${id}`, course).then(res => {
+      const courses = this.state.courses.map(c => {
         if (c.id === id) {
           return res.data;
         }
@@ -62,7 +62,13 @@ class Courses extends Component {
 
   renderCourses() {
     return this.state.courses.map(course => (
-      <Course key={course.id} {...course} deleteCourse={this.deleteCourse} updateCourse={this.updateCourse} />
+      <Course
+        key={course.id}
+        {...course}
+        deleteCourse={this.deleteCourse}
+        updateCourse={this.updateCourse}
+        
+      />
     ));
   }
 
@@ -79,7 +85,14 @@ class Courses extends Component {
                 addCourse={this.addCourse}
                 toggleAdd={this.toggleAdd}
               />
-            </div>
+            <Button
+              className="add-course-button"
+              color="teal"
+              onClick={this.toggleAdd}
+              >
+            Cancel
+            </Button>
+              </div>
           ) : (
             <Button
               className="add-course-button"
@@ -90,7 +103,9 @@ class Courses extends Component {
             </Button>
           )}
         </div>
-        <div style={{paddingTop: '2em', width: "50%"}}>{this.renderCourses()}</div>
+        <div style={{ paddingTop: "2em", width: "50%" }}>
+          {this.renderCourses()}
+        </div>
       </div>
     );
   }
