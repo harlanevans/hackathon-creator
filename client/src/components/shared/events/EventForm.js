@@ -9,8 +9,11 @@ class EventForm extends Component {
     rubric: null,
   }
 
+  
+
   componentDidMount() {
     const { id, name, rubric } = this.props
+    debugger
     if (id) {
       this.setState({
         name,
