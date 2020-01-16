@@ -28,7 +28,7 @@ class TaskForm extends Component {
 
   handleSumbit = (e) => {
     e.preventDefault()
-    if (this.props) {
+    if (this.props.id) {
       this.props.updateTask(this.props.user_id, this.props.id, this.state)
       this.props.toggleEdit()
       this.setState({ name: null, staff: null, complete: null })

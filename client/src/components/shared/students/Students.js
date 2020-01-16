@@ -12,7 +12,7 @@ class Students extends Component {
   }
 
   componentDidMount() {
-    axios.get(`/api/courses/${this.props.course.id}/students`)
+    axios.get(`/api/courses/${this.props.course_id}/students`)
     .then( res => {
       this.setState({ students: res.data })
     })
@@ -22,7 +22,7 @@ class Students extends Component {
   }
 
   addStudent = (student) => {
-    axios.post(`/api/courses/${this.props.course.id}/students`, student)
+    axios.post(`/api/courses/${this.props.course_id}/students`, student)
     .then( res => {
       this.setState({ students: [...this.state.students, res.data] })
     })
@@ -72,7 +72,7 @@ class Students extends Component {
           <></>
           }
           {
-            this.state.tasks.map( s => 
+            this.state.students.map( s => 
               <Student 
                 {...s} 
                 deleteStudent={this.deleteStudent}

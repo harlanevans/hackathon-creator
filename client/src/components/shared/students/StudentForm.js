@@ -28,7 +28,7 @@ class StudentForm extends Component {
 
   handleSumbit = (e) => {
     e.preventDefault()
-    if (this.props) {
+    if (this.props.id) {
       this.props.updateStudent(this.props.course_id, this.props.id, this.state)
       this.props.toggleEdit()
       this.setState({ name: null, skill_lvl: null, effort_lvl: null })
@@ -47,7 +47,7 @@ class StudentForm extends Component {
           name='name'
           value={name}
           onChange={this.handleChange}
-          label='Task Name'
+          label='Student Name'
           />
         <Form.Input 
           name='skill_lvl'
