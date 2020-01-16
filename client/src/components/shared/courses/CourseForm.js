@@ -27,6 +27,7 @@ class CourseForm extends React.Component {
           value={this.state.name}
           onChange={this.handleChange}
         />
+        {/* Add a button here */}
       </Form>
     )
   }

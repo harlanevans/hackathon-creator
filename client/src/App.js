@@ -10,6 +10,7 @@ import Register from './components/auth/Register';
 import FetchUser from './components/auth/FetchUser';
 import Justanything from './components/shared/Justanything';
 import Courses from './components/shared/courses/Courses';
+import CourseShow from './components/shared/courses/CourseShow';
 
 const App = () => (
   <>
@@ -20,6 +21,7 @@ const App = () => (
           <Route exact path='/' component={Home} />
           <ProtectedRoutes exact path='/justanything' component={Justanything} />
           <Route exact path='/courses' component={Courses} />
+          <Route exact path='/course/:id' component={CourseShow} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
           <Route component={Nomatch} />
