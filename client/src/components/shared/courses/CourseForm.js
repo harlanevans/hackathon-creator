@@ -6,6 +6,12 @@ import {Form} from 'semantic-ui-react';
 
 class CourseForm extends React.Component {
   state = { name: '' };
+
+  componentDidMount() {
+    if (this.props.id) {
+      this.setState({name: this.props.name})
+    }
+  }
   
   handleChange = (e) => {
     this.setState({ name: e.target.value });
@@ -13,8 +19,13 @@ class CourseForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addCourse(this.state);
-    this.setState({ name: '' })
+    if (this.props.id) {
+      this.props.updateCourse(this.props.id, this.state)
+      this.props.toggleEdit()
+    } else {
+      this.props.addCourse(this.state);
+      this.setState({ name: '' })
+    }
   }
 
   render() {
@@ -27,9 +38,11 @@ class CourseForm extends React.Component {
           value={this.state.name}
           onChange={this.handleChange}
         />
-        {/* Add a button here */}
+        <Form.Button>
+          {this.props.id ? "Update Course" : "Create Course"}
+        </Form.Button>
       </Form>
-    )
+    );
   }
 }
 export default CourseForm;

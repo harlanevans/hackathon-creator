@@ -6,7 +6,7 @@ class Api::EventsController < ApplicationController
   end
 
   def create
-    @event = @course.tasks.new(event_params)
+    @event = @course.events.new(event_params)
     if @event.save
       render json: @event
     else
@@ -15,7 +15,7 @@ class Api::EventsController < ApplicationController
   end
 
   def update
-    @event = @course.tasks.find(params[:id])
+    @event = @course.events.find(params[:id])
     if @event.update(event_params)
     render json: @event
     else 
@@ -24,7 +24,7 @@ class Api::EventsController < ApplicationController
   end
 
   def destroy
-    @course.tasks.find(params[:id]).destroy
+    @course.events.find(params[:id]).destroy
     render json: { message: 'Event Deleted' }
   end
 
