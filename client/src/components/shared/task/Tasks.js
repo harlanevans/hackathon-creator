@@ -95,6 +95,7 @@ class Tasks extends Component {
               {
                 this.state.tasks.map( t => 
                   <Task 
+                    key={t.id}
                     {...t} 
                     completeTask={this.completeTask} 
                     deleteTask={this.deleteTask}
