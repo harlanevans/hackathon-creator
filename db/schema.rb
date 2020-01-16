@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 2020_01_16_001657) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.string "rubric"
+    t.bigint "course_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_events_on_course_id"
   create_table "students", force: :cascade do |t|
     t.string "name"
     t.integer "effort_lvl"
@@ -72,6 +79,7 @@ ActiveRecord::Schema.define(version: 2020_01_16_001657) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "events", "courses"
   add_foreign_key "students", "courses"
   add_foreign_key "tasks", "users"
 end
