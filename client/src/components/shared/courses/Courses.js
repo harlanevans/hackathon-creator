@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import CourseForm from "./CourseForm";
+import Course from './Course';
 import { Button } from "semantic-ui-react";
 import Students from '../students/Students';
 
@@ -61,12 +62,7 @@ class Courses extends Component {
 
   renderCourses() {
     return this.state.courses.map(course => (
-      <div>
-
-      <div style={{ fontSize: "2em" }}>{course.name}</div>
-      <button onClick={() => this.deleteCourse(course.id)}>Delete me</button>
-      <button>Edit me</button>
-      </div>
+      <Course key={course.id} {...course} deleteCourse={this.deleteCourse} updateCourse={this.updateCourse} />
     ));
   }
 
@@ -74,8 +70,8 @@ class Courses extends Component {
     const { adding } = this.state;
     return (
       <div className="course-page">
-        <h1 className="course-header">Courses Header</h1>
-        <h4>Click the button below to start a new course!</h4>
+        <h1 className="course-header">Courses</h1>
+        <h4>Click the button below to add a new course!</h4>
         <div className="add-course">
           {adding ? (
             <div className="adding-course">
@@ -94,7 +90,7 @@ class Courses extends Component {
             </Button>
           )}
         </div>
-        <div style={{ border: "solid 2px black" }}>{this.renderCourses()}</div>
+        <div style={{paddingTop: '2em', width: "50%"}}>{this.renderCourses()}</div>
       </div>
     );
   }
