@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import { Form, Button } from 'semantic-ui-react';
 
 
-class TaskForm extends Component {
+class StudentForm extends Component {
 
   state = {
     name: null,
-    staff: null,
-    complete: null,
+    skill_lvl: null,
+    effort_lvl: null,
   } 
 
   componentDidMount() {
-    const { id, name, staff, complete } = this.props
+    const { id, name, skill_lvl, effort_lvl } = this.props
     if (id) {
       this.setState({
         name,
-        staff,
-        complete,
+        skill_lvl,
+        effort_lvl,
       })
     }
   }
@@ -29,34 +29,40 @@ class TaskForm extends Component {
   handleSumbit = (e) => {
     e.preventDefault()
     if (this.props.id) {
-      this.props.updateTask(this.props.user_id, this.props.id, this.state)
+      this.props.updateStudent(this.props.course_id, this.props.id, this.state)
       this.props.toggleEdit()
-      this.setState({ name: null, staff: null, complete: null })
+      this.setState({ name: null, skill_lvl: null, effort_lvl: null })
     } else {
-      this.props.addTask(this.state)
+      this.props.addStudent(this.state)
       this.props.toggleAdd()
-      this.setState({ name: null, staff: null, complete: null })
+      this.setState({ name: null, skill_lvl: null, effort_lvl: null })
     }
     }
 
   render() {
-    const { name, staff } = this.state
+    const { name, skill_lvl, effort_lvl } = this.state
     return(
       <Form onSubmit={ this.handleSumbit }>     
         <Form.Input 
           name='name'
           value={name}
           onChange={this.handleChange}
-          label='Task Name'
+          label='Student Name'
           />
         <Form.Input 
-          name='staff'
-          value={staff}
+          name='skill_lvl'
+          value={skill_lvl}
           onChange={this.handleChange}
-          label='Assigned To'
+          label='Skill Level'
+          />
+        <Form.Input 
+          name='effort_lvl'
+          value={effort_lvl}
+          onChange={this.handleChange}
+          label='Effort Level'
           />
         <Form.Group>
-          <Form.Button>{this.props.id ? "Update Task" : "Create Task" }</Form.Button>
+          <Form.Button>{this.props.id ? "Update Student" : "Create Student" }</Form.Button>
           <Button onClick={this.props.id ? this.props.toggleEdit : this.props.toggleAdd}>Cancel</Button>
         </Form.Group>
       </Form>
@@ -64,4 +70,4 @@ class TaskForm extends Component {
   }
 }
 
-export default TaskForm;
+export default StudentForm;
