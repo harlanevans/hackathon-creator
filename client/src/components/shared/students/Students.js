@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { List, Button, Header } from 'semantic-ui-react';
+import { Table, Button, Header } from 'semantic-ui-react';
 import StudentForm from './StudentForm';
 import Student from './Student';
 
@@ -63,24 +63,49 @@ class Students extends Component {
 
   render(){
     return(
-      <List>
-        <Header size='large'>Students</Header>
-          {this.state.adding ? <></> : <Button onClick={this.toggleAdd}>Add Student</Button>}
+      <>
+      <Header size='large'>Students</Header>
+      {this.state.adding ? <></> : <Button onClick={this.toggleAdd}>Add Student</Button>}
+      <Table celled structured>
           {this.state.adding ? 
-          <StudentForm addStudent={this.addStudent} adding={this.state.adding} toggleAdd={this.toggleAdd}/>
+          <Table.Header>  
+            <Table.Row>
+              <Table.Cell colSpan='4'>
+                <StudentForm addStudent={this.addStudent} adding={this.state.adding} toggleAdd={this.toggleAdd}/>
+              </Table.Cell>
+            </Table.Row>
+          </Table.Header>
           : 
           <></>
           }
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>
+                Name
+              </Table.HeaderCell>
+              <Table.HeaderCell>
+                Effort Level
+              </Table.HeaderCell>
+              <Table.HeaderCell>
+                Skill Level
+              </Table.HeaderCell>
+              <Table.HeaderCell>
+                Delete/Edit
+              </Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
           {
             this.state.students.map( s => 
               <Student 
+                key={s.id}
                 {...s} 
                 deleteStudent={this.deleteStudent}
                 updateStudent={this.updateStudent} 
               />
             )
           }
-      </List>
+      </Table>
+      </>
     )
   }
 }

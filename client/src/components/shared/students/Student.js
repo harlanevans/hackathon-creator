@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import StudentForm from './StudentForm';
-import { List, Icon } from 'semantic-ui-react'
+import { Table, Icon } from 'semantic-ui-react'
 
 class Student extends Component{
 
@@ -16,33 +16,43 @@ class Student extends Component{
     const student = {name, effort_lvl, skill_lvl, id, course_id}
     return(
       this.state.editing ? 
-      <StudentForm 
-        updateStudent={updateStudent}
-        toggleEdit={this.toggleEdit}
-        {...student}
-      />
+      <Table.Body>
+        <Table.Row>
+          <Table.Cell colSpan='4'>
+          <StudentForm 
+            updateStudent={updateStudent}
+            toggleEdit={this.toggleEdit}
+            {...student}
+          />
+          </Table.Cell>
+        </Table.Row>
+      </Table.Body>
       :
-      <List.Item>
-      <List.Content>
-        <List.Header>
-          {name}
-        </List.Header>
-        <List.Description>
-          {effort_lvl}
-        </List.Description>
-        <List.Description>
-          {skill_lvl}
-        </List.Description>
-        <Icon 
-          name='trash'
-          onClick={() => deleteStudent(course_id, id)}
-          />
-        <Icon 
-          name='pencil'
-          onClick={this.toggleEdit}
-          />
-      </List.Content>
-    </List.Item>
+      <Table.Body>
+        <Table.Row>
+          <Table.Cell>
+            {name}
+          </Table.Cell>
+          <Table.Cell>
+            {effort_lvl}
+          </Table.Cell>
+          <Table.Cell>
+            {skill_lvl}
+          </Table.Cell>
+          <Table.Cell>
+            <Icon
+              name='trash'
+              onClick={() => deleteStudent(course_id, id)}
+              link
+              />
+            <Icon
+              name='pencil'
+              onClick={this.toggleEdit}
+              link
+              />
+            </Table.Cell>
+        </Table.Row>
+      </Table.Body>
     )
   }
 

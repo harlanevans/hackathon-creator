@@ -5,9 +5,9 @@ import { Form, Button } from 'semantic-ui-react';
 class TaskForm extends Component {
 
   state = {
-    name: null,
-    staff: null,
-    complete: null,
+    name: '',
+    staff: '',
+    complete: '',
   } 
 
   componentDidMount() {
@@ -31,11 +31,11 @@ class TaskForm extends Component {
     if (this.props.id) {
       this.props.updateTask(this.props.user_id, this.props.id, this.state)
       this.props.toggleEdit()
-      this.setState({ name: null, staff: null, complete: null })
+      this.setState({ name: '', staff: '', complete: '' })
     } else {
       this.props.addTask(this.state)
       this.props.toggleAdd()
-      this.setState({ name: null, staff: null, complete: null })
+      this.setState({ name: '', staff: '', complete: '' })
     }
     }
 
@@ -48,12 +48,14 @@ class TaskForm extends Component {
           value={name}
           onChange={this.handleChange}
           label='Task Name'
+          required
           />
         <Form.Input 
           name='staff'
           value={staff}
           onChange={this.handleChange}
           label='Assigned To'
+          required
           />
         <Form.Group>
           <Form.Button>{this.props.id ? "Update Task" : "Create Task" }</Form.Button>

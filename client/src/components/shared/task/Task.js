@@ -44,10 +44,12 @@ class Task extends Component {
         <Icon 
           name='trash'
           onClick={() => deleteTask(user_id, id)}
+          link
           />
         <Icon 
           name='pencil'
           onClick={this.toggleEdit}
+          link
           />
       </List.Content>
     </List.Item>
