@@ -11,6 +11,7 @@ import FetchUser from './components/auth/FetchUser';
 import Justanything from './components/shared/Justanything';
 import Courses from './components/shared/courses/Courses';
 import CourseShow from './components/shared/courses/CourseShow';
+import EventShow from './components/shared/events/EventShow';
 
 const App = () => (
   <>
@@ -22,6 +23,7 @@ const App = () => (
           <ProtectedRoutes exact path='/justanything' component={Justanything} />
           <Route exact path='/courses' component={Courses} />
           <Route exact path='/course/:id' component={CourseShow} />
+          <Route exact path='/courses/:course_id/events/:id' component={EventShow} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
           <Route component={Nomatch} />
