@@ -3,7 +3,6 @@ import axios from "axios";
 import CourseForm from "./CourseForm";
 import Course from "./Course";
 import { Button } from "semantic-ui-react";
-import Students from "../students/Students";
 
 class Courses extends Component {
   state = {
