@@ -1,7 +1,7 @@
 import React from "react";
 import Tasks from "./task/Tasks";
 import Courses from "./courses/Courses";
-import Timer from "./Timer";
+// import Timer from "./Timer";
 
 class Home extends React.Component {
   render() {
@@ -9,7 +9,7 @@ class Home extends React.Component {
       <div>
         <h1>Home Page</h1>
         {/* if user auth show this */}
-        <Timer />
+        {/* <Timer /> */}
 
         <Tasks />
         <Courses />
