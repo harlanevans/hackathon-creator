@@ -1,5 +1,6 @@
 import React from "react";
 import EventForm from "./EventForm";
+import { Link } from 'react-router-dom';
 
 class Event extends React.Component {
   state = { editing: false };
@@ -21,7 +22,14 @@ class Event extends React.Component {
           margin: "2em 0em"
         }}
       >
+        <Link
+          to={{
+            pathname: `/courses/${course_id}/events/${id}`,
+            state: { id, name }
+          }}
+        >
         <h1>Name: {name}</h1>
+        </Link>
         <h3>Rubric: {rubric}</h3>
         <button onClick={this.toggleEdit}>{editing ? "Cancel" : "Edit"}</button>
         <button onClick={() => deleteEvent(course_id, id)}>Delete</button>
