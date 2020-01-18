@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { List, Button, Header } from "semantic-ui-react";
+import { Segment, Button, Header, Card, Divider } from "semantic-ui-react";
 import Event from "./Event";
 import EventForm from "./EventForm";
 
@@ -66,37 +66,41 @@ class Events extends Component {
   render() {
     const { events } = this.state;
     return (
-      <List>
+      <Segment>
         <Header size="large">Events</Header>
-        {this.state.adding ? (
-          <></>
-        ) : (
-          <Button onClick={this.toggleAdd}>Add Event</Button>
-        )}
-        {this.state.adding ? (
-          <EventForm
-            addEvent={this.addEvent}
-            adding={this.state.adding}
-            toggleAdd={this.toggleAdd}
-          />
-        ) : (
-          <></>
-        )}
-        {events ? (
-          <div>
-            {events.map(event => (
-              <Event
-              key={event.id}
-                {...event}
-                deleteEvent={this.deleteEvent}
-                updateEvent={this.updateEvent}
-              />
-            ))}
-          </div>
-        ) : (
+        {
+          this.state.adding ?
+            <></>
+          :
+            <Button onClick={this.toggleAdd}>Add Event</Button>
+        }
+        {
+          this.state.adding ? 
+            <EventForm
+              addEvent={this.addEvent}
+              adding={this.state.adding}
+              toggleAdd={this.toggleAdd}
+            />
+          :
+            <></>
+        }
+        <Divider />
+        {
+          events ?
+            <Card.Group itemsPerRow='2'>
+              {events.map(event => (
+                <Event
+                key={event.id}
+                  {...event}
+                  deleteEvent={this.deleteEvent}
+                  updateEvent={this.updateEvent}
+                />
+              ))}
+            </Card.Group>
+          : 
           <div>No Events, please add some.</div>
-        )}
-      </List>
+        }
+      </Segment>
     );
   }
 }

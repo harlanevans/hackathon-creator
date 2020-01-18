@@ -1,8 +1,6 @@
 
 import React from 'react';
-import axios from 'axios';
-import Courses from './Courses';
-import {Form} from 'semantic-ui-react';
+import { Form, Button } from 'semantic-ui-react';
 
 class CourseForm extends React.Component {
   state = { name: '' };
@@ -25,6 +23,7 @@ class CourseForm extends React.Component {
     } else {
       this.props.addCourse(this.state);
       this.setState({ name: '' })
+      this.props.toggleAdd()
     }
   }
 
@@ -32,15 +31,16 @@ class CourseForm extends React.Component {
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Input
-          label="Courses"
+          label="Course"
           placeholder="Add A Course"
           required
           value={this.state.name}
           onChange={this.handleChange}
         />
-        <Form.Button>
-          {this.props.id ? "Update Course" : "Create Course"}
-        </Form.Button>
+        <Form.Group>
+          <Form.Button>{this.props.id ? "Update Course" : "Create Course"}</Form.Button>
+          <Button onClick={this.props.id ? this.props.toggleEdit : this.props.toggleAdd}>Cancel</Button>
+        </Form.Group>
       </Form>
     );
   }

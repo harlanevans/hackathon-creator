@@ -23,16 +23,19 @@ class Task extends Component {
       />
       :
       <List.Item>
-      {complete ? 
-        <Icon 
-        onClick={() => completeTask({complete,name,staff,id})} 
-          name='check circle'
+      {
+        complete ? 
+          <Icon 
+            onClick={() => completeTask({complete,name,staff,id})} 
+            name='check circle'
+            link
           /> 
-          : 
-        <Icon 
-        onClick={() => completeTask({complete,name,staff,id})} 
-        name='circle outline'
-        />
+        : 
+          <Icon 
+            onClick={() => completeTask({complete,name,staff,id})} 
+            name='circle outline'
+            link
+          />
       }
       <List.Content>
         <List.Header>
