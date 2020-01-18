@@ -1,6 +1,6 @@
 import React,{ Component } from "react";
 import axios from 'axios';
-import { Menu, Icon, Segment, Card } from "semantic-ui-react";
+import { Menu, Icon, Segment } from "semantic-ui-react";
 import GroupForm from './GroupForm';
 import Group from './Group';
 import GroupAll from './GroupAll';

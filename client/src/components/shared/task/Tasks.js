@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {withRouter} from 'react-router-dom';
 import { AuthConsumer } from '../../../providers/AuthProvider';
-import { List, Button, Header, Card } from 'semantic-ui-react';
+import { List, Button, Card } from 'semantic-ui-react';
 import TaskForm from './TaskForm';
 import Task from './Task';
 
@@ -50,7 +50,7 @@ class Tasks extends Component {
 
   updateTask = (user_id, id, task) => {
 
-    axios.put(`/api/users/${user_id}/tasks/${id}`, task)
+    axios.put(`/api/users/${this.props.auth.user.id}/tasks/${id}`, task)
     .then( res => {
       console.log(res)
       const tasks = this.state.tasks.map( t => {
