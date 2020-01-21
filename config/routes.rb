@@ -5,15 +5,23 @@ Rails.application.routes.draw do
 
     resources :courses do
       resources :events do
-        resources :groups
+        resources :groups 
 
       end
-      resources :students 
+      resources :students
     end
 
     resources :users do
       resources :tasks
     end
 
+    resources :groups do 
+      resources :student_groups
+    end
+
+    resources :students do 
+      resources :student_groups
+    end
+    
   end
 end
