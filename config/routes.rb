@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   namespace :api do
 
     resources :courses do
-      resources :events
+      resources :events do
+
+        resources :timers
+      end
       resources :students 
     end
 

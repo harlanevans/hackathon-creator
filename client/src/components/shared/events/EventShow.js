@@ -1,4 +1,5 @@
 import React from 'react';
+import Timer from '../timers/Timer';
 
 class EventShow extends React.Component {
 
@@ -8,7 +9,7 @@ class EventShow extends React.Component {
     return(
       <div>
        <h1> {name}</h1>
-       {/* Timer */}
+       <Timer />
        {/* Create groups */}
       </div>
     )
