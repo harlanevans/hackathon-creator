@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
     resources :courses do
       resources :events do
+
+        resources :timers
         resources :groups
 
       end
