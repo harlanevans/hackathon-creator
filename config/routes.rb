@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       resources :events do
 
         resources :timers
+        resources :groups
+
       end
       resources :students 
     end

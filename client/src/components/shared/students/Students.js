@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Table, Button, Header } from 'semantic-ui-react';
+import { Table, Button, Header, Segment, Divider } from 'semantic-ui-react';
 import StudentForm from './StudentForm';
 import Student from './Student';
 
@@ -63,9 +63,10 @@ class Students extends Component {
 
   render(){
     return(
-      <>
+      <Segment>
       <Header size='large'>Students</Header>
       {this.state.adding ? <></> : <Button onClick={this.toggleAdd}>Add Student</Button>}
+      <Divider />
       <Table celled structured>
           {this.state.adding ? 
           <Table.Header>  
@@ -105,7 +106,7 @@ class Students extends Component {
             )
           }
       </Table>
-      </>
+      </Segment>
     )
   }
 }

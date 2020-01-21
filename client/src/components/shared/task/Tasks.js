@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {withRouter} from 'react-router-dom';
 import { AuthConsumer } from '../../../providers/AuthProvider';
-import { List, Button, Header } from 'semantic-ui-react';
+import { List, Button, Card } from 'semantic-ui-react';
 import TaskForm from './TaskForm';
 import Task from './Task';
 
@@ -50,7 +50,7 @@ class Tasks extends Component {
 
   updateTask = (user_id, id, task) => {
 
-    axios.put(`/api/users/${user_id}/tasks/${id}`, task)
+    axios.put(`/api/users/${this.props.auth.user.id}/tasks/${id}`, task)
     .then( res => {
       console.log(res)
       const tasks = this.state.tasks.map( t => {
@@ -81,33 +81,56 @@ class Tasks extends Component {
 
   render(){
     return(
-      <List>
-        <Header size='large'>Tasks</Header>
-          {
-            this.props.auth.user ? 
-            <>
-              {this.state.adding ? <></> : <Button onClick={this.toggleAdd}>Add Task</Button>}
-              {this.state.adding ? 
-              <TaskForm addTask={this.addTask} adding={this.state.adding} toggleAdd={this.toggleAdd}/>
-              : 
-              <></>
-              }
+      
+      <Card>
+        <Card.Content>
+          <Card.Header>Tasks</Card.Header>
+        </Card.Content>
+        <Card.Content>
+          
               {
-                this.state.tasks.map( t => 
-                  <Task 
-                    key={t.id}
-                    {...t} 
-                    completeTask={this.completeTask} 
-                    deleteTask={this.deleteTask}
-                    updateTask={this.updateTask} 
-                  />
-                )
+                this.props.auth.user ? 
+                <>
+                
+                  <Card.Content>
+                    <Card.Description>
+                      {
+                        this.state.adding ? 
+                        <></> 
+                        : 
+                        <Button onClick={this.toggleAdd}>Add Task</Button>
+                      }
+                      {
+                        this.state.adding ? 
+                        <TaskForm 
+                          addTask={this.addTask} 
+                          adding={this.state.adding} 
+                          toggleAdd={this.toggleAdd}
+                        />
+                        : 
+                        <></>
+                      }
+                    </Card.Description>
+                  </Card.Content>
+                  <List celled>
+                    {
+                      this.state.tasks.map( t => 
+                        <Task 
+                          key={t.id}
+                          {...t} 
+                          completeTask={this.completeTask} 
+                          deleteTask={this.deleteTask}
+                          updateTask={this.updateTask} 
+                        />
+                      )
+                    }
+                  </List>
+                </>
+                : 
+                <List.Item>Sign in to create tasks</List.Item>
               }
-            </>
-            : 
-            <List.Item>Sign in to create tasks</List.Item>
-          }
-      </List>
+        </Card.Content>
+      </Card>
     )
   }
 }

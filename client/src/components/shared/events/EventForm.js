@@ -5,8 +5,8 @@ import { Form, Button } from 'semantic-ui-react';
 class EventForm extends Component {
 
   state = {
-    name: null,
-    rubric: null,
+    name: '',
+    rubric: '',
   }
 
   
@@ -31,11 +31,11 @@ class EventForm extends Component {
     if (this.props.id) {
       this.props.updateEvent(this.props.course_id, this.props.id, this.state)
       this.props.toggleEdit()
-      this.setState({ name: null, rubric: null })
+      this.setState({ name: '', rubric: '' })
     } else {
       this.props.addEvent(this.state)
       this.props.toggleAdd()
-      this.setState({ name: null, rubric: null })
+      this.setState({ name: '', rubric: '' })
     }
   }
 

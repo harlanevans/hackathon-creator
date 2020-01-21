@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import CourseForm from "./CourseForm";
 import Course from "./Course";
-import { Button } from "semantic-ui-react";
-import Students from "../students/Students";
+import { Button, Segment, Card, Divider } from "semantic-ui-react";
 
 class Courses extends Component {
   state = {
@@ -75,38 +74,23 @@ class Courses extends Component {
   render() {
     const { adding } = this.state;
     return (
-      <div className="course-page">
-        <h1 className="course-header">Courses</h1>
+      <Segment>
+        <h1>Courses</h1>
         <h4>Click the button below to add a new course!</h4>
-        <div className="add-course">
-          {adding ? (
-            <div className="adding-course">
+          {
+            adding ?
               <CourseForm
                 addCourse={this.addCourse}
                 toggleAdd={this.toggleAdd}
               />
-            <Button
-              className="add-course-button"
-              color="teal"
-              onClick={this.toggleAdd}
-              >
-            Cancel
-            </Button>
-              </div>
-          ) : (
-            <Button
-              className="add-course-button"
-              color="teal"
-              onClick={this.toggleAdd}
-            >
-              New Course
-            </Button>
-          )}
-        </div>
-        <div style={{ paddingTop: "2em", width: "50%" }}>
-          {this.renderCourses()}
-        </div>
-      </div>
+            :
+              <Button onClick={this.toggleAdd}>New Course</Button>
+          }
+          <Divider />
+          <Card.Group itemsPerRow='2'>
+            {this.renderCourses()}
+          </Card.Group>
+      </Segment>
     );
   }
 }
