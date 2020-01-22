@@ -35,7 +35,7 @@ class Api::StudentGroupsController < ApplicationController
   end
 
   def student_group_params
-    params.require(:student_group).permit(:date, :time, :doctor_id, :appointment_type)
+    params.require(:student_group).permit(:group_id, :student_id)
   end
 
 end
