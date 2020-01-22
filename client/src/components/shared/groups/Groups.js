@@ -10,7 +10,7 @@ class Groups extends Component {
   state = {
     groups: [],
     adding: false,
-    activeItem: 'allGroups'
+    activeItem: 'allGroups',
   }
 
   handleItemClick = (e, { group }) => {
@@ -106,6 +106,7 @@ class Groups extends Component {
               {...activeItem} 
               deleteGroup={this.deleteGroup}
               updateGroup={this.updateGroup}
+              course_id={this.props.course_id}              
             />
           }
         </Segment>
