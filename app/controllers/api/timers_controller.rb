@@ -35,6 +35,6 @@ class Api::TimersController < ApplicationController
     end
   
     def timer_params
-      params.require(:timer).permit(:name,:start_time, :end_time, :complete)
+      params.require(:timer).permit(:name, :start_time, :end_time, :complete)
     end
 end
