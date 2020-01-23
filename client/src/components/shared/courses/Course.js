@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import CourseForm from "./CourseForm";
 import { Card, Icon } from 'semantic-ui-react';
+import { PrimaryLink } from '../../styled-components/Shared';
 
 class Course extends Component {
   state = { editing: false };
@@ -11,7 +12,7 @@ class Course extends Component {
   render() {
     const { id, name } = this.props;
     return (
-      <Card>
+      <Card className='courses'>
         <Card.Content>
           {
             this.state.editing ?
@@ -24,14 +25,14 @@ class Course extends Component {
               />
             :
               <>
-                <Link
+                <NavLink style={{color: '#6E54A3',}}
                   to={{
                     pathname: `/course/${id}`,
                     state: { id, name }
                   }}
                 >
                   <h1>{name}</h1>
-                </Link>
+                </NavLink>
                 <Icon
                   name='trash'
                   onClick={() => this.props.deleteCourse(id)}
@@ -41,6 +42,7 @@ class Course extends Component {
                   name='pencil'
                   onClick={this.toggleEdit}
                   link
+                  color='orange'
                 />            
               </>
           }
