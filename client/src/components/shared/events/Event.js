@@ -35,7 +35,7 @@ class Event extends React.Component {
               <h3>Rubric: {rubric}</h3>
               <Icon
                 name='trash'
-                onClick={() => deleteEvent(id)}
+                onClick={() => deleteEvent(course_id, id)}
                 link
               />
               <Icon
