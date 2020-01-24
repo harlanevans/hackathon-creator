@@ -1,18 +1,26 @@
 import React from "react";
 import Tasks from "./task/Tasks";
 import Courses from "./courses/Courses";
+import '../css/custom.css';
+import { Sections } from '../styled-components/Shared';
 // import Timer from "./Timer";
 
 class Home extends React.Component {
   render() {
     return (
       <div>
-        <h1>Home Page</h1>
+        <div class="image-header home">
+            <h1>DPL Hackathon</h1>
+            <div class="img-overlay"></div>
+        </div>
         {/* if user auth show this */}
         {/* <Timer /> */}
-
-        <Tasks />
-        <Courses />
+        <Sections>
+          <div class="home-wrapper">
+            <Courses />
+            <Tasks />
+          </div>
+        </Sections>
         {/* otherwise this */}
       </div>
     );
