@@ -59,7 +59,7 @@ class Timer extends Component {
   }
 
   render() {
-      const { minutes, running } = this.state
+      const { hours, minutes, running } = this.state
       return (
         <Card>
           <h1>Lunch Timer</h1>
