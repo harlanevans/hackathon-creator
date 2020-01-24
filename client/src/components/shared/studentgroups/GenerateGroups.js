@@ -31,10 +31,21 @@ class generateGroups extends Component {
     const { groups } = this.props
     let s = 0
     for ( s = 0; s < students.length; ) {
-      let g = 0
-      for ( g = 0; g < groups.length; g ++) {
-        this.addStudentGroup({group_id: groups[g].id, student_id:students[s].id})
-        s++
+      let g
+      if( s/groups.length % 2 == 0){
+        for ( g = 0; g < groups.length; g ++) {
+          if(students[s]) {
+            this.addStudentGroup({group_id: groups[g].id, student_id:students[s].id})
+            s++
+          }
+        }
+      } else {
+        for ( g = groups.length - 1; g > -1; g --) {
+          if(students[s]) {
+            this.addStudentGroup({group_id: groups[g].id, student_id:students[s].id})
+            s++
+          }
+        }
       }
     }
 
