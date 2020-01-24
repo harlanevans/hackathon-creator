@@ -33,8 +33,6 @@ class Timer extends Component {
     }, 60000);
   }
 
-
-
   handleStop = () => {
     if(this.timer) {
       clearInterval(this.timer);
@@ -60,15 +58,21 @@ class Timer extends Component {
       running: true
     })
   }
-
-
+ 
+  isCompleted(prevState): boolean {
+    if (this.state.running == false || prevState.running == true ) {
+      return true
+    }
+    else return  false
+  }
 
   render() {
       const { hours, minutes, running } = this.state
       return (
         <Card>
-            { hours === 0 && minutes === 0
-                ? <h1>STOP CODING!!!!!!!!!</h1>
+          <h1>Lunch Timer</h1>
+            { this.isCompleted()
+                ? <h3>Start Coding!</h3>
                 : 
                 <Clock minutes={minutes} />
               }
@@ -86,25 +90,4 @@ class Timer extends Component {
   }
 }
 
-
 export default Timer;
-
-
-// create_table "timers", force: :cascade do |t|
-// t.string "name"
-// t.time "start_time"
-// t.time "end_time"
-// t.boolean "complete"
-// t.bigint "event_id", null: false
-// t.datetime "created_at", precision: 6, null: false
-// t.datetime "updated_at", precision: 6, null: false
-// t.index ["event_id"], name: "index_timers_on_event_id"
-// end
-
-
-// create const for lunch
- 
-// figure out the math from end time subtracted start time 
-
-
-
