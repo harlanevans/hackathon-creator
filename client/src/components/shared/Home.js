@@ -2,6 +2,7 @@ import React from "react";
 import Tasks from "./task/Tasks";
 import Courses from "./courses/Courses";
 import '../css/custom.css';
+import { Sections } from '../styled-components/Shared';
 // import Timer from "./Timer";
 
 class Home extends React.Component {
@@ -14,10 +15,12 @@ class Home extends React.Component {
         </div>
         {/* if user auth show this */}
         {/* <Timer /> */}
-        <div class="home-wrapper">
-          <Courses />
-          <Tasks />
-        </div>
+        <Sections>
+          <div class="home-wrapper">
+            <Courses />
+            <Tasks />
+          </div>
+        </Sections>
         {/* otherwise this */}
       </div>
     );

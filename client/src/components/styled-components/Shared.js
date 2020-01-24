@@ -53,3 +53,19 @@ export const PrimaryLink = styled.a`
     color: #53407A !important;
   }
 `
+export const Sections = styled.div`
+  padding: 60px 0;
+  position: relative;
+  overflow-x: hidden;
+`
+
+export const StudentHacks = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
+`
+
+export const StudentEvents = styled.div`
+  flex-basis: 50%;
+`

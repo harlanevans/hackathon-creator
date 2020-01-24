@@ -45,9 +45,7 @@
   background-image: linear-gradient(to bottom right, #6E54A3, #53407A); 
 }
 
-.navbar a {
-  color: #fff !important;
-}
+
 .ui.secondary.pointing.menu .item {
   background-color: transparent;
   box-shadow: none;
