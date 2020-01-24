@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Icon } from 'semantic-ui-react';
+import { Icon, Form, Select } from 'semantic-ui-react';
 import GroupForm from './GroupForm';
+import StudentGroup from '../studentgroups/StudentGroup';
 
 class Group extends Component {
 
@@ -36,6 +37,8 @@ class Group extends Component {
           onClick={this.toggleEdit}
           link
           />
+
+        <StudentGroup course_id={this.props.course_id} group_id={id}/>
       </>
     )
   }
