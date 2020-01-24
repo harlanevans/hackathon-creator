@@ -1,6 +1,7 @@
 import React from 'react';
 import { AuthConsumer, } from "../../providers/AuthProvider";
 import { Button, Form, Segment, Header, } from 'semantic-ui-react';
+import { PrimaryBtn } from '../styled-components/Shared';
 
 class Login extends React.Component {
 
@@ -40,7 +41,7 @@ class Login extends React.Component {
             onChange={this.handleChange}
           />
           <Segment textAlign='center' basic>
-            <Button primary type='submit'>Submit</Button>
+            <PrimaryBtn primary type='submit'>Submit</PrimaryBtn>
           </Segment>
         </Form>
       </Segment>

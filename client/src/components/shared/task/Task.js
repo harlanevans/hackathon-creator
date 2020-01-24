@@ -53,6 +53,7 @@ class Task extends Component {
           name='pencil'
           onClick={this.toggleEdit}
           link
+          color='orange'
           />
       </List.Content>
     </List.Item>
