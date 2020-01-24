@@ -3,6 +3,7 @@ import axios from "axios";
 import CourseForm from "./CourseForm";
 import Course from "./Course";
 import { Button, Segment, Card, Divider } from "semantic-ui-react";
+import { PrimaryBtn } from '../../styled-components/Shared';
 
 class Courses extends Component {
   state = {
@@ -84,7 +85,7 @@ class Courses extends Component {
                 toggleAdd={this.toggleAdd}
               />
             :
-              <Button onClick={this.toggleAdd}>New Course</Button>
+              <PrimaryBtn onClick={this.toggleAdd}>New Course</PrimaryBtn>
           }
           <Divider />
           <Card.Group itemsPerRow='2'>

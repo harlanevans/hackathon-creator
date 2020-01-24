@@ -1,7 +1,9 @@
-import React from 'react'
+import React from 'react';
 import { AuthConsumer, } from "../../providers/AuthProvider";
-import { Menu, } from 'semantic-ui-react'
-import { Link, withRouter, } from 'react-router-dom'
+import { Menu, } from 'semantic-ui-react';
+import { Link, withRouter, } from 'react-router-dom';
+
+
 class Navbar extends React.Component {
   rightNavItems = () => {
     const { auth: { user, handleLogout, }, location, } = this.props;
@@ -37,7 +39,7 @@ class Navbar extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div class="navbar">
         <Menu pointing secondary>
           <Link to='/'>
             <Menu.Item
@@ -51,6 +53,13 @@ class Navbar extends React.Component {
               name='anything'
               id='anything'
               active={this.props.location.pathname === '/justanything'}
+            />
+          </Link>
+          <Link to='/studenthome'>
+            <Menu.Item
+              name='student home'
+              id='studenthome'
+              active={this.props.location.pathname === '/studenthome'}
             />
           </Link>
             { this.rightNavItems() }
