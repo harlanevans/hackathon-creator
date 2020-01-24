@@ -59,15 +59,14 @@ class Timer extends Component {
   }
 
   render() {
-      const { hours, minutes, running } = this.state
+      const { minutes, running } = this.state
       return (
         <Card>
           <h1>Lunch Timer</h1>
             { 
-              minutes == 0 && hours == 0
+            minutes == 0 && hours == 0
               ? <h3>Get Coding!</h3>
-              : 
-              <Clock minutes={minutes} />
+              : <Clock minutes={minutes} />
               }
             <TimerForm handleCountdown={this.handleCountdown}/>
             {
