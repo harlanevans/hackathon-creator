@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Countdown, { CountdownApi } from 'react-countdown';
 
 var time = new Date()
-time.setHours(21,0,0,0)
+time.setHours(17,0,0,0)
 var endTime = (time.getTime() - new Date().getTime())
 
 class ReactTimer extends Component {
@@ -44,7 +44,7 @@ class ReactTimer extends Component {
 
       return (
         <>
-        <h3>React-Countdown Timer</h3>
+        <h1>Countdown</h1>
         { this.isCompleted() ? <Completionist /> : null }
         <Countdown
           key={this.state.date}
@@ -63,13 +63,6 @@ class ReactTimer extends Component {
             disabled={!this.isPaused() || this.isCompleted()}
           >
             Start
-          </button>{' '}
-          <button
-            type="button"
-            onClick={this.handlePauseClick}
-            disabled={this.isPaused() || this.isCompleted()}
-          >
-            Pause
           </button>{' '}
           <button type="button" onClick={this.handleResetClick}>
             Reset

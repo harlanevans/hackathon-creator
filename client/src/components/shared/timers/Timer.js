@@ -57,7 +57,7 @@ class Timer extends Component {
       running: true
     })
   }
-
+  
   render() {
       const { hours, minutes, running } = this.state
       return (
