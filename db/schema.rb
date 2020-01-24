@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_18_170851) do
+ActiveRecord::Schema.define(version: 2020_01_24_015318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,15 @@ ActiveRecord::Schema.define(version: 2020_01_18_170851) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["course_id"], name: "index_students_on_course_id"
+  end
+
+  create_table "submissions", force: :cascade do |t|
+    t.string "link"
+    t.string "group_name"
+    t.bigint "event_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_submissions_on_event_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -114,6 +123,7 @@ ActiveRecord::Schema.define(version: 2020_01_18_170851) do
   add_foreign_key "student_groups", "groups"
   add_foreign_key "student_groups", "students"
   add_foreign_key "students", "courses"
+  add_foreign_key "submissions", "events"
   add_foreign_key "tasks", "users"
   add_foreign_key "timers", "events"
 end

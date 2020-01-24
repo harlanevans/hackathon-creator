@@ -1,7 +1,11 @@
 import React from 'react';
 import Timer from '../timers/Timer';
 import Groups from '../groups/Groups'
+
+import Submissions from '../submissions/Submissions';
+
 import ReactTimer from '../timers/ReactTimer';
+
 
 class EventShow extends React.Component {
   render() {
@@ -18,6 +22,7 @@ class EventShow extends React.Component {
        {/* Create groups */}
 
        <Groups course_id={course_id} event_id={id}/>
+       <Submissions course_id={course_id} event_id={id} />
       </div>
     )
   }

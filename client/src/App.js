@@ -13,6 +13,7 @@ import Courses from './components/shared/courses/Courses';
 import CourseShow from './components/shared/courses/CourseShow';
 import EventShow from './components/shared/events/EventShow';
 import StudentHome from './components/shared/StudentHome';
+import StudentPage from './components/shared/StudentPage';
 
 
 const App = () => (
@@ -24,6 +25,7 @@ const App = () => (
           <Route exact path='/' component={Home} />
           <ProtectedRoutes exact path='/justanything' component={Justanything} />
           <Route exact path='/studenthome' component={StudentHome} />
+          <Route exact path='/event/:event_id' component={StudentPage} />
           <Route exact path='/courses' component={Courses} />
           <Route exact path='/course/:id' component={CourseShow} />
           <Route exact path='/courses/:course_id/events/:id' component={EventShow} />
