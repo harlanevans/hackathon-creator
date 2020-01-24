@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Form } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 
 
 class TimerForm extends Component {

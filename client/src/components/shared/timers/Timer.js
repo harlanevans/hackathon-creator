@@ -10,7 +10,7 @@ class Timer extends Component {
       running: false
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevState) {
     if(this.state.running !== prevState.running){
       switch(this.state.running) {
         case true:
@@ -18,7 +18,6 @@ class Timer extends Component {
       }
     }
   }
-
 
   componentWillUnmount() {
     clearInterval(this.myInterval)
@@ -58,23 +57,17 @@ class Timer extends Component {
       running: true
     })
   }
- 
-  isCompleted(prevState): boolean {
-    if (this.state.running == false || prevState.running == true ) {
-      return true
-    }
-    else return  false
-  }
 
   render() {
       const { hours, minutes, running } = this.state
       return (
         <Card>
           <h1>Lunch Timer</h1>
-            { this.isCompleted()
-                ? <h3>Start Coding!</h3>
-                : 
-                <Clock minutes={minutes} />
+            { 
+              minutes == 0 && hours == 0
+              ? <h3>Get Coding!</h3>
+              : 
+              <Clock minutes={minutes} />
               }
             <TimerForm handleCountdown={this.handleCountdown}/>
             {

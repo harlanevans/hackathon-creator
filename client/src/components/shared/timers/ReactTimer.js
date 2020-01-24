@@ -7,8 +7,13 @@ var endTime = (time.getTime() - new Date().getTime())
 
 class ReactTimer extends Component {
     countdownApi: CountdownApi | null = null;
+    
     state = { date: Date.now() + endTime };
-  
+    
+    handleResetClick = (): void => {
+        this.setState({ date: Date.now() + endTime});
+      };
+
     handleStartClick = (): void => {
       this.countdownApi && this.countdownApi.start();
     };
@@ -16,11 +21,7 @@ class ReactTimer extends Component {
     handlePauseClick = (): void => {
       this.countdownApi && this.countdownApi.pause();
     };
-  
-    handleResetClick = (): void => {
-      this.setState({ date: Date.now() + endTime });
-    };
-  
+    
     handleUpdate = (): void => {
       this.forceUpdate();
     };
@@ -39,13 +40,21 @@ class ReactTimer extends Component {
       return !!(this.countdownApi && this.countdownApi.isCompleted())
     }
 
-    render() {
-        const Completionist = () => <span>Stop Coding!</span>
+    tick() {
+        this.setState((prevState, props) => ({
+            diff: prevState.fixDate - (new Date()).getTime(),
+        }));
+    }
 
+    render() {
+        
       return (
         <>
         <h1>Countdown</h1>
-        { this.isCompleted() ? <Completionist /> : null }
+        { this.isCompleted() ?
+        <h3>Stop Coding</h3>
+        : null }
+
         <Countdown
           key={this.state.date}
           ref={this.setRef}
