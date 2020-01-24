@@ -1,18 +1,9 @@
 import React from 'react';
-import Groups from '../groups/Groups';
-
+import Timer from '../timers/Timer';
+import Groups from '../groups/Groups'
+import ReactTimer from '../timers/ReactTimer';
 
 class EventShow extends React.Component {
-  // state = { showTimer: false}  
-
-  // toggleShowClock = () => {
-  //   const { showTimer } = this.state 
-  //   this.setState({ showTimer: !showTimer })
-  //   // this.setState( state => {
-  //   //   return { showClock: !state.showClock }
-  //   // })
-
-
   render() {
     const { name, id, course_id } = this.props.location.state;
 
@@ -21,6 +12,9 @@ class EventShow extends React.Component {
         
        <h1> {name}</h1>
         {/* <Timer /> */}
+       <ReactTimer />
+       
+       <Timer />
        {/* Create groups */}
 
        <Groups course_id={course_id} event_id={id}/>
