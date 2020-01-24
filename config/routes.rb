@@ -10,6 +10,10 @@ Rails.application.routes.draw do
       end
       resources :students
     end
+    
+    resources :events do
+      resources :submissions
+    end
 
     resources :users do
       resources :tasks

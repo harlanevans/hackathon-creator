@@ -12,14 +12,14 @@ class Courses extends Component {
   };
 
   componentDidMount() {
-    axios
-      .get("/api/courses")
-      .then(res => {
-        this.setState({ courses: res.data });
-      })
-      .catch(err => {
-        console.log(err);
-      });
+      axios
+        .get("/api/courses")
+        .then(res => {
+          this.setState({ courses: res.data });
+        })
+        .catch(err => {
+          console.log(err);
+        });
   }
 
   toggleAdd = () => this.setState({ adding: !this.state.adding });
