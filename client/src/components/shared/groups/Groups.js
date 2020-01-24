@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Button, Segment, Card, Divider } from "semantic-ui-react";
 import GroupForm from './GroupForm';
 import Group from './Group';
+import GenerateGroups from "../studentgroups/GenerateGroups";
 
 class Groups extends Component {
 
@@ -37,7 +38,7 @@ class Groups extends Component {
     axios.delete(`/api/courses/${this.props.course_id}/events/${this.props.event_id}/groups/${id}`)
     .then( res => {
       const { groups } = this.state
-      this.setState({groups: groups.filter( g => g.id !== id), activeItem:'allGroups'})
+      this.setState({groups: groups.filter( g => g.id !== id)})
     })
     .catch( err => {
       console.log(err)
@@ -65,6 +66,7 @@ class Groups extends Component {
     return (
       <Segment>
         {adding ? <></> : <Button onClick={this.toggleAdd}>Add Group</Button>}
+        <GenerateGroups groups={this.state.groups} course_id={this.props.course_id}/>
         {adding ? <GroupForm addGroup={this.addGroup} toggleAdd={this.toggleAdd}/> : <></>}
         <Divider />
           <Card.Group itemsPerRow='3'>
