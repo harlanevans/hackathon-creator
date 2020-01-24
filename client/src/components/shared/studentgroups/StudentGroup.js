@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import StudentGroupForm from './StudentGroupForm';
 import axios from 'axios';
+import { Icon } from 'semantic-ui-react';
 
 class StudentGroup extends Component {
 
@@ -28,6 +29,18 @@ class StudentGroup extends Component {
     axios.post(`/api/groups/${this.props.group_id}/student_groups`, studentGroup)
     .then( res => {
       this.setState({ studentGroups: [...this.state.studentGroups, res.data] })
+      this.getStudents()
+    })
+    .catch( err => {
+      console.log(err)
+    })
+  }
+
+  deleteStudentGroup = (id) => {
+    axios.delete(`/api/groups/${this.props.group_id}/student_groups/${id}`)
+    .then( res => {
+      const { studentGroups } = this.state
+      this.setState({studentGroups: studentGroups.filter( s => s.id !== id)})
     })
     .catch( err => {
       console.log(err)
@@ -55,10 +68,14 @@ class StudentGroup extends Component {
        <ul>
        {
         this.state.studentGroups.map(s => 
-      
-          <li key={s.student_id}>
-            {s.name}
-          </li>   
+          <div>
+            <li key={s.id}>
+              {s.name}
+              {s.effort}
+              {s.skill}
+            </li>   
+            <Icon name='trash' onClick={() => this.deleteStudentGroup(s.id)} link/>
+          </div>
         )
       }
       </ul>

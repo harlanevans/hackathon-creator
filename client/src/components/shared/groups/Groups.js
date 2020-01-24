@@ -1,20 +1,15 @@
 import React,{ Component } from "react";
 import axios from 'axios';
-import { Menu, Icon, Segment } from "semantic-ui-react";
+import { Button, Segment, Card, Divider } from "semantic-ui-react";
 import GroupForm from './GroupForm';
 import Group from './Group';
-import GroupAll from './GroupAll';
+import GenerateGroups from "../studentgroups/GenerateGroups";
 
 class Groups extends Component {
 
   state = {
     groups: [],
     adding: false,
-    activeItem: 'allGroups',
-  }
-
-  handleItemClick = (e, { group }) => {
-    this.setState({ activeItem: group })
   }
 
   componentDidMount() {
@@ -43,7 +38,7 @@ class Groups extends Component {
     axios.delete(`/api/courses/${this.props.course_id}/events/${this.props.event_id}/groups/${id}`)
     .then( res => {
       const { groups } = this.state
-      this.setState({groups: groups.filter( g => g.id !== id), activeItem:'allGroups'})
+      this.setState({groups: groups.filter( g => g.id !== id)})
     })
     .catch( err => {
       console.log(err)
@@ -67,50 +62,26 @@ class Groups extends Component {
   }
 
   render() {
-    const { activeItem, groups, adding } = this.state
+    const { groups, adding } = this.state
     return (
-      <div>
+      <Segment>
+        {adding ? <></> : <Button onClick={this.toggleAdd}>Add Group</Button>}
+        <GenerateGroups groups={this.state.groups} course_id={this.props.course_id}/>
         {adding ? <GroupForm addGroup={this.addGroup} toggleAdd={this.toggleAdd}/> : <></>}
-        <Menu attached='top' tabular>
-          <Menu.Item
-              group='allGroups'
-              name='All Groups'
-              active={activeItem === 'allGroups'}
-              onClick={this.handleItemClick}
-            />
+        <Divider />
+          <Card.Group itemsPerRow='3'>
             {
               groups.map( g =>
-                <Menu.Item
-                  key={g.id}
-                  group={g}
-                  name={g.name}
-                  active={activeItem === g}
-                  onClick={this.handleItemClick}
+                <Group 
+                {...g} 
+                deleteGroup={this.deleteGroup}
+                updateGroup={this.updateGroup}
+                course_id={this.props.course_id}              
                 />
                 )
-            }
-            <Menu.Item>
-              <Icon 
-                name='plus'
-                link
-                onClick={this.toggleAdd}
-              />
-            </Menu.Item>
-        </Menu>
-        <Segment attached='bottom'>
-          {
-            activeItem === 'allGroups' ?
-            <GroupAll groups={this.state.groups}/>
-            :
-            <Group 
-              {...activeItem} 
-              deleteGroup={this.deleteGroup}
-              updateGroup={this.updateGroup}
-              course_id={this.props.course_id}              
-            />
-          }
-        </Segment>
-      </div>
+              }
+          </Card.Group>
+      </Segment>
     )
   }
 }

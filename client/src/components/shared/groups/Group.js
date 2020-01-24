@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, Form, Select } from 'semantic-ui-react';
+import { Icon, Card } from 'semantic-ui-react';
 import GroupForm from './GroupForm';
 import StudentGroup from '../studentgroups/StudentGroup';
 
@@ -14,32 +14,36 @@ class Group extends Component {
   render(){
     const { id, name } = this.props
     return(
-      <>
-      {
-        this.state.editing ?
-        <GroupForm 
-          name={name} 
-          id={id} 
-          toggleEdit={this.toggleEdit} 
-          updateGroup={this.props.updateGroup}
-        />
-        :
-        <h1>{name}</h1>
-
-      }
-        <Icon
-          name='trash'
-          onClick={() => this.props.deleteGroup(id)}
-          link
-          />
-        <Icon
-          name='pencil'
-          onClick={this.toggleEdit}
-          link
-          />
-
-        <StudentGroup course_id={this.props.course_id} group_id={id}/>
-      </>
+      <Card>
+        <Card.Content>
+          {
+            this.state.editing ?
+            <GroupForm 
+              name={name} 
+              id={id} 
+              toggleEdit={this.toggleEdit} 
+              updateGroup={this.props.updateGroup}
+            />
+            :
+            <Card.Header>
+                {name}
+              <Icon
+                name='trash'
+                onClick={() => this.props.deleteGroup(id)}
+                floated='right'
+                link
+                />
+              <Icon
+                name='pencil'
+                onClick={this.toggleEdit}
+                floated='right'
+                link
+                />
+            </Card.Header>
+          }
+            <StudentGroup course_id={this.props.course_id} group_id={id}/>
+        </Card.Content>
+      </Card>
     )
   }
 }
