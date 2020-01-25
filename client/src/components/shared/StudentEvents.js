@@ -22,7 +22,7 @@ class StudentEvents extends React.Component {
         <Link
           to={{
             pathname: `/event/${event.id}`,
-            state: { ...event }
+            state: { ...event, courseName: this.state.course.name }
           }}
         >
           {event.name}

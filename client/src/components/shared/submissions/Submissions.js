@@ -1,13 +1,15 @@
 import React from "react";
 import axios from "axios";
+import {Segment} from 'semantic-ui-react';
 
 class Submissions extends React.Component {
   state = { submissions: [] };
 
   componentDidMount() {
     const { event_id } = this.props;
-    axios.get(`/api/events/${event_id}/submissions`).then(res => {
-      this.setState({ submissions: res.data });
+    axios.get(`/api/events/${event_id}/submissions`)
+      .then(res => {
+        this.setState({ submissions: res.data });
     });
   }
 
@@ -18,16 +20,15 @@ class Submissions extends React.Component {
     }
 
     return submissions.map(s => (
-      <div>
-        <h1>Submissions</h1>
-        <h5>Name: {s.group_name}</h5>
+      <Segment>
+        <h5>Group Name: </h5>
+        <h5>{s.group_name}</h5>
+        <h5>Repo: </h5>
         <h5>
-          Repo:
-          <a href={s.link} target="_blank">
-            {s.link}
-          </a>
+          <a href={s.link} target="_blank">{s.link}</a>
         </h5>
-      </div>
+        <h5>{s.created_at}</h5>
+      </Segment>
     ));
   }
 
