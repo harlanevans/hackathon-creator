@@ -38,7 +38,7 @@ class Navbar extends React.Component {
   }
   render() {
     return (
-      <div class="navbar">
+      <div className="navbar">
         <Menu pointing secondary>
           <Link to='/'>
           <Menu.Item

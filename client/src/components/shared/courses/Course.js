@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import CourseForm from "./CourseForm";
 import { Card, Icon } from 'semantic-ui-react';
-import { PrimaryLink } from '../../styled-components/Shared';
 
 class Course extends Component {
   state = { editing: false };

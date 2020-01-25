@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Form, Button } from 'semantic-ui-react';
 import { PrimaryBtn } from '../../styled-components/Shared';

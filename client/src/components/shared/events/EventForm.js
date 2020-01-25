@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'semantic-ui-react';
 
-
 class EventForm extends Component {
 
   state = {
     name: '',
     rubric: '',
   }
-
-  
 
   componentDidMount() {
     const { id, name, rubric } = this.props

@@ -139,7 +139,6 @@ class Tasks extends Component {
   }
 }
 
-
 export class ConnectedTasks extends Component {
   render(){
     return(

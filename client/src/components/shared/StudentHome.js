@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import "../css/custom.css";
 import Timer from "./timers/Timer";
+import Countdown from "./timers/Countdown";
 import {
   Sections
 } from "../styled-components/Shared";
@@ -42,11 +43,11 @@ class StudentHome extends React.Component {
     return (
       <div>
         <div>
-        <div class="image-header home">
+        <div className="image-header home">
           <h1>DPL Hackathon</h1>
-          <div class="img-overlay"></div>
+          <div className="img-overlay"></div>
         </div>
-        <Timer />
+        <Countdown />
       </div>
 
         {this.renderCourses()}
