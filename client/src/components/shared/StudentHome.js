@@ -1,10 +1,9 @@
 import React from "react";
 import axios from "axios";
 import "../css/custom.css";
-import { Input } from "semantic-ui-react";
+import Timer from "./timers/Timer";
 import {
-  Sections,
-  StudentHacks,
+  Sections
 } from "../styled-components/Shared";
 
 import StudentEvents from "./StudentEvents";
@@ -42,10 +41,13 @@ class StudentHome extends React.Component {
   render() {
     return (
       <div>
+        <div>
         <div class="image-header home">
           <h1>DPL Hackathon</h1>
           <div class="img-overlay"></div>
         </div>
+        <Timer />
+      </div>
 
         {this.renderCourses()}
 
