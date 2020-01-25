@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import '../../../App.css';
 
-class CountdownAaron extends Component {
+class Countdown extends Component {
 
   state = {
     hours: undefined,
@@ -53,4 +53,4 @@ class CountdownAaron extends Component {
   }
 }
 
-export default CountdownAaron
+export default Countdown

@@ -1,85 +1,45 @@
-import React, { Component } from "react";
-import TimerForm from './TimerForm';
-import { Card, Button } from 'semantic-ui-react';
-import Clock from './Clock';
+import React, { Component } from 'react';
+import { Form, Segment } from 'semantic-ui-react';
+import '../../../App.css';
+import Countdown from './Countdown';
 
 class Timer extends Component {
+
   state = {
-      hours: 0,
-      minutes: 0,
-      running: false
+    timeTillDate: "17:00",
+    timeFormat: "hh:mm",
+    running: false
   }
 
-  componentDidUpdate(prevState) {
-    if(this.state.running !== prevState.running){
-      switch(this.state.running) {
-        case true:
-          this.handleStart();
-      }
-    }
+  handleChange = (e, { name, value }) => this.setState({ [name]: value })
+
+  handleSumbit = (e) => {
+    e.preventDefault()
+    this.setState({running: !this.state.running})
   }
 
-  componentWillUnmount() {
-    clearInterval(this.myInterval)
-  }
-
-  handleStart = () => {
-    this.timer = setInterval(() => {
-      const newCount = this.state.minutes - 1;
-      this.setState(
-        {minutes: newCount >= 0 ? newCount : 0}
-      );
-    }, 60000);
-  }
-
-  handleStop = () => {
-    if(this.timer) {
-      clearInterval(this.timer);
-      this.setState({running: false});
-    }
-  }
-  
-  handleResume = () => {
-    if(this.timer) {
-      this.setState({running: true});
-    }
-  }
-
-  handleReset = () => {
-    this.setState(
-      {minutes: 0}
-    );
-  }
-
-  handleCountdown = (minutes) => {
-    this.setState({
-      minutes: minutes,
-      running: true
-    })
-  }
-  
   render() {
-      const { hours, minutes, running } = this.state
-      return (
-        <Card>
-          <h1>Lunch Timer</h1>
-            { 
-            minutes == 0 && hours == 0
-              ? <h3>Get Coding!</h3>
-              : <Clock minutes={minutes} />
-              }
-            <TimerForm handleCountdown={this.handleCountdown}/>
-            {
-              running ?
-              <Button onClick={this.handleStop}>Stop</Button>
-              :
-              <Button onClick={this.handleResume}>Resume</Button>
-            }
-            <Button onClick={this.handleReset}>Reset</Button>
-          </Card>
-
-      )
+    return(
+      <Segment>
+        <Countdown
+          timeTillDate={this.state.timeTillDate} 
+          timeFormat={this.state.timeFormat}
+          running
+        />
+        <Form onSubmit={this.handleSumbit}>
+          <Form.Group>  
+            <Form.Input
+              type={<input type='time'/>}
+              name='timeTillDate'
+              value={this.state.timeTillDate}
+              onChange={this.handleChange}
+            />
+            <Form.Button>{this.state.running ? "Stop Clock" : "Start Clock"}</Form.Button>
+          </Form.Group>
+        </Form>
+      </Segment>
+    )
   }
 }
 
-export default Timer;
+export default Timer

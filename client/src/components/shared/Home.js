@@ -3,7 +3,7 @@ import Tasks from "./task/Tasks";
 import Courses from "./courses/Courses";
 import '../css/custom.css';
 import { Sections } from '../styled-components/Shared';
-import TimerAaron from '../shared/timers/TimerAaron';
+import TimerAaron from './timers/Timer';
 // import Timer from "./Timer";
 
 class Home extends React.Component {
