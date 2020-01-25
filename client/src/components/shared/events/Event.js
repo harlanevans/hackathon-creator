@@ -27,7 +27,7 @@ class Event extends React.Component {
               <Link
                 to={{
                   pathname: `/courses/${course_id}/events/${id}`,
-                  state: { course_id, id, name }
+                  state: { ...event }
                 }}
               >
               <h1>{name}</h1>
