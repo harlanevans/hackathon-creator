@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import CourseForm from "./CourseForm";
 import Course from "./Course";
-import { Button, Segment, Card, Divider } from "semantic-ui-react";
+import { Segment, Card, Divider } from "semantic-ui-react";
 import { PrimaryBtn } from '../../styled-components/Shared';
 
 class Courses extends Component {
