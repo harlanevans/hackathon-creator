@@ -45,6 +45,14 @@ class Groups extends Component {
     })
   }
 
+  resetAllGroups = () => {
+    this.state.groups.map( g => {
+      this.deleteGroup(g.id)
+      this.addGroup({name: g.name})
+    })
+    window.setTimeout( () => window.location.reload(), 1000 )
+  }
+
   updateGroup = (id, group) => {
     axios.put(`/api/courses/${this.props.course_id}/events/${this.props.event_id}/groups/${id}`, group)
     .then( res => {
@@ -61,12 +69,19 @@ class Groups extends Component {
     })
   }
 
+// Need to grab all the students addigned to groups.
+// Assign this to an array in state.
+// Map through groups and student groups.
+// If group id == group id in student group then delete
+
   render() {
     const { groups, adding } = this.state
     return (
       <Segment>
+        <h1>Groups</h1>
         {adding ? <></> : <Button onClick={this.toggleAdd}>Add Group</Button>}
-        <GenerateGroups groups={this.state.groups} course_id={this.props.course_id}/>
+        <GenerateGroups groups={this.state.groups} course_id={this.props.course_id} resetAllGroups={this.resetAllGroups}/>
+        <Button onClick={this.resetAllGroups}>Clear Groups</Button>
         {adding ? <GroupForm addGroup={this.addGroup} toggleAdd={this.toggleAdd}/> : <></>}
         <Divider />
           <Card.Group itemsPerRow='3'>

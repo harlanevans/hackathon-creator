@@ -6,7 +6,6 @@ class generateGroups extends Component {
 
   state = {
     students: [],
-    student_groups: []
   }
 
   componentDidMount(){
@@ -27,7 +26,7 @@ class generateGroups extends Component {
   }
 
   assignStudents = () => {
-    const { students } = this.state
+    const { students, studentGroups } = this.state
     const { groups } = this.props
     let s = 0
     for ( s = 0; s < students.length; ) {
@@ -48,10 +47,7 @@ class generateGroups extends Component {
         }
       }
     }
-
     window.setTimeout( () => window.location.reload(), 1000 )
-   
-    
   }
 
   addStudentGroup = ( studentGroup ) => {
@@ -60,11 +56,18 @@ class generateGroups extends Component {
       console.log(err)
     })
   }
+  
+  deleteStudentGroup = (id) => {
+    axios.delete(`/api/groups/${this.props.group_id}/student_groups/${id}`) 
+    .catch( err => {
+      console.log(err)
+    })
+  }
 
   render () {
     return(
       <>
-        <Button onClick={this.assignStudents}>Assign Student Groups</Button>
+        <Button floated='right' onClick={this.assignStudents}>Assign Student Groups</Button>
       </>
     )
   }

@@ -50,6 +50,7 @@ class EventForm extends Component {
           label='Event Name'
         />
         <Form.Input
+          type={<input type='file' />}
           name='rubric'
           value={rubric}
           onChange={this.handleChange}
