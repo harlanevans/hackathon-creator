@@ -18,7 +18,6 @@ class Event extends React.Component {
       <Card>
         <Card.Content>
             
-
           { 
             editing ? 
               <EventForm updateEvent={updateEvent} {...event} toggleEdit={this.toggleEdit}/> 

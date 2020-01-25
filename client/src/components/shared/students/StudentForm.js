@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'semantic-ui-react';
 
+const lvl_choices = [ { key: "1", text: "1", value: 1},
+{ key: "2", text: "2", value: 2},
+{ key: "3", text: "3", value: 3},
+{ key: "4", text: "4", value: 4},
+{ key: "5", text: "5", value: 5} ]
 
 class StudentForm extends Component {
 
@@ -21,10 +26,7 @@ class StudentForm extends Component {
     }
   }
 
-  handleChange = (e) => {
-    const { name, value } = e.target
-    this.setState({ [name]: value })
-  }
+  handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
   handleSumbit = (e) => {
     e.preventDefault()
@@ -51,16 +53,18 @@ class StudentForm extends Component {
             label='Student Name'
             required
             />
-          <Form.Input 
+          <Form.Select
             name='skill_lvl'
             value={skill_lvl}
             onChange={this.handleChange}
+            options={lvl_choices}
             label='Skill Level'
             required
             />
-          <Form.Input 
+          <Form.Select
             name='effort_lvl'
             value={effort_lvl}
+            options={lvl_choices}
             onChange={this.handleChange}
             label='Effort Level'
             required
