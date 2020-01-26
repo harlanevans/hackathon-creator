@@ -1,15 +1,31 @@
 import React, { Component } from 'react';
 import { Form, Segment } from 'semantic-ui-react';
 import '../../../App.css';
+import axios from 'axios';
 import Countdown from './Countdown';
+import TimerForm from './TimerForm';
 
 class Timer extends Component {
 
   state = {
+    timers: [],
     timeTillDate: "17:00",
     timeFormat: "hh:mm",
-    running: false
+    running: false,
+    editing: false
   }
+
+  componentDidMount() {
+    axios.get(`/api/timers`)
+    .then( res => {
+      this.setState({ timers: res.data })
+    })
+    .catch( err => {
+      console.log(err)
+    })
+  }
+
+  toggleEdit = () => {this.setState({editing: !this.state.editing})}
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
@@ -19,7 +35,16 @@ class Timer extends Component {
   }
 
   render() {
+    const { name, end_time, types, active } = this.props
+    const timer = { name, end_time, types, active }
     return(
+      this.state.editing ?
+      <TimerForm 
+      updateTimer={this.props.updateTimer}
+      toggleEdit={this.toggleEdit}
+      {...timer}
+      />
+      :
       <Segment>
         <Countdown
           timeTillDate={this.state.timeTillDate} 
@@ -30,7 +55,7 @@ class Timer extends Component {
           <Form.Group>  
             <Form.Input
               type={<input type='time'/>}
-              name='timeTillDate'
+              name='end_time'
               value={this.state.timeTillDate}
               onChange={this.handleChange}
             />
