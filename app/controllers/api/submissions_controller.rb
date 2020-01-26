@@ -8,10 +8,23 @@ class Api::SubmissionsController < ApplicationController
     render json: @event.submissions
   end
 
+  def create
+    @submission = @event.submissions.new(submission_params)
+    if @submission.save
+      render json: @submission
+    else
+      render json: @submission.errors, status: 422
+    end
+  end
+
   private
 
   def set_event
     @event = Event.find(params[:event_id])
+  end
+
+  def submission_params
+    params.require(:submission).permit(:event_id, :group_name, :link)
   end
 
 end

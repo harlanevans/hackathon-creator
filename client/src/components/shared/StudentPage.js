@@ -1,31 +1,19 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import SubmissionForm from './submissions/SubmissionForm';
 
 class StudentPage extends React.Component {
-  // state = { event: this.props.location.state.event };
 
-  componentDidMount() {
-
-
-
-
-    // THIS IS NOT RECEIVING EVENT PROPERLY 
-    
-    // console.log(this.props.location.state.event);
-    // const { event } = this.props.location.state;
-    // this.setState({ event: event });
-    console.log(this.props.location.state);
-  }
 
   render() {
+    const { course_id, id, name, rubric, courseName } = this.props.location.state
     return (
       <div>
-        {/* {this.state.event.name} */}
-        "STUDENT HOME" Submission form for link 
-        rubric 
         <Link to="/studenthome">
           <button>Go back</button>
         </Link>
+        <h1>{courseName} {name}</h1>
+        <SubmissionForm course_id={course_id} event_id={id}/>
       </div>
     );
   }
