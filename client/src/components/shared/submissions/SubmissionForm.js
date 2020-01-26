@@ -62,7 +62,7 @@ class SubmissionFrom extends Component {
           <Form.Input 
             name='link'
             value={link}
-            label='Link' 
+            label='Link to GitHub Repo' 
             placeholder='GitHub' 
             onChange={this.handleChange}
           />

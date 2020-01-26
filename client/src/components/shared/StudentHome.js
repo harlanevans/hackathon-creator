@@ -1,13 +1,10 @@
 import React from "react";
 import axios from "axios";
 import "../css/custom.css";
-import Timer from "./timers/Timer";
 import Countdown from "./timers/Countdown";
-import {
-  Sections
-} from "../styled-components/Shared";
-
+import { Sections } from "../styled-components/Shared";
 import StudentEvents from "./StudentEvents";
+import { Segment } from "semantic-ui-react";
 
 class StudentHome extends React.Component {
   state = { courses: [], events: [] };
@@ -25,17 +22,10 @@ class StudentHome extends React.Component {
 
   renderCourses = () => {
     return this.state.courses.map(course => (
-      <div
-        style={{
-          border: "solid 3px black",
-          borderRadius: "5px",
-          padding: "2em",
-          margin: "2em"
-        }}
-      >
-        <h1>Course : {course.name}</h1>
-        Event: <StudentEvents key={course.id} name={course.name} id={course.id} />
-      </div>
+      <Segment>
+        <h1>{course.name}</h1>
+        Events: <StudentEvents key={course.id} name={course.name} id={course.id} />
+      </Segment>
     ));
   };
 
@@ -43,20 +33,14 @@ class StudentHome extends React.Component {
     return (
       <div>
         <div>
-        <div className="image-header home">
-          <h1>DPL Hackathon</h1>
-          <div className="img-overlay"></div>
+          <div className="image-header home">
+            <h1>DPL Hackathon</h1>
+            <div className="img-overlay"></div>
+          </div>
+          <Countdown timeTillDate="17:00" timeFormat="hh:mm" />
         </div>
-        <Countdown timeTillDate="17:00" timeFormat="hh:mm" />
-      </div>
-
+        <h1>Courses:</h1>
         {this.renderCourses()}
-
-        <Sections>
-          <h3>Submission URL</h3>
-          {/* make it's own component */}
-          {/* <Input fluid action='Submit' placeholder='https://...' /> */}
-        </Sections>
       </div>
     );
   }

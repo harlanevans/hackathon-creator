@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 
 class Rubric extends Component {
 
-  state = {
-   }
-
- 
-  
   render() {
     const { rubric } = this.props
     const regex = /\/view/;
@@ -20,11 +15,6 @@ class Rubric extends Component {
     )
   }
 }
-
-
-
-
-
 
 export default Rubric;
 
