@@ -7,7 +7,6 @@ class EventForm extends Component {
     name: '',
     rubric: '',
   }
-
   componentDidMount() {
     const { id, name, rubric } = this.props
     if (id) {
@@ -47,11 +46,10 @@ class EventForm extends Component {
           label='Event Name'
         />
         <Form.Input
-          type={<input type='file' />}
           name='rubric'
           value={rubric}
           onChange={this.handleChange}
-          label='Rubric'
+          label='Rubric link to PDF'
         />
         <Form.Group>
           <Form.Button>{this.props.id ? "Update Event" : "Create Event"}</Form.Button>
