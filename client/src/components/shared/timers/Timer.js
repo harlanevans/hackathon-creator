@@ -47,7 +47,7 @@ class Timer extends Component {
       :
       <Segment>
         <Countdown
-          timeTillDate={this.state.end_time} 
+          timeTillDate={this.state.timeTillDate} 
           timeFormat={this.state.timeFormat}
           running
         />
@@ -56,7 +56,7 @@ class Timer extends Component {
             <Form.Input
               type={<input type='time'/>}
               name='end_time'
-              value={this.state.end_time}
+              value={this.state.timeTillDate}
               onChange={this.handleChange}
             />
             <Form.Button>{this.state.running ? "Stop Clock" : "Start Clock"}</Form.Button>

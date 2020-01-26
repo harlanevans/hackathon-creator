@@ -5,7 +5,6 @@ import ProtectedRoutes from './components/auth/ProtectedRoutes'
 import Navbar from './components/shared/Navbar';
 import Nomatch from './components/shared/Nomatch';
 import Login from './components/auth/Login';
-import Register from './components/auth/Register';
 import FetchUser from './components/auth/FetchUser';
 import Courses from './components/shared/courses/Courses';
 import CourseShow from './components/shared/courses/CourseShow';
@@ -28,7 +27,6 @@ const App = () => (
           <Route exact path='/course/:id' component={CourseShow} />
           <Route exact path='/courses/:course_id/events/:id' component={EventShow} />
           <Route exact path='/login' component={Login} />
-          <Route exact path='/register' component={Register} />
           <Route component={Nomatch} />
         </Switch>
       </Container>

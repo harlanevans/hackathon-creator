@@ -25,13 +25,6 @@ class Navbar extends React.Component {
               active={location.pathname === '/login'}
             />
           </Link>
-          <Link to='/register'>
-            <Menu.Item
-              id='register'
-              name='register'
-              active={location.pathname === '/register'}
-            />
-          </Link>
         </Menu.Menu>
       )
     }
