@@ -1,24 +1,21 @@
 import React, { Component } from 'react';
 
 class Rubric extends Component {
-  state = { }
 
-  handleRe = ( rubric, regex, str, subst ) => {
-    regex = `/view`;
-    str = `${rubric}`;
-    subst = `/preview`;
-  }
+  state = {
+   }
+
+ 
   
-  handleReplace = (result, str, regex, subst) => {
-   result = str.replace(regex, subst);
-   console.log('Substitution result: ', result);
-  }
-
   render() {
     const { rubric } = this.props
+    const regex = /\/view/;
+    const subst = "/preview";
+    const result = rubric.replace(regex, subst);
+    
     return(
       <>
-        <iframe src={rubric} width="935" height="480"></iframe>
+        <iframe src={result} width="935" height="480"></iframe>
       </>
     )
   }
