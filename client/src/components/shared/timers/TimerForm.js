@@ -11,21 +11,18 @@ class TimerForm extends Component {
 
   state = {
     name: '', 
-    start_time: '', 
     end_time: '',
     types: '', 
     active: null
   } 
 
   componentDidMount() {
-    const { id, name, start_time, end_time, types, active } = this.props
+    const { id, name, end_time, types, active } = this.props
     if (id) {
       this.setState({
         id,
         name,
-        start_time,
         end_time,
-        complete,
         types,
         active
       })
@@ -39,16 +36,16 @@ class TimerForm extends Component {
     if (this.props.id) {
       this.props.updateTimer(this.props.course_id, this.props.id, this.state)
       this.props.toggleEdit()
-      this.setState({ name: '', start_time: '', end_time: '', types: '', active: null })
+      this.setState({ name: '', end_time: '', types: '', active: null })
     } else {
       this.props.addTimer(this.state)
       this.props.toggleAdd()
-      this.setState({ name: '', start_time: '', end_time: '', types: '', active: null })
+      this.setState({ name: '', end_time: '', types: '', active: null })
     }
     }
 
   render() {
-    const { id, name, start_time, end_time, types, active } = this.state
+    const { name, end_time, types, active } = this.state
     return(
       <Form onSubmit={ this.handleSumbit }>     
         <Form.Group>
@@ -59,12 +56,6 @@ class TimerForm extends Component {
             label='Timer Name'
             required
             />
-          <Form.Input
-            type={<input type='time'/>}
-            name='start_time'
-            value={start_time}
-            onChange={this.handleChange}
-          />
           <Form.Input
             type={<input type='time'/>}
             name='end_time'

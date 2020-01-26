@@ -2,14 +2,18 @@ import React, { Component } from 'react';
 import { Form, Segment } from 'semantic-ui-react';
 import '../../../App.css';
 import Countdown from './Countdown';
+import TimerForm from './TimerForm';
 
 class Timer extends Component {
 
   state = {
     timeTillDate: "17:00",
     timeFormat: "hh:mm",
-    running: false
+    running: false,
+    editing: false
   }
+
+  toggleEdit = () => {this.setState({editing: !this.state.editing})}
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
@@ -19,10 +23,19 @@ class Timer extends Component {
   }
 
   render() {
+    const { name, end_time, types, active } = this.props
+    const timer = { name, end_time, types, active }
     return(
+      this.state.editing ?
+      <TimerForm 
+      updateTimer={this.props.updateTimer}
+      toggleEdit={this.toggleEdit}
+      {...timer}
+      />
+      :
       <Segment>
         <Countdown
-          timeTillDate={this.state.timeTillDate} 
+          timeTillDate={this.state.end_time} 
           timeFormat={this.state.timeFormat}
           running
         />
@@ -30,8 +43,8 @@ class Timer extends Component {
           <Form.Group>  
             <Form.Input
               type={<input type='time'/>}
-              name='timeTillDate'
-              value={this.state.timeTillDate}
+              name='end_time'
+              value={this.state.end_time}
               onChange={this.handleChange}
             />
             <Form.Button>{this.state.running ? "Stop Clock" : "Start Clock"}</Form.Button>
