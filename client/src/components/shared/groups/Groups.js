@@ -79,9 +79,9 @@ class Groups extends Component {
     return (
       <Segment>
         <h1>Groups</h1>
-        {adding ? <></> : <Button onClick={this.toggleAdd}>Add Group</Button>}
+        {adding ? <></> : <Button onClick={this.toggleAdd}>Create New Group</Button>}
         <GenerateGroups groups={this.state.groups} course_id={this.props.course_id} resetAllGroups={this.resetAllGroups}/>
-        <Button onClick={this.resetAllGroups}>Clear Groups</Button>
+        <Button floated='right' onClick={this.resetAllGroups}>Clear Groups</Button>
         {adding ? <GroupForm addGroup={this.addGroup} toggleAdd={this.toggleAdd}/> : <></>}
         <Divider />
           <Card.Group itemsPerRow='3'>

@@ -13,8 +13,8 @@ class EventShow extends React.Component {
         
        <h1> {name}</h1>
        <Groups course_id={course_id} event_id={id}/>
-       <Submissions course_id={course_id} event_id={id} />
        <Rubric rubric={rubric}/>
+       <Submissions course_id={course_id} event_id={id} />
       </div>
     )
   }

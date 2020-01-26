@@ -25,7 +25,7 @@ class StudentEvents extends React.Component {
             state: { ...event, courseName: this.state.course.name }
           }}
         >
-          {event.name}
+          <h3>{event.name}</h3>
         </Link>
       </div>
     ));

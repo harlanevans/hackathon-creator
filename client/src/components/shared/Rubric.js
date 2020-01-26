@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 
 class Rubric extends Component {
 
-  state = {
-   }
-
- 
-  
   render() {
     const { rubric } = this.props
     const regex = /\/view/;
@@ -15,16 +10,11 @@ class Rubric extends Component {
     
     return(
       <>
-        <iframe src={result} width="935" height="480"></iframe>
+        <iframe src={result} width="100%" height="480"></iframe>
       </>
     )
   }
 }
-
-
-
-
-
 
 export default Rubric;
 
