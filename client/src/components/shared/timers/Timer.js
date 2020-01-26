@@ -1,16 +1,28 @@
 import React, { Component } from 'react';
 import { Form, Segment } from 'semantic-ui-react';
 import '../../../App.css';
+import axios from 'axios';
 import Countdown from './Countdown';
 import TimerForm from './TimerForm';
 
 class Timer extends Component {
 
   state = {
+    timers: [],
     timeTillDate: "17:00",
     timeFormat: "hh:mm",
     running: false,
     editing: false
+  }
+
+  componentDidMount() {
+    axios.get(`/api/timers`)
+    .then( res => {
+      this.setState({ timers: res.data })
+    })
+    .catch( err => {
+      console.log(err)
+    })
   }
 
   toggleEdit = () => {this.setState({editing: !this.state.editing})}
