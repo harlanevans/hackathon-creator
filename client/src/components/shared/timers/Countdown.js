@@ -13,7 +13,7 @@ class Countdown extends Component {
   componentDidMount() {
     this.interval = setInterval(() => {
         const { timeTillDate, timeFormat } = this.props;
-        const then = moment(timeTillDate, timeFormat);
+        const then = moment(timeTillDate, "HH:mm");
         const now = moment();
         const countdown = moment.utc(then - now);
         const hours = countdown.format('H');
@@ -33,7 +33,7 @@ class Countdown extends Component {
     const { hours, minutes, seconds } = this.state;
     return(
       <div>
-        <h1>Countdown</h1>
+        {this.props.types === 'lunch' ? <h1>Lunch Timer</h1> : <h1>Hackathon Countdown</h1>}
         <div className="countdown-wrapper">
             <div className="countdown-item">
                 {hours}
@@ -48,6 +48,7 @@ class Countdown extends Component {
                 <span>seconds</span>
             </div>
         </div>
+        <h4>End Time: {moment(this.props.timeTillDate, "HH:mm").format('LT')}</h4>
       </div>
     )
   }
