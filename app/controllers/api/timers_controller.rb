@@ -13,7 +13,7 @@ class Api::TimersController < ApplicationController
     end
   
     def update
-      @timer = TImer.find(params[:id])
+      @timer = Timer.find(params[:id])
       if @timer.update(timer_params)
       render json: @timer
       else 

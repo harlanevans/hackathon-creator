@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_25_233136) do
+ActiveRecord::Schema.define(version: 2020_01_27_055000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 2020_01_25_233136) do
   create_table "timers", force: :cascade do |t|
     t.string "name"
     t.time "start_time"
-    t.time "end_time"
+    t.string "end_time"
     t.boolean "complete"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

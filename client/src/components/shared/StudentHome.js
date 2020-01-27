@@ -37,7 +37,6 @@ class StudentHome extends React.Component {
             <h1>DPL Hackathon</h1>
             <div className="img-overlay"></div>
           </div>
-          <Countdown timeTillDate="17:00" timeFormat="hh:mm" />
         </div>
         <h1>Courses:</h1>
         {this.renderCourses()}
