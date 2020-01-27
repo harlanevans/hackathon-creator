@@ -23,6 +23,7 @@ class Timer extends Component {
     axios.get(`/api/timers`)
     .then( res => {
       this.setState({ timers: res.data })
+      this.timerMap()
     })
     .catch( err => {
       console.log(err)
@@ -36,6 +37,14 @@ class Timer extends Component {
   handleSumbit = (e) => {
     e.preventDefault()
     this.setState({ id: ''})
+  }
+
+  timerMap = () => {
+    const timers = this.state.timers.map(s =>
+      {
+        return {...s, text: s.types, value: s.id}
+      })
+      this.setState({ timers })
   }
 
   render() {

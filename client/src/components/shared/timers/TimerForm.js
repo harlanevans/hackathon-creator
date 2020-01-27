@@ -7,6 +7,7 @@ const active_dropdown = [ { key: "yes", text: "Yes", value: true},
 class TimerForm extends Component {
 
   state = {
+    id: '',
     name: '', 
     end_time: '',
     types: '', 
@@ -30,13 +31,13 @@ class TimerForm extends Component {
 
   handleSumbit = (e) => {
     e.preventDefault()
-    this.props.updateTimer(this.props.course_id, this.props.id, this.state)
+    this.props.updateTimer(this.props.id, this.state)
     this.props.toggleEdit()
     this.setState({ name: '', end_time: '', types: '', active: null }) 
     }
 
   render() {
-    const { name, end_time, types, active } = this.state
+    const { end_time, active } = this.state
     return(
       <Form onSubmit={ this.handleSumbit }>     
         <Form.Group>
@@ -44,6 +45,7 @@ class TimerForm extends Component {
             type={<input type='time'/>}
             name='end_time'
             value={end_time}
+            label='End Time'
             onChange={this.handleChange}
             />
          <Form.Select
