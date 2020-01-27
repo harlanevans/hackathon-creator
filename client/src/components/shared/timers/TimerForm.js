@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'semantic-ui-react';
 
-const active_dropdown = [ { key: "yes", text: "yes", value: true},
-{ key: "no", text: "no", value: false} ]
-
-const types_dropdown = [ { key: "event", text: "event", value: "event"},
-{ key: "lunch", text: "lunch", value: "lunch"} ]
+const active_dropdown = [ { key: "yes", text: "Yes", value: true},
+{ key: "no", text: "No", value: false} ]
 
 class TimerForm extends Component {
 
@@ -33,15 +30,9 @@ class TimerForm extends Component {
 
   handleSumbit = (e) => {
     e.preventDefault()
-    if (this.props.id) {
-      this.props.updateTimer(this.props.course_id, this.props.id, this.state)
-      this.props.toggleEdit()
-      this.setState({ name: '', end_time: '', types: '', active: null })
-    } else {
-      this.props.addTimer(this.state)
-      this.props.toggleAdd()
-      this.setState({ name: '', end_time: '', types: '', active: null })
-    }
+    this.props.updateTimer(this.props.course_id, this.props.id, this.state)
+    this.props.toggleEdit()
+    this.setState({ name: '', end_time: '', types: '', active: null }) 
     }
 
   render() {
@@ -49,26 +40,11 @@ class TimerForm extends Component {
     return(
       <Form onSubmit={ this.handleSumbit }>     
         <Form.Group>
-          <Form.Input 
-            name='name'
-            value={name}
-            onChange={this.handleChange}
-            label='Timer Name'
-            required
-            />
           <Form.Input
             type={<input type='time'/>}
             name='end_time'
             value={end_time}
             onChange={this.handleChange}
-            />
-          <Form.Select
-            name='type'
-            value={types}
-            options={types_dropdown}
-            onChange={this.handleChange}
-            label='type'
-            required
             />
          <Form.Select
             name='active'
@@ -80,8 +56,8 @@ class TimerForm extends Component {
             />
         </Form.Group>
         <Form.Group>
-          <Form.Button>{this.props.id ? "Update Timer" : "Create Timer" }</Form.Button>
-          <Button onClick={this.props.id ? this.props.toggleEdit : this.props.toggleAdd}>Cancel</Button>
+          <Form.Button>Update Timer</Form.Button>
+          <Button onClick={this.props.toggleEdit}>Cancel</Button>
         </Form.Group>
       </Form>
     )

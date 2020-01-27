@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Segment } from 'semantic-ui-react';
+import { Form, Button, Segment } from 'semantic-ui-react';
 import '../../../App.css';
 import axios from 'axios';
 import Countdown from './Countdown';
@@ -9,9 +9,13 @@ class Timer extends Component {
 
   state = {
     timers: [],
+    id: '',
+    types: '',
+    end_time: '',
     timeTillDate: "17:00",
     timeFormat: "hh:mm",
-    running: false,
+    active: '',
+    running: true,
     editing: false
   }
 
@@ -31,36 +35,39 @@ class Timer extends Component {
 
   handleSumbit = (e) => {
     e.preventDefault()
-    this.setState({running: !this.state.running})
+    this.setState({ id: ''})
   }
 
   render() {
     const { name, end_time, types, active } = this.props
     const timer = { name, end_time, types, active }
     return(
-      this.state.editing ?
-      <TimerForm 
-      updateTimer={this.props.updateTimer}
-      toggleEdit={this.toggleEdit}
-      {...timer}
-      />
-      :
       <Segment>
         <Countdown
-          timeTillDate={this.state.timeTillDate} 
+          timeTillDate={this.state.end_time} 
           timeFormat={this.state.timeFormat}
           running
         />
         <Form onSubmit={this.handleSumbit}>
-          <Form.Group>  
-            <Form.Input
-              type={<input type='time'/>}
-              name='end_time'
-              value={this.state.timeTillDate}
-              onChange={this.handleChange}
+          <Form.Select
+            name='id'
+            value={this.state.id}
+            options={this.state.timers}
+            placeholder='Timer'
+            onChange={this.handleChange}
+            search
+          />
+          <Form.Button>Choose Timer</Form.Button>
+          { 
+          this.state.editing ?
+            <TimerForm 
+              updateTimer={this.props.updateTimer}
+              toggleEdit={this.toggleEdit}
+              {...timer}
             />
-            <Form.Button>{this.state.running ? "Stop Clock" : "Start Clock"}</Form.Button>
-          </Form.Group>
+          :
+          <Form.Button onClick={this.toggleEdit}>Update Timer</Form.Button>
+          }
         </Form>
       </Segment>
     )
