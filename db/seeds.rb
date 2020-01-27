@@ -12,7 +12,7 @@ end
 
 1.times do
     Timer.create(
-        name: 'Hackathon III 2020',
+        name: 'Event',
         end_time: '17:00:00',
         types: 'event',
         active: true
