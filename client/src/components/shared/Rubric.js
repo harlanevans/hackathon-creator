@@ -10,7 +10,7 @@ class Rubric extends Component {
     
     return(
       <>
-        <iframe src={result} width="100%" height="600 title="rubric""></iframe>
+        <iframe src={result} width="100%" height="600" title="rubric"></iframe>
       </>
     )
   }
