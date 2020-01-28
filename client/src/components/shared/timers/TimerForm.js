@@ -41,7 +41,7 @@ class TimerForm extends Component {
       <Form onSubmit={ this.handleSumbit }>     
         <Form.Group>
           <Form.Input
-            type={<input type='time'/>}
+            type='time'
             name='end_time'
             value={end_time}
             onChange={this.handleChange}
