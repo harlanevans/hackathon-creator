@@ -26,8 +26,9 @@ state = {
     this.state.timers.map( t => {
       if(t.active) {
         return <Countdown timeTillDate={t.end_time}/>
-      }
+      } 
     })
+    return 
   }
 
 

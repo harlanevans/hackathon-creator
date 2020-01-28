@@ -26,12 +26,12 @@ class generateGroups extends Component {
   }
 
   assignStudents = () => {
-    const { students, studentGroups } = this.state
+    const { students } = this.state
     const { groups } = this.props
     let s = 0
     for ( s = 0; s < students.length; ) {
       let g
-      if( s/groups.length % 2 == 0){
+      if( s/groups.length % 2 === 0){
         for ( g = 0; g < groups.length; g ++) {
           if(students[s]) {
             this.addStudentGroup({group_id: groups[g].id, student_id:students[s].id})

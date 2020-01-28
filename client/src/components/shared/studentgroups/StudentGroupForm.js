@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Select } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 import axios from 'axios';
 
 class StudentGroupForm extends Component {

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import StudentGroupForm from './StudentGroupForm';
 import axios from 'axios';
-import { Icon, Table, Tab, TableRow } from 'semantic-ui-react';
+import { Icon, Table, TableRow } from 'semantic-ui-react';
 
 class StudentGroup extends Component {
 
@@ -62,7 +62,7 @@ class StudentGroup extends Component {
           }
       })
     })
-      this.setState({ studentGroups: newGroup })
+    this.setState({ studentGroups: newGroup })
   }
 
 

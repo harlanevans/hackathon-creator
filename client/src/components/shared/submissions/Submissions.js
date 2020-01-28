@@ -27,7 +27,7 @@ class Submissions extends React.Component {
                 <Card.Header>
                   Group Name: {s.group_name}
                   <h5>
-                    Repo: <a href={s.link} target="_blank">{s.link}</a>
+                    Repo: <a href={s.link} target="_blank" rel="noopener noreferrer">{s.link}</a>
                   </h5>
                 </Card.Header>
               

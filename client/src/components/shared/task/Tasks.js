@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {withRouter} from 'react-router-dom';
 import { AuthConsumer } from '../../../providers/AuthProvider';
-import { List, Button, Card } from 'semantic-ui-react';
+import { List, Card } from 'semantic-ui-react';
 import TaskForm from './TaskForm';
 import Task from './Task';
 import { PrimaryBtn } from '../../styled-components/Shared';

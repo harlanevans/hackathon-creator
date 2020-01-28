@@ -1,7 +1,6 @@
 import React from 'react';
 import Groups from '../groups/Groups'
 import Submissions from '../submissions/Submissions';
-import EventForm from './EventForm';
 import Rubric from '../Rubric';
 
 class EventShow extends React.Component {
