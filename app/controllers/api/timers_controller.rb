@@ -1,6 +1,6 @@
 class Api::TimersController < ApplicationController  
     def index
-      render json: Timer.all
+      render json: Timer.all.order(created_at: :desc)
     end
   
     def create

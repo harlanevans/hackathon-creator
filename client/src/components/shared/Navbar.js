@@ -30,23 +30,29 @@ class Navbar extends React.Component {
     }
   }
   render() {
+    const { auth: { user } } = this.props;
     return (
       <div className="navbar">
         <Menu pointing secondary>
           <Link to='/'>
-          <Menu.Item
-              name='home'
-              id='home'
-              active={this.props.location.pathname === '/'}
-            />
+            <Menu.Item
+                name='home'
+                id='home'
+                active={this.props.location.pathname === '/'}
+              />
           </Link>
-          <Link to='/admin'>
-          <Menu.Item
-            name='admin'
-            id='admin'
-            active={this.props.location.pathname === '/admin'}
-          />
-          </Link>
+          {
+            user ?
+            <Link to='/admin'>
+              <Menu.Item
+                name='admin'
+                id='admin'
+                active={this.props.location.pathname === '/admin'}
+              />
+            </Link>
+            :
+            <></>
+          }
             { this.rightNavItems() }
         </Menu>
       </div>
