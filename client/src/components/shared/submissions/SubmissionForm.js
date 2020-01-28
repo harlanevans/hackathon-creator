@@ -53,8 +53,7 @@ class SubmissionFrom extends Component {
         <>
         <Container fluid style={{background: "#eee"}}>
           <Sections style={{padding: "10%"}}>
-            <h1>Submit your</h1>
-            <TextCenter>Hackathon Project</TextCenter>
+            <h1>Submit your <br></br> Hackathon Project</h1>
             <Form className="submissions" success onSubmit={this.handleSumbit}>
               <Form.Select 
                 name='group_name'

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Segment, Button, Header, Card, Divider } from "semantic-ui-react";
-import { PrimaryBtn, DefaultBtn } from '../../styled-components/Shared';
+import { Segment, Button, Header, Card, Divider, Container } from "semantic-ui-react";
+import { PrimaryBtn, Sections } from '../../styled-components/Shared';
 import Event from "./Event";
 import EventForm from "./EventForm";
 
@@ -67,41 +67,45 @@ class Events extends Component {
   render() {
     const { events } = this.state;
     return (
-      <Segment>
-        <Header size="large">Events</Header>
-        {
-          this.state.adding ?
-            <></>
-          :
-            <PrimaryBtn onClick={this.toggleAdd}>Add Event</PrimaryBtn>
-        }
-        {
-          this.state.adding ? 
-            <EventForm
-              addEvent={this.addEvent}
-              adding={this.state.adding}
-              toggleAdd={this.toggleAdd}
-            />
-          :
-            <></>
-        }
-        <Divider />
-        {
-          events ?
-            <Card.Group itemsPerRow='2'>
-              {events.map(event => (
-                <Event
-                  key={event.id}
-                  {...event}
-                  deleteEvent={this.deleteEvent}
-                  updateEvent={this.updateEvent}
-                />
-              ))}
-            </Card.Group>
-          : 
-          <div>No Events, please add some.</div>
-        }
-      </Segment>
+      <Container>
+        <Sections>
+        <Segment>
+          <Header size="large">Events</Header>
+          {
+            this.state.adding ?
+              <></>
+            :
+              <PrimaryBtn onClick={this.toggleAdd}>Add Event</PrimaryBtn>
+          }
+          {
+            this.state.adding ? 
+              <EventForm
+                addEvent={this.addEvent}
+                adding={this.state.adding}
+                toggleAdd={this.toggleAdd}
+              />
+            :
+              <></>
+          }
+          <Divider />
+          {
+            events ?
+              <Card.Group itemsPerRow='2'>
+                {events.map(event => (
+                  <Event
+                    key={event.id}
+                    {...event}
+                    deleteEvent={this.deleteEvent}
+                    updateEvent={this.updateEvent}
+                  />
+                ))}
+              </Card.Group>
+            : 
+            <div>No Events, please add some.</div>
+          }
+        </Segment>
+        </Sections>
+      </Container>
     );
   }
 }

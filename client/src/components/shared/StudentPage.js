@@ -36,14 +36,14 @@ class StudentPage extends React.Component {
       <div>
         <div>
           <Link to="/" className="back-btn">
-            <h2>
+            <h3>
               <Icon name='arrow left' />
               Go back
-            </h2>
+            </h3>
           </Link>
         </div>
         {/* Add image background here */}
-          <h1>{courseName} {name}</h1>
+          <h1>{courseName} <br></br>{name}</h1>
 
         <Container>
           {

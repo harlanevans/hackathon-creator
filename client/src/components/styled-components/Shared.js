@@ -119,8 +119,3 @@ export const StudentCourseFlex = styled.div`
   display: flex;
   flex-direction: column;
 `
-
-export const TextCenter = styled.h2`
-  text-align: center;
-  margin-top: 0 !important;
-`
