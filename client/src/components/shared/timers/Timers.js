@@ -41,7 +41,11 @@ class Timers extends Component {
         <Card.Group itemsPerRow='2'>
           {
             this.state.timers.map( t => 
-              <Timer {...t} updateTimer={this.updateTimer}/>
+              <Timer 
+                key={t.id} 
+                {...t} 
+                updateTimer={this.updateTimer}
+              />
             )
           }
         </Card.Group>
