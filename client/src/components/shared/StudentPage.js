@@ -31,7 +31,7 @@ class StudentPage extends React.Component {
 
 
   render() {
-    const { course_id, id, name, rubric, courseName } = this.props.location.state
+    const { id, course_id, name, rubric, courseName } = this.props.location.state
     return (
       <div>
         <Link to="/">

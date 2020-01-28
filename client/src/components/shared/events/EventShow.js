@@ -5,7 +5,7 @@ import Rubric from '../Rubric';
 
 class EventShow extends React.Component {
   render() {
-    const { name, id, course_id, rubric } = this.props.location.state;
+    const { name, id, course_id, rubric } = this.props;
 
     return(
       <div>

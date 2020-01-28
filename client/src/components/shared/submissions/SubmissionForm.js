@@ -25,7 +25,7 @@ class SubmissionFrom extends Component {
   
   groupMap = () => {
     const groups = this.state.groups.map( g => {
-      return {...g, text: g.name, value: g.name}
+      return {...g, text: g.name, value: g.name, key:g.id}
     })
     this.setState({groups})
   }
