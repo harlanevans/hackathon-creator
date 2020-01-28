@@ -90,7 +90,7 @@ class Events extends Component {
             <Card.Group itemsPerRow='2'>
               {events.map(event => (
                 <Event
-                key={event.id}
+                  key={event.id}
                   {...event}
                   deleteEvent={this.deleteEvent}
                   updateEvent={this.updateEvent}
