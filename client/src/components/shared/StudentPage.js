@@ -44,7 +44,7 @@ class StudentPage extends React.Component {
         {
           this.state.timers.map(t =>
             t.active ?
-              <Countdown timeTillDate={t.end_time} types={t.types} />
+              <Countdown key={t.id} timeTillDate={t.end_time} types={t.types} />
               :
               ""
           )
