@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Sections } from '../styled-components/Shared';
+
 
 class Rubric extends Component {
 
@@ -10,7 +12,10 @@ class Rubric extends Component {
     
     return(
       <>
+      <Sections>
+        <h1>Grading Rubric</h1>
         <iframe src={result} width="100%" height="600" title="rubric"></iframe>
+      </Sections>
       </>
     )
   }

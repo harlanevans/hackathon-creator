@@ -13,13 +13,13 @@
 
 .image-header {
   position: relative;
-  padding: 100px 0;
+  padding: 160px 0;
   overflow-x: hidden;
 }
 
 .image-header h1 {
   z-index: 4;
-  color: #000;
+  color: #fff;
   position: relative;
   display: flex; 
   justify-content: center;
@@ -34,10 +34,11 @@ h1 {
 }
 
 .image-header.home .img-overlay {
-  background-image: url('./images/gray-lab.png');
+  background-image: url('./images/code-hack.png');
   opacity: 0.9;
   background-position: center 20%;
-  background-size: contain;
+  background-size: cover;
+  width: 100% !important;
 }
 
 .home-wrapper {
@@ -95,6 +96,16 @@ i.icon.check.circle:before {
 }
 .edit-buttons i {
   margin: 0 6px !important;
+}
+
+.submissions {
+  max-width: 75% !important;
+  margin: 0 auto;
+}
+
+.ftr-logo {
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {

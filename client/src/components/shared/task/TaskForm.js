@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'semantic-ui-react';
-import { PrimaryBtn } from '../../styled-components/Shared';
+import { PrimaryBtn, DefaultBtn } from '../../styled-components/Shared';
 
 
 class TaskForm extends Component {
@@ -60,7 +60,7 @@ class TaskForm extends Component {
           />
         <Form.Group>
           <PrimaryBtn>{this.props.id ? "Update Task" : "Create Task" }</PrimaryBtn>
-          <Button onClick={this.props.id ? this.props.toggleEdit : this.props.toggleAdd}>Cancel</Button>
+          <DefaultBtn onClick={this.props.id ? this.props.toggleEdit : this.props.toggleAdd}>Cancel</DefaultBtn>
         </Form.Group>
       </Form>
     )

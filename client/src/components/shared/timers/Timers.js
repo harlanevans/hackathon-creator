@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Card, Segment} from 'semantic-ui-react';
 import Timer from './Timer'
+import { Sections } from '../../styled-components/Shared';
+
 
 class Timers extends Component {
 
@@ -36,20 +38,22 @@ class Timers extends Component {
 
   render() {
     return(
-      <Segment>
-        <h1>Event Timers</h1>
-        <Card.Group itemsPerRow='2'>
-          {
-            this.state.timers.map( t => 
-              <Timer 
-                key={t.id} 
-                {...t} 
-                updateTimer={this.updateTimer}
-              />
-            )
-          }
-        </Card.Group>
-      </Segment>
+      <Sections>
+          <Segment>
+          <h1>Event Timers</h1>
+          <Card.Group itemsPerRow='2'>
+            {
+              this.state.timers.map( t => 
+                <Timer 
+                  key={t.id} 
+                  {...t} 
+                  updateTimer={this.updateTimer}
+                />
+              )
+            }
+          </Card.Group>
+        </Segment>
+      </Sections>
     )
   }
 }

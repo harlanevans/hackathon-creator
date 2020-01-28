@@ -10,25 +10,26 @@ class Timer extends Component {
     const { id, name, end_time, types, active, updateTimer } = this.props
     const timer = { id, name, end_time, types, active }
     return(
-      <Card>
-        <Card.Content>
-          {
-            active ? 
-            <Countdown
-              types={types}
-              timeTillDate={end_time} 
+      
+        <Card>
+          <Card.Content>
+            {
+              active ? 
+              <Countdown
+                types={types}
+                timeTillDate={end_time} 
+                {...timer}
+              />
+              :
+            <h3>{name} Not Started</h3>
+            }
+            <TimerForm 
+              updateTimer={updateTimer}
+              toggleEdit={this.toggleEdit}
               {...timer}
             />
-            :
-          <h3>{name} Not Started</h3>
-          }
-          <TimerForm 
-            updateTimer={updateTimer}
-            toggleEdit={this.toggleEdit}
-            {...timer}
-          />
-        </Card.Content>
-      </Card>
+          </Card.Content>
+        </Card>
     )
   }
 }

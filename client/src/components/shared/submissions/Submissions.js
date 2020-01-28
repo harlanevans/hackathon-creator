@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import {Segment, Card} from 'semantic-ui-react';
 import moment from 'moment';
+import { Sections } from '../../styled-components/Shared';
 
 class Submissions extends React.Component {
   state = { submissions: [], formattedTime: '' };

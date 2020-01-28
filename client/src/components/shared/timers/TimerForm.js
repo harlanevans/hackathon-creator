@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'semantic-ui-react';
+import { PrimaryBtn, DefaultBtn } from '../../styled-components/Shared';
 
 
 class TimerForm extends Component {
@@ -46,8 +47,8 @@ class TimerForm extends Component {
             value={end_time}
             onChange={this.handleChange}
             />
-          <Form.Button>Change End Time</Form.Button>
-          <Button onClick={this.toggleActive}>{active ? "Stop" : "Start"}</Button>
+          <PrimaryBtn>Change End Time</PrimaryBtn>
+          <DefaultBtn onClick={this.toggleActive}>{active ? "Stop" : "Start"}</DefaultBtn>
         </Form.Group>
       </Form>
     )
