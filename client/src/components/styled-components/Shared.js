@@ -31,8 +31,8 @@ export const PrimaryBtn = styled.button`
 `
 
 export const DefaultBtn = styled.button`
-  background-color: #6E54A3;
-  color: #fff;
+  background-color: #e0e1e2;
+  color: #444;
   padding: 10px;
   font-size: 12px;
   letter-spacing: 1.5px;
@@ -43,7 +43,7 @@ export const DefaultBtn = styled.button`
   transition: ease 0.3s;
 
   &:hover {
-    background-color: #53407A;
+    background-color: #cacbcd;
   }
 `
 export const GreenBtn = styled.button`
@@ -87,4 +87,10 @@ export const StudentHacks = styled.div`
 
 export const StudentEvents = styled.div`
   flex-basis: 50%;
+`
+export const Footer = styled.div`
+  text-align: center;
+  padding: 80px 0;
+  color: #fff;
+  background: #757575;
 `

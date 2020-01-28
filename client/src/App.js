@@ -12,6 +12,7 @@ import EventShow from './components/shared/events/EventShow';
 import StudentHome from './components/shared/StudentHome';
 import StudentPage from './components/shared/StudentPage';
 import AdminHome from './components/admin/AdminHome';
+import SiteFooter from './components/shared/Footer';
 
 
 const App = () => (
@@ -30,6 +31,7 @@ const App = () => (
           <Route component={Nomatch} />
         </Switch>
       </Container>
+      <SiteFooter/>
     </FetchUser>
   </>
 )

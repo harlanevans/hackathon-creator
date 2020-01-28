@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Button } from 'semantic-ui-react';
-import { PrimaryBtn } from '../../styled-components/Shared';
+import { PrimaryBtn, DefaultBtn } from '../../styled-components/Shared';
 
 class CourseForm extends React.Component {
   state = { name: '' };
@@ -39,7 +39,7 @@ class CourseForm extends React.Component {
         />
         <Form.Group>
           <PrimaryBtn>{this.props.id ? "Update Course" : "Create Course"}</PrimaryBtn>
-          <Button onClick={this.props.id ? this.props.toggleEdit : this.props.toggleAdd}>Cancel</Button>
+          <DefaultBtn onClick={this.props.id ? this.props.toggleEdit : this.props.toggleAdd}>Cancel</DefaultBtn>
         </Form.Group>
       </Form>
     );

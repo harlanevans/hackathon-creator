@@ -5,7 +5,7 @@ import { AuthConsumer } from '../../../providers/AuthProvider';
 import { List, Card } from 'semantic-ui-react';
 import TaskForm from './TaskForm';
 import Task from './Task';
-import { PrimaryBtn } from '../../styled-components/Shared';
+import { PrimaryBtn, Sections } from '../../styled-components/Shared';
 
 
 class Tasks extends Component {
@@ -83,7 +83,8 @@ class Tasks extends Component {
 
   render(){
     return(
-      
+      <Sections>
+
       <Card className='tasks'>
         <Card.Content>
           <h1>Tasks</h1>
@@ -107,9 +108,9 @@ class Tasks extends Component {
                       {
                         this.state.adding ? 
                         <TaskForm 
-                          addTask={this.addTask} 
-                          adding={this.state.adding} 
-                          toggleAdd={this.toggleAdd}
+                        addTask={this.addTask} 
+                        adding={this.state.adding} 
+                        toggleAdd={this.toggleAdd}
                         />
                         : 
                         <></>
@@ -120,14 +121,14 @@ class Tasks extends Component {
                     {
                       this.state.tasks.map( t => 
                         <Task 
-                          key={t.id}
-                          {...t} 
-                          completeTask={this.completeTask} 
-                          deleteTask={this.deleteTask}
-                          updateTask={this.updateTask} 
+                        key={t.id}
+                        {...t} 
+                        completeTask={this.completeTask} 
+                        deleteTask={this.deleteTask}
+                        updateTask={this.updateTask} 
                         />
-                      )
-                    }
+                        )
+                      }
                   </List>
                 </>
                 : 
@@ -135,6 +136,7 @@ class Tasks extends Component {
               }
         </Card.Content>
       </Card>
+      </Sections>
     )
   }
 }

@@ -2,7 +2,9 @@ import React from "react";
 import axios from "axios";
 import "../css/custom.css";
 import StudentEvents from "./StudentEvents";
-import { Segment } from "semantic-ui-react";
+import { Segment, Container } from "semantic-ui-react";
+import { Sections } from '../styled-components/Shared';
+
 
 class StudentHome extends React.Component {
   state = { courses: [], events: [] };
@@ -30,14 +32,18 @@ class StudentHome extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          <div className="image-header home">
-            <h1>DPL Hackathon</h1>
-            <div className="img-overlay"></div>
-          </div>
-        </div>
-        <h1>Courses:</h1>
-        {this.renderCourses()}
+        <Container fluid>
+          
+            <div className="image-header home">
+              <h1>DPL Hackathon</h1>
+              <div className="img-overlay"></div>
+            </div>
+          
+        </Container>
+        <Sections>
+          <h1>Courses:</h1>
+          {this.renderCourses()}
+        </Sections>
       </div>
     );
   }
