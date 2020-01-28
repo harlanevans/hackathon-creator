@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'semantic-ui-react';
+import { PrimaryBtn, DefaultBtn } from '../../styled-components/Shared';
 
 const lvl_choices = [ { key: "1", text: "1", value: 1},
 { key: "2", text: "2", value: 2},
@@ -70,8 +71,8 @@ class StudentForm extends Component {
             />
         </Form.Group>
         <Form.Group>
-          <Form.Button>{this.props.id ? "Update Student" : "Create Student" }</Form.Button>
-          <Button onClick={this.props.id ? this.props.toggleEdit : this.props.toggleAdd}>Cancel</Button>
+          <PrimaryBtn>{this.props.id ? "Update Student" : "Create Student" }</PrimaryBtn>
+          <DefaultBtn onClick={this.props.id ? this.props.toggleEdit : this.props.toggleAdd}>Cancel</DefaultBtn>
         </Form.Group>
       </Form>
     )

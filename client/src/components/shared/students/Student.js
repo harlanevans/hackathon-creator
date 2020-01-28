@@ -48,6 +48,7 @@ class Student extends Component{
             <Icon
               name='pencil'
               onClick={this.toggleEdit}
+              color='orange'
               link
               />
             </Table.Cell>

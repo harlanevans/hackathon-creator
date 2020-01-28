@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Table, Button, Header, Segment, Divider } from 'semantic-ui-react';
+import { PrimaryBtn, DefaultBtn } from '../../styled-components/Shared';
 import StudentForm from './StudentForm';
 import Student from './Student';
 
@@ -65,7 +66,7 @@ class Students extends Component {
     return(
       <Segment>
       <Header size='large'>Students</Header>
-      {this.state.adding ? <></> : <Button onClick={this.toggleAdd}>Add Student</Button>}
+      {this.state.adding ? <></> : <PrimaryBtn onClick={this.toggleAdd}>Add Student</PrimaryBtn>}
       <Divider />
       <Table celled structured>
           {this.state.adding ? 

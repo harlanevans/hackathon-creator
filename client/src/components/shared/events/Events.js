@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Segment, Button, Header, Card, Divider } from "semantic-ui-react";
+import { PrimaryBtn, DefaultBtn } from '../../styled-components/Shared';
 import Event from "./Event";
 import EventForm from "./EventForm";
 
@@ -72,7 +73,7 @@ class Events extends Component {
           this.state.adding ?
             <></>
           :
-            <Button onClick={this.toggleAdd}>Add Event</Button>
+            <PrimaryBtn onClick={this.toggleAdd}>Add Event</PrimaryBtn>
         }
         {
           this.state.adding ? 
