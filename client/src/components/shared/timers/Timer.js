@@ -20,7 +20,7 @@ class Timer extends Component {
               {...timer}
             />
             :
-          <h1>{name} Not Started</h1>
+          <h3>{name} Not Started</h3>
           }
           <TimerForm 
             updateTimer={updateTimer}

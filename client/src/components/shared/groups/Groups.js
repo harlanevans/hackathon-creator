@@ -4,6 +4,7 @@ import { Button, Segment, Card, Divider } from "semantic-ui-react";
 import GroupForm from './GroupForm';
 import Group from './Group';
 import GenerateGroups from "../studentgroups/GenerateGroups";
+import { PrimaryBtn } from '../../styled-components/Shared';
 
 class Groups extends Component {
 
@@ -78,13 +79,13 @@ class Groups extends Component {
     const { groups, adding } = this.state
     return (
       <Segment>
-        <h1>Groups</h1>
-        {adding ? <></> : <Button onClick={this.toggleAdd}>Create New Group</Button>}
+        <h2>Groups</h2>
+        {adding ? <></> : <PrimaryBtn onClick={this.toggleAdd}>Create New Group</PrimaryBtn>}
         <GenerateGroups groups={this.state.groups} course_id={this.props.course_id} resetAllGroups={this.resetAllGroups}/>
         <Button floated='right' onClick={this.resetAllGroups}>Clear Groups</Button>
         {adding ? <GroupForm addGroup={this.addGroup} toggleAdd={this.toggleAdd}/> : <></>}
         <Divider />
-          <Card.Group itemsPerRow='3'>
+          <Card.Group className="group-cards">
             {
               groups.map( g =>
                 <Group 

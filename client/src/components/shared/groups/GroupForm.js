@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'semantic-ui-react';
+import { PrimaryBtn } from '../../styled-components/Shared';
 
 
 class GroupForm extends Component {

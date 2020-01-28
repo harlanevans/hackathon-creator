@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Form } from 'semantic-ui-react';
 import axios from 'axios';
+import { PrimaryBtn } from '../../styled-components/Shared';
+
 
 class StudentGroupForm extends Component {
 
@@ -49,7 +51,7 @@ class StudentGroupForm extends Component {
             onChange={this.handleChange}
             search
           />
-          <Form.Button>Add to Group</Form.Button>
+          <PrimaryBtn>Add to Group</PrimaryBtn>
         </Form>
       </>
     )

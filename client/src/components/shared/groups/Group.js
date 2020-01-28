@@ -26,19 +26,24 @@ class Group extends Component {
             />
             :
             <Card.Header>
+              <div class="group-edit">
                 {name}
-              <Icon
-                name='trash'
-                onClick={() => this.props.deleteGroup(id)}
-                floated='right'
-                link
-                />
-              <Icon
-                name='pencil'
-                onClick={this.toggleEdit}
-                floated='right'
-                link
-                />
+                <div class="edit-buttons">
+                <Icon
+                  name='trash'
+                  onClick={() => this.props.deleteGroup(id)}
+                  floated='right'
+                  link
+                  />
+                <Icon
+                  name='pencil'
+                  onClick={this.toggleEdit}
+                  floated='right'
+                  color='orange'
+                  link
+                  />
+                </div>
+              </div>
             </Card.Header>
           }
             <StudentGroup course_id={this.props.course_id} group_id={id}/>

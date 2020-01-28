@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Button } from 'semantic-ui-react';
+import { GreenBtn } from '../../styled-components/Shared';
+
 
 class generateGroups extends Component {
 
@@ -67,7 +69,7 @@ class generateGroups extends Component {
   render () {
     return(
       <>
-        <Button floated='right' onClick={this.assignStudents}>Assign Student Groups</Button>
+        <GreenBtn floated='right' onClick={this.assignStudents}>Assign Student Groups</GreenBtn>
       </>
     )
   }

@@ -22,6 +22,8 @@ export const PrimaryBtn = styled.button`
   text-transform: uppercase;
   font-weight: 600;
   cursor: pointer;
+  transition: ease 0.3s;
+  margin: 0 4px;
 
   &:hover {
     background-color: #53407A;
@@ -38,9 +40,27 @@ export const DefaultBtn = styled.button`
   text-transform: uppercase;
   font-weight: 600;
   cursor: pointer;
+  transition: ease 0.3s;
 
   &:hover {
     background-color: #53407A;
+  }
+`
+export const GreenBtn = styled.button`
+  background-color: #3aab3a;
+  color: #fff;
+  padding: 10px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: ease 0.3s;
+  margin: 0 10px;
+
+  &:hover {
+    background-color: green;
   }
 `
 
