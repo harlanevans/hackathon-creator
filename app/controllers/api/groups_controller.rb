@@ -2,7 +2,7 @@ class Api::GroupsController < ApplicationController
     before_action :set_event
 
   def index
-    render json: @event.groups 
+    render json: @event.groups.order(created_at: :desc) 
   end
 
   def create

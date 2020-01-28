@@ -1,7 +1,7 @@
 class Api::CoursesController < ApplicationController
   
   def index
-    render json: Course.all 
+    render json: Course.all.order(created_at: :desc)
   end
 
   def create

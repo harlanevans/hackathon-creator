@@ -5,7 +5,7 @@ class Api::SubmissionsController < ApplicationController
   # Axios call here only on admin side. 
   
   def index
-    render json: @event.submissions
+    render json: @event.submissions.order(created_at: :desc)
   end
 
   def create

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import CourseForm from "./CourseForm";
 import { Card, Icon } from 'semantic-ui-react';
+import moment from 'moment';
 
 class Course extends Component {
   state = { editing: false };
@@ -9,7 +10,7 @@ class Course extends Component {
   toggleEdit = () => this.setState({ editing: !this.state.editing });
 
   render() {
-    const { id, name } = this.props;
+    const { id, name, created_at } = this.props;
     return (
       <Card className='courses'>
         <Card.Content>
@@ -42,7 +43,8 @@ class Course extends Component {
                   onClick={this.toggleEdit}
                   link
                   color='orange'
-                />            
+                />    
+              <h4>Created at: {moment(created_at).format("LLL")}</h4>        
               </>
           }
         </Card.Content>
