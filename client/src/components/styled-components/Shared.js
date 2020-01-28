@@ -119,3 +119,9 @@ export const StudentCourseFlex = styled.div`
   display: flex;
   flex-direction: column;
 `
+export const BackBtn = styled.div`
+  position: absolute;
+  z-index: 8;
+  margin: 10px 0;
+  left: 50px;
+`
