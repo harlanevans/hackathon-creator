@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import SubmissionForm from './submissions/SubmissionForm';
 import Rubric from "./Rubric";
 import Countdown from './timers/Countdown';
-import { Icon } from 'semantic-ui-react';
+import { Icon, Container } from 'semantic-ui-react';
+import { BackBtn } from '../styled-components/Shared';
 import axios from 'axios';
 
 class StudentPage extends React.Component {
@@ -34,24 +35,34 @@ class StudentPage extends React.Component {
     const { id, course_id, name, rubric, courseName } = this.props.location.state
     return (
       <div>
-        <Link to="/" className="back-btn">
-          <h2>
-            <Icon name='arrow left' />
-            Go back
-          </h2>
-        </Link>
-        <h1>{courseName} {name}</h1>
-        {
-          this.state.timers.map(t =>
-            t.active ?
+        <BackBtn>
+          <Link to="/" className="back-btn">
+            <h3>
+              <Icon name='arrow left' />
+              Go back
+            </h3>
+          </Link>
+        </BackBtn>
+       
+        <Container fluid>
+            <div className="image-header home">
+              <h1>{courseName} <br></br>{name}</h1>
+              <div className="img-overlay"></div>
+            </div>
+        </Container>
+        <Container>
+          {
+            this.state.timers.map(t =>
+              t.active ?
               <Countdown key={t.id} timeTillDate={t.end_time} types={t.types} />
               :
               ""
-          )
-
-        }
-        <Rubric rubric={rubric} />
-        <SubmissionForm course_id={course_id} event_id={id} />
+              )
+              
+            }
+          <Rubric rubric={rubric} />
+        </Container>
+          <SubmissionForm course_id={course_id} event_id={id} />
       </div>
     );
   }

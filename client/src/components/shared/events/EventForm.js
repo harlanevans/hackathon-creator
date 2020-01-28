@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'semantic-ui-react';
+import { PrimaryBtn, DefaultBtn } from '../../styled-components/Shared';
 
 class EventForm extends Component {
 
@@ -52,8 +53,8 @@ class EventForm extends Component {
           label='Rubric link to PDF'
         />
         <Form.Group>
-          <Form.Button>{this.props.id ? "Update Event" : "Create Event"}</Form.Button>
-          <Button onClick={this.props.id ? this.props.toggleEdit : this.props.toggleAdd}>Cancel</Button>
+          <PrimaryBtn>{this.props.id ? "Update Event" : "Create Event"}</PrimaryBtn>
+          <DefaultBtn onClick={this.props.id ? this.props.toggleEdit : this.props.toggleAdd}>Cancel</DefaultBtn>
         </Form.Group>
       </Form>
     )

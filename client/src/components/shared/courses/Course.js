@@ -33,17 +33,19 @@ class Course extends Component {
                 >
                   <h2>{name}</h2>
                 </NavLink>
-                <Icon
-                  name='trash'
-                  onClick={() => this.props.deleteCourse(id)}
-                  link
-                />
-                <Icon
-                  name='pencil'
-                  onClick={this.toggleEdit}
-                  link
-                  color='orange'
-                />    
+                <div className="edit-buttons">
+                  <Icon
+                    name='trash'
+                    onClick={() => this.props.deleteCourse(id)}
+                    link
+                  />
+                  <Icon
+                    name='pencil'
+                    onClick={this.toggleEdit}
+                    link
+                    color='orange'
+                  />    
+                </div>
               <h4>Created at: {moment(created_at).format("LLL")}</h4>        
               </>
           }

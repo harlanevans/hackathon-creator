@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { Form, Message } from 'semantic-ui-react';
+import { Form, Message, Container } from 'semantic-ui-react';
 import axios from 'axios';
-import { Sections, PrimaryBtn } from '../../styled-components/Shared';
+import { Sections, PrimaryBtn, TextCenter } from '../../styled-components/Shared';
 
 
 class SubmissionFrom extends Component {
@@ -50,9 +50,10 @@ class SubmissionFrom extends Component {
     render(){
       const { link, group_name, groups } = this.state
       return(
-        <> 
-          <Sections>
-            <h1>Submit your hackathon project</h1>
+        <>
+        <Container fluid style={{background: "#eee"}}>
+          <Sections style={{padding: "10%"}}>
+            <h1>Submit your <br></br> Hackathon Project</h1>
             <Form className="submissions" success onSubmit={this.handleSumbit}>
               <Form.Select 
                 name='group_name'
@@ -82,6 +83,7 @@ class SubmissionFrom extends Component {
               <PrimaryBtn>Submit</PrimaryBtn>
               </Form>
             </Sections>
+        </Container>
           </>
       )
     }

@@ -30,13 +30,18 @@
 
 h1 {
   color: #6E54A3;
-  font-size: 42px !important;
+  font-size: 52px !important;
+}
+
+h2 {
+  color: #222;
+  font-size: 36px !important;
 }
 
 .image-header.home .img-overlay {
-  background-image: url('./images/code-hack.png');
+  background-image: url('./images/happy-hacking.jpg');
   opacity: 0.9;
-  background-position: center 20%;
+  background-position: center 40%;
   background-size: cover;
   width: 100% !important;
 }
@@ -48,7 +53,8 @@ h1 {
 }
 
 .navbar {
-  background-image: linear-gradient(to bottom right, #6E54A3, #53407A); 
+  padding: 15px 40px 0 40px;
+  background-image: linear-gradient(to bottom right, #6E54A3, #53407A);
 }
 
 .ui.secondary.pointing.menu .item {
@@ -57,6 +63,7 @@ h1 {
   border-color: rgba(255, 255, 255, 0.9);
   font-weight: 700;
   color: rgba(255, 255, 255, 0.95);
+  text-transform: uppercase;
 }
 
 i.icon.check.circle:before {

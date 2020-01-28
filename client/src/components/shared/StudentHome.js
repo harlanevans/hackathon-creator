@@ -3,7 +3,7 @@ import axios from "axios";
 import "../css/custom.css";
 import StudentEvents from "./StudentEvents";
 import { Segment, Container } from "semantic-ui-react";
-import { Sections } from '../styled-components/Shared';
+import { Sections, StudentCourseWrapper, StudentCourseFlex } from '../styled-components/Shared';
 
 
 class StudentHome extends React.Component {
@@ -22,10 +22,17 @@ class StudentHome extends React.Component {
 
   renderCourses = () => {
     return this.state.courses.map(course => (
-      <Segment key={course.id}>
-        <h1>{course.name}</h1>
-        Events: <StudentEvents key={course.id} name={course.name} id={course.id} />
-      </Segment>
+      // Need to fix this to work how i want
+        <StudentCourseWrapper>
+
+            <StudentCourseFlex>
+              <Segment key={course.id}>
+              <h2>{course.name}</h2>
+                Events: <StudentEvents key={course.id} name={course.name} id={course.id} />
+              </Segment>
+            </StudentCourseFlex>
+            
+        </StudentCourseWrapper>
     ));
   };
 
@@ -33,17 +40,18 @@ class StudentHome extends React.Component {
     return (
       <div>
         <Container fluid>
-          
             <div className="image-header home">
               <h1>DPL Hackathon</h1>
               <div className="img-overlay"></div>
             </div>
-          
         </Container>
-        <Sections>
-          <h1>Courses:</h1>
-          {this.renderCourses()}
-        </Sections>
+
+        <Container>
+          <Sections>
+            <h1>Courses:</h1>
+            {this.renderCourses()}
+          </Sections>
+        </Container>
       </div>
     );
   }
