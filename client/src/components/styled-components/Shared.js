@@ -94,3 +94,33 @@ export const Footer = styled.div`
   color: #fff;
   background: #757575;
 `
+export const AdminWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+`
+export const CoursesFlex = styled.div`
+  flex-basis: 60%;
+`
+export const TasksFlex = styled.div`
+  flex-basis: 30%;
+`
+export const StudentCourseWrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  margin: 40px 20px;
+`
+export const StudentCourseFlex = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const TextCenter = styled.h2`
+  text-align: center;
+  margin-top: 0 !important;
+`

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container } from 'semantic-ui-react';
 import { Switch, Route } from 'react-router-dom';
 import ProtectedRoutes from './components/auth/ProtectedRoutes'
 import Navbar from './components/shared/Navbar';
@@ -19,7 +18,6 @@ const App = () => (
   <>
     <Navbar />
     <FetchUser>
-      <Container>
         <Switch>
           <Route exact path='/' component={StudentHome} />
           <ProtectedRoutes exact path='/admin' component={AdminHome} />
@@ -30,7 +28,6 @@ const App = () => (
           <Route exact path='/login' component={Login} />
           <Route component={Nomatch} />
         </Switch>
-      </Container>
       <SiteFooter/>
     </FetchUser>
   </>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import CourseForm from "./CourseForm";
 import Course from "./Course";
-import { Segment, Card, Divider } from "semantic-ui-react";
+import { Segment, Card, Divider, Container } from "semantic-ui-react";
 import { PrimaryBtn, Sections } from '../../styled-components/Shared';
 
 class Courses extends Component {
@@ -75,25 +75,27 @@ class Courses extends Component {
   render() {
     const { adding } = this.state;
     return (
-      <Sections>
-        <Segment>
-          <h1>Courses</h1>
-          <h4>Click the button below to add a new course!</h4>
-            {
-              adding ?
+      <Container>
+        <Sections>
+          <Segment>
+            <h1>Courses</h1>
+            <h4>Click the button below to add a new course!</h4>
+              {
+                adding ?
                 <CourseForm
-                  addCourse={this.addCourse}
-                  toggleAdd={this.toggleAdd}
+                addCourse={this.addCourse}
+                toggleAdd={this.toggleAdd}
                 />
-              :
+                :
                 <PrimaryBtn onClick={this.toggleAdd}>New Course</PrimaryBtn>
-            }
-            <Divider />
-            <Card.Group itemsPerRow='2'>
-              {this.renderCourses()}
-            </Card.Group>
-        </Segment>
-      </Sections>
+              }
+              <Divider />
+              <Card.Group itemsPerRow='2'>
+                {this.renderCourses()}
+              </Card.Group>
+          </Segment>
+        </Sections>
+      </Container>
     );
   }
 }
