@@ -6,7 +6,7 @@ import ftrlogo from '../css/images/DPL-white.svg';
 const SiteFooter = () => (
     <>
         <Footer>
-            <div class="ftr-logo">
+            <div className="ftr-logo">
                 <img src={ftrlogo}/>
             </div>
         </Footer>
