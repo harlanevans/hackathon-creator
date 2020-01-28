@@ -4,6 +4,10 @@ class Api::CoursesController < ApplicationController
     render json: Course.all.order(created_at: :desc)
   end
 
+  def show
+    render json: Course.find(params[:id])
+  end
+
   def create
     course = Course.new(course_params)
     if course.save

@@ -89,10 +89,11 @@ class Groups extends Component {
             {
               groups.map( g =>
                 <Group 
-                {...g} 
-                deleteGroup={this.deleteGroup}
-                updateGroup={this.updateGroup}
-                course_id={this.props.course_id}              
+                  key={g.id}
+                  {...g} 
+                  deleteGroup={this.deleteGroup}
+                  updateGroup={this.updateGroup}
+                  course_id={this.props.course_id}              
                 />
                 )
               }
