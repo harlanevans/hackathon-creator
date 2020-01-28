@@ -36,7 +36,6 @@ class StudentForm extends Component {
       this.setState({ name: '', skill_lvl: '', effort_lvl: '' })
     } else {
       this.props.addStudent(this.state)
-      this.props.toggleAdd()
       this.setState({ name: '', skill_lvl: '', effort_lvl: '' })
     }
     }

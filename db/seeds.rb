@@ -1,31 +1,23 @@
-1.times do 
-    course = Course.create(name: 'Winter Part-Time 2019')
+User.delete_all
+Timer.delete_all
 
-    1.times do 
-        Event.create(
-            course_id: course.id,
-            name: 'Hackathon I 2019',
-            rubric: 'this link doesnt exist'
-        )
-    end
-end
-
-1.times do
-    Timer.create(
-        name: 'Event',
-        end_time: '17:00:00',
-        types: 'event',
-        active: true
+User.create(
+    email: "admin@test.com",
+    password: "password"
 )
-end
 
-1.times do
-    Timer.create(
-        name: 'Lunch',
-        end_time: '12:00:00',
-        types: 'lunch',
-        active: true
+Timer.create(
+    name: 'Lunch',
+    end_time: '12:00:00',
+    types: 'lunch',
+    active: false
 )
-end
+
+Timer.create(
+    name: 'Event',
+    end_time: '17:00:00',
+    types: 'event',
+    active: false
+)
 
 puts 'Data seeded'
