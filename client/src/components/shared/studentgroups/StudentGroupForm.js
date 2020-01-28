@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Select } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 import axios from 'axios';
 import { PrimaryBtn } from '../../styled-components/Shared';
 
@@ -25,7 +25,7 @@ class StudentGroupForm extends Component {
   studentMap = () => {
     const students = this.state.students.map(s =>
       {
-        return {...s, text: s.name, value: s.id}
+        return {...s, key: s.id, text: s.name, value: s.id}
       })
       this.setState({ students })
   }

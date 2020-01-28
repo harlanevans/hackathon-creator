@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import StudentGroupForm from './StudentGroupForm';
 import axios from 'axios';
-import { Icon, Table, Tab, TableRow } from 'semantic-ui-react';
+import { Icon, Table, TableRow } from 'semantic-ui-react';
 
 class StudentGroup extends Component {
 
@@ -82,7 +82,7 @@ class StudentGroup extends Component {
           <Table.Body>
           {
             this.state.studentGroups.map(s => 
-              <Table.Row>
+              <Table.Row key={s.id}>
                 <Table.Cell>{s.name}</Table.Cell>
                 <Table.Cell>{s.effort}</Table.Cell>
                 <Table.Cell>{s.skill}</Table.Cell>

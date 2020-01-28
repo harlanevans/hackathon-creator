@@ -19,5 +19,4 @@ Timer.create(
     types: 'event',
     active: false
 )
-
 puts 'Data seeded'

@@ -1,6 +1,6 @@
 import React from 'react';
 import { AuthConsumer, } from "../../providers/AuthProvider";
-import { Button, Form, Segment, Header, } from 'semantic-ui-react';
+import { Form, Segment, Header, } from 'semantic-ui-react';
 import { PrimaryBtn } from '../styled-components/Shared';
 
 class Login extends React.Component {

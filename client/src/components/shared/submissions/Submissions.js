@@ -22,12 +22,12 @@ class Submissions extends React.Component {
     return (
       <Card.Group itemsPerRow='2'>
         { submissions.map(s => (
-          <Card>
+          <Card key={s.id}>
             <Card.Content>
                 <Card.Header>
                   Group Name: {s.group_name}
                   <h5>
-                    Repo: <a href={s.link} target="_blank">{s.link}</a>
+                    Repo: <a href={s.link} target="_blank" rel="noopener noreferrer">{s.link}</a>
                   </h5>
                 </Card.Header>
               
