@@ -18,8 +18,8 @@ class StudentEvents extends React.Component {
 
   renderEvents = () => {
     return this.state.events.map(event => (
-      <div>
-        <Link
+      <div key={event.id}>
+        <Link 
           to={{
             pathname: `/event/${event.id}`,
             state: { ...event, courseName: this.state.course.name }

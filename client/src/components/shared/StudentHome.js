@@ -1,8 +1,6 @@
 import React from "react";
 import axios from "axios";
 import "../css/custom.css";
-import Countdown from "./timers/Countdown";
-import { Sections } from "../styled-components/Shared";
 import StudentEvents from "./StudentEvents";
 import { Segment } from "semantic-ui-react";
 
@@ -22,7 +20,7 @@ class StudentHome extends React.Component {
 
   renderCourses = () => {
     return this.state.courses.map(course => (
-      <Segment>
+      <Segment key={course.id}>
         <h1>{course.name}</h1>
         Events: <StudentEvents key={course.id} name={course.name} id={course.id} />
       </Segment>
