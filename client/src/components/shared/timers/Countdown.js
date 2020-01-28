@@ -39,11 +39,11 @@ class Countdown extends Component {
   render() {
     const { hours, minutes, seconds, completed } = this.state;
     return(
-      <div>
-        {this.props.types === 'lunch' ? <h1>Lunch Timer</h1> : <h1>Hackathon Countdown</h1>}
+      <div className="countdown-section">
+        {this.props.types === 'lunch' ? <h2>Lunch Timer</h2> : <h2>Hackathon Countdown</h2>}
         {
           completed ?
-          this.props.types === 'lunch' ? <h1>START CODING!</h1> : <h1>TIME'S UP!</h1>
+          this.props.types === 'lunch' ? <h2>START CODING!</h2> : <h2>TIME'S UP!</h2>
           :
           <div className="countdown-wrapper">
               <div className="countdown-item">

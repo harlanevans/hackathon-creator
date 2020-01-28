@@ -35,7 +35,7 @@ state = {
     const { course_id, id, name, rubric, courseName } = this.props.location.state
     return (
       <div>
-        <Link to="/">
+        <Link to="/" className="back-btn">
           <h2>
             <Icon name='arrow left'/>
             Go back
