@@ -62,7 +62,7 @@ class StudentGroup extends Component {
           }
       })
     })
-    this.setState({ studentGroups: newGroup })
+      this.setState({ studentGroups: newGroup })
   }
 
 
