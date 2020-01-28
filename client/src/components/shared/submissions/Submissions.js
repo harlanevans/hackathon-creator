@@ -22,7 +22,7 @@ class Submissions extends React.Component {
     return (
       <Card.Group itemsPerRow='2'>
         { submissions.map(s => (
-          <Card>
+          <Card key={s.id}>
             <Card.Content>
                 <Card.Header>
                   Group Name: {s.group_name}

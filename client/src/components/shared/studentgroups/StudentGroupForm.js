@@ -23,7 +23,7 @@ class StudentGroupForm extends Component {
   studentMap = () => {
     const students = this.state.students.map(s =>
       {
-        return {...s, text: s.name, value: s.id}
+        return {...s, key: s.id, text: s.name, value: s.id}
       })
       this.setState({ students })
   }
