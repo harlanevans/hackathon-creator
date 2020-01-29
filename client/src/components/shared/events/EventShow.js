@@ -21,6 +21,5 @@ class EventShow extends React.Component {
     )
   }
 }
-//"https://drive.google.com/file/d/1h8vrAUdPcQ0Op50aGhQU5Htbueaot4XG/preview"
-//"https://drive.google.com/file/d/1h8vrAUdPcQ0Op50aGhQU5Htbueaot4XG/view"
+
 export default EventShow;
