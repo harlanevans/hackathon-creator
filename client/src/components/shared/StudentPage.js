@@ -4,7 +4,7 @@ import SubmissionForm from './submissions/SubmissionForm';
 import Rubric from "./Rubric";
 import Countdown from './timers/Countdown';
 import { Icon, Container } from 'semantic-ui-react';
-import { BackBtn } from '../styled-components/Shared';
+import { BackBtn, StudentTimerFlex } from '../styled-components/Shared';
 import axios from 'axios';
 
 class StudentPage extends React.Component {
@@ -50,18 +50,22 @@ class StudentPage extends React.Component {
               <div className="img-overlay"></div>
             </div>
         </Container>
-        <Container>
-          {
-            this.state.timers.map(t =>
-              t.active ?
-              <Countdown key={t.id} timeTillDate={t.end_time} types={t.types} />
-              :
-              ""
-              )
-              
-            }
+        
+          <div className="countdown-section">
+            <StudentTimerFlex>
+            {
+              this.state.timers.map(t =>
+                t.active ?
+                <Countdown key={t.id} timeTillDate={t.end_time} types={t.types} />
+                :
+                ""
+                )
+                
+              }
+            </StudentTimerFlex>
+          </div>
           <Rubric rubric={rubric} />
-        </Container>
+       
           <SubmissionForm course_id={course_id} event_id={id} />
       </div>
     );

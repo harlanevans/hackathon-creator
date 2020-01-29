@@ -84,8 +84,8 @@ i.icon.check.circle:before {
 /*Timers*/
 .countdown-section {
   background: #eee;
-  margin: 20px 0;
-  padding: 4em 0;
+  margin: 20px;
+  padding: 6em;
   text-align: center;
 }
 
@@ -150,6 +150,7 @@ i.icon.check.circle:before {
   .home-wrapper {
     display: block;
   }
+  
 }
 
 .courses {
@@ -162,12 +163,11 @@ i.icon.check.circle:before {
   color: #000 !important;
 }
 .timer {
-  width: 100em;
+  text-align: center;
 }
 
 .tasks {
   width: 100%;
-  border: solid 2px brown;
 }
 
 .student-events a {

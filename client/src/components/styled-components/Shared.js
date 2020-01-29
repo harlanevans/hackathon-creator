@@ -127,12 +127,34 @@ export const StudentCourseWrapper = styled.div`
   padding: 2em;
   width: 50%;
 `
+//Admin side Timer 
+export const TimerFlex =styled.div`
+ display: flex;
+ justify-content: center;
+ width: 100%;
+
+ @media only screen and (max-width: 900px) {
+  display: block;
+  }
+`
+//Student page Timer
+export const StudentTimerFlex = styled.div`
+  display: flex;
+  justify-content: space-between;
+  
+
+  @media only screen and (max-width: 900px) {
+    display: block;
+  
+    }
+`
+
 export const AlignCenter = styled.div`
   display: flex;
   justify-content: center;
   margin: 20px 0;
-  
 `
+
 export const BackBtn = styled.div`
   position: absolute;
   z-index: 8;

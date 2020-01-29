@@ -38,20 +38,22 @@ class Timers extends Component {
 
   render() {
     return(
+      <div className="timer">
       <Sections>
           <h1>Event Timers</h1>
-          
+          <TimerFlex>
             {
               this.state.timers.map( t => 
                 <Timer 
-                  key={t.id} 
-                  {...t} 
-                  updateTimer={this.updateTimer}
+                key={t.id} 
+                {...t} 
+                updateTimer={this.updateTimer}
                 />
-              )
-            }
-         
+                )
+              }
+          </TimerFlex>
       </Sections>
+      </div>
     )
   }
 }

@@ -12,7 +12,7 @@ class Timer extends Component {
     return(
       
         <div className="countdown-section">
-          <div >
+          <div>
             {
               active ? 
               <Countdown
