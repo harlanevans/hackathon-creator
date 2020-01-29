@@ -7,7 +7,7 @@ import { Sections } from '../../styled-components/Shared';
 
 class EventShow extends React.Component {
   render() {
-    const { name, id, course_id, rubric } = this.props;
+    const { name, id, course_id, rubric } = this.props.location.state;
 
     return(
       <div>

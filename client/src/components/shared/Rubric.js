@@ -5,12 +5,8 @@ import { Sections } from '../styled-components/Shared';
 
 class Rubric extends Component {
 
-  state = {
-    rubric: ""
-  }
-
-  render() {
-    const { rubric } = this.state
+render() {
+    const { rubric } = this.props;
     const regex = /\/view/;
     const subst = "/preview";
     const result = rubric.replace(regex, subst);
@@ -27,5 +23,6 @@ class Rubric extends Component {
     )
   }
 }
-
+//"https://drive.google.com/file/d/1h8vrAUdPcQ0Op50aGhQU5Htbueaot4XG/preview"
+//"https://drive.google.com/file/d/1h8vrAUdPcQ0Op50aGhQU5Htbueaot4XG/view"
 export default Rubric;
