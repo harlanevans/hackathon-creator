@@ -127,6 +127,12 @@ export const StudentCourseWrapper = styled.div`
   padding: 2em;
   width: 50%;
 `
+export const AlignCenter = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  
+`
 export const BackBtn = styled.div`
   position: absolute;
   z-index: 8;
