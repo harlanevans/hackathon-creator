@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Form } from 'semantic-ui-react';
-import { PrimaryBtn, DefaultBtn } from '../../styled-components/Shared';
+import { PrimaryBtn, DefaultBtn, AlignCenter } from '../../styled-components/Shared';
 
 
 class TimerForm extends Component {
@@ -39,18 +39,20 @@ class TimerForm extends Component {
   render() {
     const { end_time, active } = this.state
     return(
-      <Form onSubmit={ this.handleSumbit }>     
-        <Form.Group>
-          <Form.Input
-            type='time'
-            name='end_time'
-            value={end_time}
-            onChange={this.handleChange}
-            />
-          <PrimaryBtn>Change End Time</PrimaryBtn>
-          <DefaultBtn onClick={this.toggleActive}>{active ? "Stop" : "Start"}</DefaultBtn>
-        </Form.Group>
+      <AlignCenter>
+        <Form onSubmit={ this.handleSumbit }>     
+          <Form.Group>
+            <Form.Input
+              type='time'
+              name='end_time'
+              value={end_time}
+              onChange={this.handleChange}
+              />
+            <PrimaryBtn>Change End Time</PrimaryBtn>
+            <DefaultBtn onClick={this.toggleActive}>{active ? "Stop" : "Start"}</DefaultBtn>
+          </Form.Group>
       </Form>
+      </AlignCenter>
     )
   }
 }

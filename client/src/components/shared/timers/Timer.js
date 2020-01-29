@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Card } from 'semantic-ui-react';
 import '../../../App.css';
 import Countdown from './Countdown';
 import TimerForm from './TimerForm';
+import { TimerFlex } from '../../styled-components/Shared';
 
 class Timer extends Component {
 
@@ -11,8 +11,8 @@ class Timer extends Component {
     const timer = { id, name, end_time, types, active }
     return(
       
-        <Card>
-          <Card.Content>
+        <div className="countdown-section">
+          <div>
             {
               active ? 
               <Countdown
@@ -28,8 +28,8 @@ class Timer extends Component {
               toggleEdit={this.toggleEdit}
               {...timer}
             />
-          </Card.Content>
-        </Card>
+          </div>
+        </div>
     )
   }
 }
