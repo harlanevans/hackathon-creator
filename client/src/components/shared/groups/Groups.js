@@ -1,10 +1,10 @@
 import React,{ Component } from "react";
 import axios from 'axios';
-import { Button, Segment, Card, Divider } from "semantic-ui-react";
+import { Button, Container, Card, Divider } from "semantic-ui-react";
 import GroupForm from './GroupForm';
 import Group from './Group';
 import GenerateGroups from "../studentgroups/GenerateGroups";
-import { PrimaryBtn } from '../../styled-components/Shared';
+import { PrimaryBtn, DefaultBtn } from '../../styled-components/Shared';
 
 class Groups extends Component {
 
@@ -78,11 +78,11 @@ class Groups extends Component {
   render() {
     const { groups, adding } = this.state
     return (
-      <Segment>
-        <h2>Groups</h2>
+      <Container>
+        <h2>Student Groups</h2>
         {adding ? <></> : <PrimaryBtn onClick={this.toggleAdd}>Create New Group</PrimaryBtn>}
         <GenerateGroups groups={this.state.groups} course_id={this.props.course_id} resetAllGroups={this.resetAllGroups}/>
-        <Button floated='right' onClick={this.resetAllGroups}>Clear Groups</Button>
+        <DefaultBtn style={{float:'right'}} onClick={this.resetAllGroups}>Clear Groups</DefaultBtn>
         {adding ? <GroupForm addGroup={this.addGroup} toggleAdd={this.toggleAdd}/> : <></>}
         <Divider />
           <Card.Group className="group-cards">
@@ -98,7 +98,7 @@ class Groups extends Component {
                 )
               }
           </Card.Group>
-      </Segment>
+      </Container>
     )
   }
 }
