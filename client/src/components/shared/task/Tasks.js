@@ -85,7 +85,7 @@ class Tasks extends Component {
     return(
       <Sections>
 
-      <Card className='tasks'>
+      <Card style={{width: "100%"}}>
         <Card.Content>
           <h1>Tasks</h1>
           <h4>Add a new task!</h4>

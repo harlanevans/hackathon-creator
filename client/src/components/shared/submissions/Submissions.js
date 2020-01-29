@@ -17,7 +17,7 @@ class Submissions extends React.Component {
   renderSubmissions() {
     const { submissions } = this.state;
     if (submissions.length === 0) {
-      return <h3>No submissions have been made for this event.</h3>;
+      return <h3 style={{textAlign: "center"}}>No submissions have been made for this event.</h3>;
     }
     return (
       <Card.Group itemsPerRow='2'>

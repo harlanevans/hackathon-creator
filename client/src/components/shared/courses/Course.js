@@ -31,7 +31,7 @@ class Course extends Component {
                     state: { id, name }
                   }}
                 >
-                  <h2>{name}</h2>
+                  <h2 className="course-name">{name}</h2>
                 </NavLink>
                 <div className="edit-buttons">
                   <Icon

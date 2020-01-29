@@ -21,6 +21,7 @@ class StudentHome extends React.Component {
   }
 
   renderCourses = () => {
+      
     return this.state.courses.map(course => (
       // Need to fix this to work how i want
         <StudentCourseWrapper key={course.id}>
@@ -28,12 +29,12 @@ class StudentHome extends React.Component {
             <StudentCourseFlex>
               <Segment>
               <h2>{course.name}</h2>
-                Events: <StudentEvents key={course.id} name={course.name} id={course.id} />
-              </Segment>
+                <h3>Events : </h3><StudentEvents key={course.id} name={course.name} id={course.id} />
+              </div>
             </StudentCourseFlex>
             
-        </StudentCourseWrapper>
-    ));
+        )
+    );
   };
 
   render() {
@@ -49,7 +50,10 @@ class StudentHome extends React.Component {
         <Container>
           <Sections>
             <h1>Courses:</h1>
+      <StudentCourseWrapper>
+            
             {this.renderCourses()}
+            </StudentCourseWrapper>
           </Sections>
         </Container>
       </div>
