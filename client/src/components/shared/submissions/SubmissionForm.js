@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Form, Message, Container } from 'semantic-ui-react';
 import axios from 'axios';
-import { Sections, PrimaryBtn, TextCenter } from '../../styled-components/Shared';
+import { Sections, PrimaryBtn } from '../../styled-components/Shared';
 
 
 class SubmissionFrom extends Component {

@@ -23,10 +23,10 @@ class StudentHome extends React.Component {
   renderCourses = () => {
     return this.state.courses.map(course => (
       // Need to fix this to work how i want
-        <StudentCourseWrapper>
+        <StudentCourseWrapper key={course.id}>
 
             <StudentCourseFlex>
-              <Segment key={course.id}>
+              <Segment>
               <h2>{course.name}</h2>
                 Events: <StudentEvents key={course.id} name={course.name} id={course.id} />
               </Segment>

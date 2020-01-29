@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Table, Button, Header, Segment, Divider, Container } from 'semantic-ui-react';
-import { PrimaryBtn, DefaultBtn } from '../../styled-components/Shared';
+import { Table, Header, Segment, Divider, Container } from 'semantic-ui-react';
+import { PrimaryBtn } from '../../styled-components/Shared';
 import StudentForm from './StudentForm';
 import Student from './Student';
 

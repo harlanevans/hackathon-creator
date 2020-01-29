@@ -49,7 +49,7 @@ class StudentGroup extends Component {
     })
   }
 
-  getStudents = () => {
+  getStudents() {
     let newGroup = []
     let total = 0
     this.state.studentGroups.map( sg => {
@@ -61,6 +61,7 @@ class StudentGroup extends Component {
             this.setState({ average: total/this.state.studentGroups.length })
           }
       })
+      return
     })
       this.setState({ studentGroups: newGroup })
   }

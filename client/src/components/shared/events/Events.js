@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Segment, Button, Header, Card, Divider, Container } from "semantic-ui-react";
+import { Segment, Header, Card, Divider, Container } from "semantic-ui-react";
 import { PrimaryBtn, Sections } from '../../styled-components/Shared';
 import Event from "./Event";
 import EventForm from "./EventForm";

@@ -46,12 +46,13 @@ class Groups extends Component {
     })
   }
 
-  resetAllGroups = () => {
+  resetAllGroups() {
     this.state.groups.map( g => {
       this.deleteGroup(g.id)
       this.addGroup({name: g.name})
     })
     window.setTimeout( () => window.location.reload(), 1000 )
+    return
   }
 
   updateGroup = (id, group) => {

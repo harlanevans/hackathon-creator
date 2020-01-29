@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Button } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 import { PrimaryBtn, DefaultBtn } from '../../styled-components/Shared';
 
 const lvl_choices = [ { key: "1", text: "1", value: 1},
