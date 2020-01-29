@@ -5,7 +5,7 @@ import { AuthConsumer } from '../../../providers/AuthProvider';
 import { List, Card } from 'semantic-ui-react';
 import TaskForm from './TaskForm';
 import Task from './Task';
-import { PrimaryBtn, Sections } from '../../styled-components/Shared';
+import { PrimaryBtn, Sections, AlignCenter } from '../../styled-components/Shared';
 
 
 class Tasks extends Component {
@@ -87,8 +87,8 @@ class Tasks extends Component {
 
       <Card style={{width: "100%"}}>
         <Card.Content>
-          <h1>Tasks</h1>
-          <h4>Add a new task!</h4>
+          <h1 style={{textAlign: "center"}}>Tasks</h1>
+          <h4 style={{textAlign: "center"}}>Add a new task!</h4>
 
         </Card.Content>
         <Card.Content>
@@ -103,7 +103,7 @@ class Tasks extends Component {
                         this.state.adding ? 
                         <></> 
                         : 
-                        <PrimaryBtn onClick={this.toggleAdd}>Add Task</PrimaryBtn>
+                        <AlignCenter><PrimaryBtn onClick={this.toggleAdd}>Add Task</PrimaryBtn></AlignCenter>
                       }
                       {
                         this.state.adding ? 

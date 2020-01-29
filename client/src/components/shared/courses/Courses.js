@@ -3,7 +3,7 @@ import axios from "axios";
 import CourseForm from "./CourseForm";
 import Course from "./Course";
 import { Segment, Card, Divider, Container } from "semantic-ui-react";
-import { PrimaryBtn, Sections } from '../../styled-components/Shared';
+import { PrimaryBtn, Sections, AlignCenter } from '../../styled-components/Shared';
 
 class Courses extends Component {
   state = {
@@ -77,8 +77,8 @@ class Courses extends Component {
     return (
         <Sections>
           <Segment>
-            <h1>Courses</h1>
-            <h4>Click the button below to add a new course!</h4>
+            <h1 style={{textAlign: "center"}}>Courses</h1>
+            <h4 style={{textAlign: "center"}}>Click the button below to add a new course!</h4>
               {
                 adding ?
                 <CourseForm
@@ -86,7 +86,7 @@ class Courses extends Component {
                 toggleAdd={this.toggleAdd}
                 />
                 :
-                <PrimaryBtn onClick={this.toggleAdd}>New Course</PrimaryBtn>
+                <AlignCenter><PrimaryBtn onClick={this.toggleAdd}>New Course</PrimaryBtn></AlignCenter>
               }
               <Divider />
               <Card.Group itemsPerRow='2'>
