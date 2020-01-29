@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { PrimaryBtn } from '../styled-components/Shared';
 
 class StudentEvents extends React.Component {
   state = { course: {}, events: [] };
@@ -18,16 +19,16 @@ class StudentEvents extends React.Component {
 
   renderEvents = () => {
     return this.state.events.map(event => (
-      <div key={event.id}>
+      <PrimaryBtn className="student-events" key={event.id}>
         <Link 
           to={{
             pathname: `/event/${event.id}`,
             state: { ...event, courseName: this.state.course.name }
           }}
         >
-          <h3>{event.name}</h3>
+          <p>{event.name}</p>
         </Link>
-      </div>
+      </PrimaryBtn>
     ));
   };
 

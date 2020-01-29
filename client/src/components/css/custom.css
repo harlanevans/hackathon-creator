@@ -15,6 +15,7 @@
   position: relative;
   padding: 160px 0;
   overflow-x: hidden;
+  background: none 0% 0% repeat scroll rgb(0, 0, 0);
 }
 
 .image-header h1 {
@@ -40,7 +41,7 @@ h2 {
 
 .image-header.home .img-overlay {
   background-image: url('./images/happy-hacking.jpg');
-  opacity: 0.9;
+  opacity: 0.7;
   background-position: center 40%;
   background-size: cover;
   width: 100% !important;
@@ -119,4 +120,31 @@ i.icon.check.circle:before {
   .home-wrapper {
     display: block;
   }
+}
+
+.courses {
+  width: 100em;
+}
+.course-name {
+ text-decoration: underline;
+}
+.course-name a {
+
+  color: #000 !important;
+}
+
+.tasks {
+  width: 100%;
+  border: solid 2px brown;
+}
+
+.student-events a {
+  color: #fff;
+}
+.student-events a:hover {
+  color: #fff;
+}
+.task-wrapper {
+  display: flex !important;
+  justify-content: space-between;
 }

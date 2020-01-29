@@ -75,7 +75,6 @@ class Courses extends Component {
   render() {
     const { adding } = this.state;
     return (
-      <Container>
         <Sections>
           <Segment>
             <h1>Courses</h1>
@@ -95,7 +94,6 @@ class Courses extends Component {
               </Card.Group>
           </Segment>
         </Sections>
-      </Container>
     );
   }
 }

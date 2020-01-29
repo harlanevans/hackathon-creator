@@ -96,28 +96,36 @@ export const Footer = styled.div`
 `
 export const AdminWrapper = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  flex-direction: row;
   align-items: flex-start;
   flex-wrap: wrap;
+  width: 100%;
+  `
+  export const CoursesFlex = styled.div`
+  width: 100%;
+  flex: 60%;
+  `
+  export const TasksFlex = styled.div`
+  flex: 30%;
+  width: 100%;
 `
-export const CoursesFlex = styled.div`
-  flex-basis: 60%;
-`
-export const TasksFlex = styled.div`
-  flex-basis: 30%;
-`
+// Course map container
 export const StudentCourseWrapper = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
   align-items: flex-start;
-  flex-wrap: wrap;
-  flex-direction: row;
   width: 100%;
-  margin: 40px 20px;
-`
-export const StudentCourseFlex = styled.div`
-  display: flex;
-  flex-direction: column;
+  ` 
+  // Individual Course
+  export const StudentCourseFlex = styled.div`
+  margin: 2em;
+  border: solid 1px gray;
+  border-radius: 5px;
+  box-shadow: 5px 10px 8px 2px #bfbfbf;
+  padding: 2em;
+  width: 50%;
 `
 export const BackBtn = styled.div`
   position: absolute;

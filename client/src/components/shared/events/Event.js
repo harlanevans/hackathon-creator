@@ -15,7 +15,7 @@ class Event extends React.Component {
     const event = { id, name, rubric, course_id}
     const { editing } = this.state;
     return (
-      <Card>
+      <Card style={{textAlign: "center"}}>
         <Card.Content>
             
           { 
@@ -31,7 +31,7 @@ class Event extends React.Component {
               >
               <h1>{name}</h1>
               </Link>
-              <h3><a href={rubric} target="_blank" rel="noopener noreferrer">Requirements</a></h3>
+              <h3 className="course-name"><a href={rubric} target="_blank" rel="noopener noreferrer">Requirements</a></h3>
               <Icon
                 name='trash'
                 onClick={() => deleteEvent(course_id, id)}
@@ -40,6 +40,7 @@ class Event extends React.Component {
               <Icon
                 name='pencil'
                 onClick={this.toggleEdit}
+                color='orange'
                 link
               />
             </>

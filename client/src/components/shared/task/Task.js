@@ -35,8 +35,8 @@ class Task extends Component {
             onClick={() => completeTask({complete,name,staff,id})} 
             name='circle outline'
             link
-          />
-      }
+            />
+          }
       <List.Content>
         <List.Header>
           {name}
@@ -44,19 +44,21 @@ class Task extends Component {
         <List.Description>
           {staff}
         </List.Description>
-        <Icon 
-          name='trash'
-          onClick={() => deleteTask(user_id, id)}
-          link
-          />
-        <Icon 
-          name='pencil'
-          onClick={this.toggleEdit}
-          link
-          color='orange'
-          />
+        
+          <Icon 
+            name='trash'
+            onClick={() => deleteTask(user_id, id)}
+            link
+            />
+          <Icon 
+            name='pencil'
+            onClick={this.toggleEdit}
+            link
+            color='orange'
+            />
+        
       </List.Content>
-    </List.Item>
+     </List.Item>
     )
   }
 }
