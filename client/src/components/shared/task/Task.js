@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { List, Icon } from 'semantic-ui-react';
+import { List, Icon, Dropdown } from 'semantic-ui-react';
 import TaskForm from './TaskForm'
 
 
@@ -39,24 +39,17 @@ class Task extends Component {
           }
       <List.Content>
         <List.Header>
+          <Dropdown icon='ellipsis vertical' float='right'>
+            <Dropdown.Menu>
+              <Dropdown.Item icon='pencil' text='Edit' onClick={this.toggleEdit}/>
+              <Dropdown.Item icon='trash' text='Delete' onClick={() => deleteTask(user_id, id)}/>
+            </Dropdown.Menu>
+          </Dropdown>     
           {name}
         </List.Header>
         <List.Description>
-          {staff}
+        &emsp;&ensp;{staff}
         </List.Description>
-        
-          <Icon 
-            name='trash'
-            onClick={() => deleteTask(user_id, id)}
-            link
-            />
-          <Icon 
-            name='pencil'
-            onClick={this.toggleEdit}
-            link
-            color='orange'
-            />
-        
       </List.Content>
      </List.Item>
     )

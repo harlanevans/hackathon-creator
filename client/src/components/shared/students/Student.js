@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import StudentForm from './StudentForm';
-import { Table, Icon } from 'semantic-ui-react'
+import { Table, Dropdown } from 'semantic-ui-react'
 
 class Student extends Component{
 
@@ -31,6 +31,12 @@ class Student extends Component{
       <Table.Body>
         <Table.Row>
           <Table.Cell>
+            <Dropdown icon='ellipsis vertical'>
+              <Dropdown.Menu>
+                <Dropdown.Item icon='pencil' text='Edit' onClick={this.toggleEdit}/>
+                <Dropdown.Item icon='trash' text='Delete' onClick={() => deleteStudent(course_id, id)}/>
+              </Dropdown.Menu>
+            </Dropdown>
             {name}
           </Table.Cell>
           <Table.Cell>
@@ -39,19 +45,6 @@ class Student extends Component{
           <Table.Cell>
             {skill_lvl}
           </Table.Cell>
-          <Table.Cell>
-            <Icon
-              name='trash'
-              onClick={() => deleteStudent(course_id, id)}
-              link
-              />
-            <Icon
-              name='pencil'
-              onClick={this.toggleEdit}
-              color='orange'
-              link
-              />
-            </Table.Cell>
         </Table.Row>
       </Table.Body>
     )

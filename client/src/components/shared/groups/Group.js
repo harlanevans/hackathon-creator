@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, Card } from 'semantic-ui-react';
+import { Dropdown, Card } from 'semantic-ui-react';
 import GroupForm from './GroupForm';
 import StudentGroup from '../studentgroups/StudentGroup';
 
@@ -29,19 +29,12 @@ class Group extends Component {
               <div class="group-edit">
                 {name}
                 <div class="edit-buttons">
-                <Icon
-                  name='trash'
-                  onClick={() => this.props.deleteGroup(id)}
-                  floated='right'
-                  link
-                  />
-                <Icon
-                  name='pencil'
-                  onClick={this.toggleEdit}
-                  floated='right'
-                  color='orange'
-                  link
-                  />
+                <Dropdown icon='ellipsis vertical'>
+                  <Dropdown.Menu>
+                    <Dropdown.Item icon='pencil' text='Edit' onClick={this.toggleEdit}/>
+                    <Dropdown.Item icon='trash' text='Delete' onClick={() => this.props.deleteGroup(id)}/>
+                  </Dropdown.Menu>
+                </Dropdown>
                 </div>
               </div>
             </Card.Header>
