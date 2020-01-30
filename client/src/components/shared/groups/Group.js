@@ -14,7 +14,7 @@ class Group extends Component {
   render(){
     const { id, name } = this.props
     return(
-      <Card>
+      <div className="group-item">
         <Card.Content>
           {
             this.state.editing ?
@@ -41,7 +41,7 @@ class Group extends Component {
           }
             <StudentGroup course_id={this.props.course_id} group_id={id}/>
         </Card.Content>
-      </Card>
+      </div>
     )
   }
 }
