@@ -10,7 +10,6 @@ class StudentEvents extends React.Component {
     const { id } = this.props;
     axios.get(`/api/courses/${id}`).then(res => {
       this.setState({ course: res.data });
-      console.log(this.state.course);
     });
     axios.get(`/api/courses/${id}/events`).then(res => {
       this.setState({ events: res.data });

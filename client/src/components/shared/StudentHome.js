@@ -23,8 +23,9 @@ class StudentHome extends React.Component {
   renderCourses = () => {
       
     return this.state.courses.map(course => (
-        <StudentCourseFlex>
-        <div>
+
+        <StudentCourseFlex key={course.id}>
+        <div >
         <h2>{course.name}</h2>
         <h3>Events : </h3><StudentEvents key={course.id} name={course.name} id={course.id} />
         </div>
