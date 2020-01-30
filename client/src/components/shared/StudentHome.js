@@ -48,7 +48,7 @@ class StudentHome extends React.Component {
 
         <Container>
           <Sections>
-            <h1>Courses:</h1>
+            <h1>Courses</h1>
       <StudentCourseWrapper>
             
             {this.renderCourses()}

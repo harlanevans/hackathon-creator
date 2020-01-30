@@ -51,17 +51,20 @@ class StudentPage extends React.Component {
             </div>
         </Container>
         
-          <div className="countdown-section">
+
+          <div className="timer">
             <StudentTimerFlex>
-            {
-              this.state.timers.map(t =>
-                t.active ?
-                <Countdown key={t.id} timeTillDate={t.end_time} types={t.types} />
-                :
-                ""
-                )
-                
-              }
+              {
+                this.state.timers.map(t =>
+                  t.active ?
+                  <div key={t.id} className="countdown-section">
+                    <Countdown timeTillDate={t.end_time} types={t.types} />
+                  </div>
+                  :
+                  ""
+                  )
+                  
+                }
             </StudentTimerFlex>
           </div>
           <Rubric rubric={rubric} />
