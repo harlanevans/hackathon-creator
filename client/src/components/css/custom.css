@@ -1,4 +1,3 @@
-
 .img-overlay {
   height: 100%;
   width: 100%;
@@ -201,13 +200,14 @@ i.icon.check.circle:before {
   margin: 8px 0px;
 }
 
-.submission-date {
-
-}
-
 .event-name {
   text-decoration: underline;
   color: #6E54A3 !important;
+}
+
+.groups-buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media (max-width: 900px) {
@@ -219,5 +219,8 @@ i.icon.check.circle:before {
   }
   .group-name {
     width: 100%;
+  }
+  .groups-buttons {
+    display: block;
   }
 }

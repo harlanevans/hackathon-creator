@@ -26,9 +26,9 @@ class Group extends Component {
             />
             :
             <Card.Header>
-              <div class="group-edit">
+              <div className="group-edit">
                 {name}
-                <div class="edit-buttons">
+                <div className="edit-buttons">
                 <Dropdown icon='ellipsis vertical'>
                   <Dropdown.Menu>
                     <Dropdown.Item icon='pencil' text='Edit' onClick={this.toggleEdit}/>
