@@ -10,7 +10,7 @@ class EventShow extends React.Component {
     const { name, id, course_id, rubric } = this.props.location.state;
 
     return(
-      <div>
+      <div className="eventshow-wrapper">
        <Sections>
         <h1> {name}</h1>
       </Sections> 

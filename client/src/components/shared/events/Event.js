@@ -23,7 +23,7 @@ class Event extends React.Component {
               <EventForm updateEvent={updateEvent} {...event} toggleEdit={this.toggleEdit}/> 
             :
             <>
-              <Link
+              <Link className="event-name"
                 to={{
                   pathname: `/courses/${course_id}/events/${id}`,
                   state: { ...event }

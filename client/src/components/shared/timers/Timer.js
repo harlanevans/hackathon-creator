@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../../../App.css';
 import Countdown from './Countdown';
 import TimerForm from './TimerForm';
-import { TimerFlex } from '../../styled-components/Shared';
 
 class Timer extends Component {
 
