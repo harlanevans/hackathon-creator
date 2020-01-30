@@ -92,9 +92,6 @@ class Students extends Component {
                 <Table.HeaderCell>
                   Skill Level
                 </Table.HeaderCell>
-                <Table.HeaderCell>
-                  Delete/Edit
-                </Table.HeaderCell>
               </Table.Row>
             </Table.Header>
             {

@@ -1,7 +1,7 @@
 import React from "react";
 import EventForm from "./EventForm";
 import { Link } from 'react-router-dom';
-import { Card, Icon } from 'semantic-ui-react';
+import { Card, Dropdown } from 'semantic-ui-react';
 
 class Event extends React.Component {
   state = { editing: false };
@@ -32,17 +32,12 @@ class Event extends React.Component {
               <h1>{name}</h1>
               </Link>
               <h3 className="course-name"><a href={rubric} target="_blank" rel="noopener noreferrer">Requirements</a></h3>
-              <Icon
-                name='trash'
-                onClick={() => deleteEvent(course_id, id)}
-                link
-              />
-              <Icon
-                name='pencil'
-                onClick={this.toggleEdit}
-                color='orange'
-                link
-              />
+              <Dropdown icon='ellipsis vertical'>
+                <Dropdown.Menu>
+                  <Dropdown.Item icon='pencil' text='Edit' onClick={this.toggleEdit}/>
+                  <Dropdown.Item icon='trash' text='Delete' onClick={() => deleteEvent(course_id, id)}/>
+                </Dropdown.Menu>
+              </Dropdown>   
             </>
           }
         </Card.Content>

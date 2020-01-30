@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import CourseForm from "./CourseForm";
-import { Card, Icon } from 'semantic-ui-react';
+import { Card, Dropdown } from 'semantic-ui-react';
 import moment from 'moment';
 
 class Course extends Component {
@@ -34,17 +34,12 @@ class Course extends Component {
                   <h2 className="course-name">{name}</h2>
                 </NavLink>
                 <div className="edit-buttons">
-                  <Icon
-                    name='trash'
-                    onClick={() => this.props.deleteCourse(id)}
-                    link
-                  />
-                  <Icon
-                    name='pencil'
-                    onClick={this.toggleEdit}
-                    link
-                    color='orange'
-                  />    
+                  <Dropdown icon='ellipsis vertical'>
+                    <Dropdown.Menu>
+                      <Dropdown.Item icon='pencil' text='Edit' onClick={this.toggleEdit}/>
+                      <Dropdown.Item icon='trash' text='Delete' onClick={() => this.props.deleteCourse(id)}/>
+                    </Dropdown.Menu>
+                  </Dropdown>   
                 </div>
               <h4>Created at: {moment(created_at).format("LLL")}</h4>        
               </>
