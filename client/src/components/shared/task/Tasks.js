@@ -85,7 +85,7 @@ class Tasks extends Component {
     return(
       <Sections>
 
-      <Card style={{width: "100%"}}>
+      <div className="tasks" style={{width: "100%"}}>
         <Card.Content>
           <h1 style={{textAlign: "center"}}>Tasks</h1>
           <h4 style={{textAlign: "center"}}>Add a new task!</h4>
@@ -135,7 +135,7 @@ class Tasks extends Component {
                 <List.Item>Sign in to create tasks</List.Item>
               }
         </Card.Content>
-      </Card>
+      </div>
       </Sections>
     )
   }
