@@ -121,6 +121,10 @@ export const StudentCourseWrapper = styled.div`
   justify-content: space-evenly;
   align-items: flex-start;
   width: 100%;
+
+  @media only screen and (max-width: 900px) {
+    display: block;
+  }
   ` 
   // Individual Course
   export const StudentCourseFlex = styled.div`
@@ -130,6 +134,10 @@ export const StudentCourseWrapper = styled.div`
   box-shadow: 5px 10px 8px 2px #bfbfbf;
   padding: 2em;
   width: 50%;
+
+  @media only screen and (max-width: 900px) {
+    width: 90%;
+  }
 `
 //Admin side Timer 
 export const TimerFlex =styled.div`
