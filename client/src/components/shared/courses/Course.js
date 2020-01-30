@@ -12,8 +12,8 @@ class Course extends Component {
   render() {
     const { id, name, created_at } = this.props;
     return (
-      <Card className='courses'>
-        <Card.Content>
+      <div className='courses'>
+        <div className="course-item">
           {
             this.state.editing ?
               <CourseForm
@@ -44,8 +44,8 @@ class Course extends Component {
               <h4>Created at: {moment(created_at).format("LLL")}</h4>        
               </>
           }
-        </Card.Content>
-      </Card>
+        </div>
+      </div>
     );
   }
 }

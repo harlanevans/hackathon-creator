@@ -76,7 +76,7 @@ class Courses extends Component {
     const { adding } = this.state;
     return (
         <Sections>
-          <Segment>
+          
             <h1 style={{textAlign: "center"}}>Courses</h1>
             <h4 style={{textAlign: "center"}}>Click the button below to add a new course!</h4>
               {
@@ -88,11 +88,11 @@ class Courses extends Component {
                 :
                 <AlignCenter><PrimaryBtn onClick={this.toggleAdd}>New Course</PrimaryBtn></AlignCenter>
               }
-              <Divider />
-              <Card.Group itemsPerRow='2'>
+              
+              <div className="admincourse-items">
                 {this.renderCourses()}
-              </Card.Group>
-          </Segment>
+              </div>
+          
         </Sections>
     );
   }

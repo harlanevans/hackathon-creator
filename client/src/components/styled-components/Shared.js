@@ -105,10 +105,14 @@ export const AdminWrapper = styled.div`
   export const CoursesFlex = styled.div`
   width: 100%;
   flex: 60%;
+  margin: 0 20px;
+  border: 1px solid #ddd;
+  
   `
   export const TasksFlex = styled.div`
   flex: 30%;
   width: 100%;
+  margin: 0 20px;
 `
 // Course map container
 export const StudentCourseWrapper = styled.div`
