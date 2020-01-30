@@ -3,6 +3,7 @@ import Groups from '../groups/Groups'
 import Submissions from '../submissions/Submissions';
 import Rubric from '../Rubric';
 import { Sections } from '../../styled-components/Shared';
+import { Container } from 'semantic-ui-react';
 
 
 class EventShow extends React.Component {
@@ -11,12 +12,22 @@ class EventShow extends React.Component {
 
     return(
       <div className="eventshow-wrapper">
-       <Sections>
-        <h1> {name}</h1>
-      </Sections> 
-       <Groups course_id={course_id} event_id={id}/>
-       <Rubric rubric={rubric}/>
-       <Submissions course_id={course_id} event_id={id} />
+        <Container fluid>
+            <div className="image-header admin">
+            <h1> {name}</h1>
+                <div className="img-overlay"></div>
+            </div>
+        </Container>
+        
+        <Sections>
+          <Groups course_id={course_id} event_id={id}/>
+        </Sections> 
+
+        <Rubric rubric={rubric}/>
+
+        <Sections>
+          <Submissions course_id={course_id} event_id={id} />
+        </Sections>
       </div>
     )
   }
