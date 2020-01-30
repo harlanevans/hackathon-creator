@@ -212,6 +212,7 @@ i.icon.check.circle:before {
 .groups-buttons {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .admincourse-items {
   display: flex;
@@ -237,6 +238,19 @@ i.icon.check.circle:before {
   top: 10px;
   right: 10px;
 }
+.events-section {
+  position: relative;
+  margin: 20px;
+}
+.event-item {
+  padding: 1em;
+}
+
+.events-section .edit-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
 
 
 
@@ -254,7 +268,10 @@ i.icon.check.circle:before {
   .groups-buttons {
     display: block;
   }
+  .groups-cancel-button {
+    margin: 10px 4px;
+  }
   .group-cards {
-    display: block;
+    display: block !important;
   }
 }
