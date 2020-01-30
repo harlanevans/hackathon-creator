@@ -70,19 +70,20 @@ class Groups extends Component {
     })
   }
 
-// Need to grab all the students addigned to groups.
-// Assign this to an array in state.
-// Map through groups and student groups.
-// If group id == group id in student group then delete
-
   render() {
     const { groups, adding } = this.state
     return (
       <Container>
         <h2>Student Groups</h2>
+        <div className="groups-buttons">
+        <div className="groups-create-buttons">
         {adding ? <></> : <PrimaryBtn onClick={this.toggleAdd}>Create New Group</PrimaryBtn>}
         <GenerateGroups groups={this.state.groups} course_id={this.props.course_id} resetAllGroups={this.resetAllGroups}/>
-        <DefaultBtn style={{float:'right'}} onClick={this.resetAllGroups}>Clear Groups</DefaultBtn>
+        </div>
+        <div className="groups-cancel-button">
+        <DefaultBtn onClick={this.resetAllGroups}>Clear Groups</DefaultBtn>
+        </div>
+        </div>
         {adding ? <GroupForm addGroup={this.addGroup} toggleAdd={this.toggleAdd}/> : <></>}
         <Divider />
           <Card.Group className="group-cards">

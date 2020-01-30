@@ -67,9 +67,7 @@ class generateGroups extends Component {
 
   render () {
     return(
-      <>
-        <GreenBtn floated='right' onClick={this.assignStudents}>Assign Student Groups</GreenBtn>
-      </>
+      <GreenBtn onClick={this.assignStudents}>Assign Student Groups</GreenBtn>
     )
   }
 }
