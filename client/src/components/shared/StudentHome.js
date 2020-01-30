@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import "../css/custom.css";
 import StudentEvents from "./StudentEvents";
-import { Segment, Container } from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
 import { Sections, StudentCourseWrapper, StudentCourseFlex } from '../styled-components/Shared';
 
 
@@ -30,8 +30,7 @@ class StudentHome extends React.Component {
               <h2>{course.name}</h2>
                 <h3>Events : </h3><StudentEvents key={course.id} name={course.name} id={course.id} />
               </div>
-            </StudentCourseFlex>
-            
+            </StudentCourseFlex>     
         )
     );
   };

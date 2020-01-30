@@ -146,13 +146,6 @@ i.icon.check.circle:before {
   margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-  .home-wrapper {
-    display: block;
-  }
-  
-}
-
 .courses {
   width: 100em;
 }
@@ -179,4 +172,52 @@ i.icon.check.circle:before {
 .task-wrapper {
   display: flex !important;
   justify-content: space-between;
+}
+
+.submission-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.submission-wrapper h4 span {
+  text-transform: uppercase;
+}
+
+.submission-wrapper h5 span {
+  text-transform: uppercase;
+}
+
+.group-name {
+  margin: 20px;
+  width: 50%;
+  border: solid 1px gray;
+  border-radius: 5px;
+  box-shadow: 5px 10px 8px 2px #bfbfbf;
+  padding: 2em;
+}
+
+.repo-name {
+  margin: 8px 0px;
+}
+
+.submission-date {
+
+}
+
+.event-name {
+  text-decoration: underline;
+  color: #6E54A3 !important;
+}
+
+@media (max-width: 900px) {
+  .home-wrapper {
+    display: block;
+  }
+  .submission-wrapper {
+    display: block;
+  }
+  .group-name {
+    width: 100%;
+  }
 }

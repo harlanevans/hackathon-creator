@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import {Segment, Card} from 'semantic-ui-react';
+import { Segment } from 'semantic-ui-react';
 import moment from 'moment';
 
 class Submissions extends React.Component {
@@ -20,22 +20,20 @@ class Submissions extends React.Component {
       return <h3 style={{textAlign: "center"}}>No submissions have been made for this event.</h3>;
     }
     return (
-      <Card.Group itemsPerRow='2'>
+      <div className="submission-wrapper">
         { submissions.map(s => (
-          <Card key={s.id}>
-            <Card.Content>
-                <Card.Header>
-                  Group Name: {s.group_name}
-                  <h5>
-                    Repo: <a href={s.link} target="_blank" rel="noopener noreferrer">{s.link}</a>
-                  </h5>
-                </Card.Header>
-              
-              <h5>Submitted: {moment(s.created_at).format('LLL')}</h5>
-            </Card.Content>
-          </Card>
+          <div key={s.id} className="group-name">
+          <h4><span>Group:</span> {s.group_name}</h4>
+          <div className="repo-name">
+          <h5><span>Repo:</span><a href={s.link} target="_blank" rel="noopener noreferrer"> {s.link}</a>
+          </h5>    
+          </div> 
+          <div className="submitted-date">       
+          <h5><span>Submitted:</span> {moment(s.created_at).format('LLL')}</h5>
+          </div>
+          </div>
       ))};
-      </Card.Group>
+      </div>
     )
   }
 

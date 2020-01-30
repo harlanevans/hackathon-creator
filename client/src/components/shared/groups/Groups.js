@@ -1,6 +1,6 @@
 import React,{ Component } from "react";
 import axios from 'axios';
-import { Button, Container, Card, Divider } from "semantic-ui-react";
+import { Container, Card, Divider } from "semantic-ui-react";
 import GroupForm from './GroupForm';
 import Group from './Group';
 import GenerateGroups from "../studentgroups/GenerateGroups";
