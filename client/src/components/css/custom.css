@@ -166,10 +166,6 @@ i.icon.check.circle:before {
   text-align: center;
 }
 
-.tasks {
-  width: 100%;
-}
-
 .student-events a {
   color: #fff;
 }
@@ -229,6 +225,13 @@ i.icon.check.circle:before {
   position: relative;
 }
 
+.tasks {
+  width: 100%;
+  border: 1px solid #eee;
+  padding: 1.4em;
+  position: relative;
+}
+
 .courses .course-item .edit-buttons {
   position: absolute;
   top: 10px;
@@ -236,7 +239,9 @@ i.icon.check.circle:before {
 }
 
 
-@media (max-width: 900px) {
+
+
+@media only screen and (max-width: 900px) {
   .home-wrapper {
     display: block;
   }
