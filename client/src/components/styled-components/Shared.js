@@ -133,7 +133,7 @@ export const TimerFlex =styled.div`
  justify-content: center;
  width: 100%;
 
- @media only screen and (max-width: 900px) {
+ @media only screen and (max-width: 1100px) {
   display: block;
   }
 `
@@ -143,7 +143,7 @@ export const StudentTimerFlex = styled.div`
   justify-content: space-between;
   
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 1100px) {
     display: block;
   
     }

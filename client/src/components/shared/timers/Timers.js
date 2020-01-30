@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Card, Segment} from 'semantic-ui-react';
 import Timer from './Timer'
 import { Sections, TimerFlex } from '../../styled-components/Shared';
 

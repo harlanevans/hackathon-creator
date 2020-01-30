@@ -73,8 +73,8 @@ class SubmissionFrom extends Component {
                 this.state.submitted ?
                   <Message
                   success
-                  header='Boom'
-                  content="You're all done"
+                  header='Success!'
+                  content="You're all done."
                   />
                 :
                 <></>
