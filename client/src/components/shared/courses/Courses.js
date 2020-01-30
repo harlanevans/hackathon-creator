@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import CourseForm from "./CourseForm";
 import Course from "./Course";
-import { Segment, Card, Divider } from "semantic-ui-react";
 import { PrimaryBtn, Sections, AlignCenter } from '../../styled-components/Shared';
 
 class Courses extends Component {
@@ -78,7 +77,6 @@ class Courses extends Component {
         <Sections>
           
             <h1 style={{textAlign: "center"}}>Courses</h1>
-            <h4 style={{textAlign: "center"}}>Click the button below to add a new course!</h4>
               {
                 adding ?
                 <CourseForm

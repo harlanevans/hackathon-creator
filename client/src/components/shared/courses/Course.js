@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import CourseForm from "./CourseForm";
-import { Card, Dropdown } from 'semantic-ui-react';
+import { Dropdown } from 'semantic-ui-react';
 import moment from 'moment';
 
 class Course extends Component {
