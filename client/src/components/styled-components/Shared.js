@@ -152,7 +152,7 @@ export const TimerFlex =styled.div`
 //Student page Timer
 export const StudentTimerFlex = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   
 
   @media only screen and (max-width: 1100px) {

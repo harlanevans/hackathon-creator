@@ -46,6 +46,14 @@ h2 {
   width: 100% !important;
 }
 
+.image-header.admin .img-overlay {
+  background-image: url('./images/winter-dpl2.jpg');
+  opacity: 0.7;
+  background-position: center 30%;
+  background-size: cover;
+  width: 100% !important;
+}
+
 .home-wrapper {
   display: flex;
   align-items: center;
@@ -96,7 +104,7 @@ i.icon.check.circle:before {
 }
 
 .countdown-item {
-  color: #111;
+  color: #53407A;
   font-size: 40px;
   display: flex;
   align-items: center;
