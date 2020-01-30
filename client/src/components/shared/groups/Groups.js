@@ -76,13 +76,13 @@ class Groups extends Component {
       <Container>
         <h2>Student Groups</h2>
         <div className="groups-buttons">
-        <div className="groups-create-buttons">
-        {adding ? <></> : <PrimaryBtn onClick={this.toggleAdd}>Create New Group</PrimaryBtn>}
-        <GenerateGroups groups={this.state.groups} course_id={this.props.course_id} resetAllGroups={this.resetAllGroups}/>
-        </div>
-        <div className="groups-cancel-button">
-        <DefaultBtn onClick={this.resetAllGroups}>Clear Groups</DefaultBtn>
-        </div>
+          <div className="groups-create-buttons">
+          {adding ? <></> : <PrimaryBtn onClick={this.toggleAdd}>Create New Group</PrimaryBtn>}
+          <GenerateGroups groups={this.state.groups} course_id={this.props.course_id} resetAllGroups={this.resetAllGroups}/>
+          </div>
+          <div className="groups-cancel-button">
+          <DefaultBtn onClick={this.resetAllGroups}>Clear Groups</DefaultBtn>
+          </div>
         </div>
         {adding ? <GroupForm addGroup={this.addGroup} toggleAdd={this.toggleAdd}/> : <></>}
         <Divider />

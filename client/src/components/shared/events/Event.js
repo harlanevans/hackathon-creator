@@ -15,7 +15,7 @@ class Event extends React.Component {
     const event = { id, name, rubric, course_id}
     const { editing } = this.state;
     return (
-      <Card style={{textAlign: "center"}}>
+      <Card className="events-section" style={{textAlign: "center"}}>
         <Card.Content>
             
           { 
@@ -32,12 +32,14 @@ class Event extends React.Component {
               <h1>{name}</h1>
               </Link>
               <h3 className="course-name"><a href={rubric} target="_blank" rel="noopener noreferrer">Requirements</a></h3>
-              <Dropdown icon='ellipsis vertical'>
-                <Dropdown.Menu>
-                  <Dropdown.Item icon='pencil' text='Edit' onClick={this.toggleEdit}/>
-                  <Dropdown.Item icon='trash' text='Delete' onClick={() => deleteEvent(course_id, id)}/>
-                </Dropdown.Menu>
-              </Dropdown>   
+              <div className="edit-buttons">
+                <Dropdown icon='ellipsis vertical'>
+                  <Dropdown.Menu>
+                    <Dropdown.Item icon='pencil' text='Edit' onClick={this.toggleEdit}/>
+                    <Dropdown.Item icon='trash' text='Delete' onClick={() => deleteEvent(course_id, id)}/>
+                  </Dropdown.Menu>
+                </Dropdown> 
+              </div>  
             </>
           }
         </Card.Content>
