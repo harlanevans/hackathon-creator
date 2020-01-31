@@ -10,12 +10,12 @@ class CourseShow extends Component {
   render(){
     return (
       <>
-        <Container fluid>
+        <div className="container-fluid">
           <div className="image-header admin">
             <h1>{this.props.location.state.name}</h1>
               <div className="img-overlay"></div>
           </div>
-        </Container>
+        </div>
         
         <Sections><Students course_id={this.props.location.state.id} /></Sections>
         <Events course_id={this.props.location.state.id} updateEvent={this.updateEvent}/>

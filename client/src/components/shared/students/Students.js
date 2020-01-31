@@ -69,7 +69,7 @@ class Students extends Component {
         <Header size='large'>Students</Header>
         {this.state.adding ? <></> : <PrimaryBtn onClick={this.toggleAdd}>Add Student</PrimaryBtn>}
         <Divider />
-        <Table celled structured>
+        <Table celled unstackable>
             {this.state.adding ? 
             <Table.Header>  
               <Table.Row>

@@ -37,17 +37,18 @@ class StudentHome extends React.Component {
   render() {
     return (
       <div>
-        <Container fluid>
+        <div className="container-fluid">
             <div className="image-header home">
               <h1>DPL Hackathon</h1>
               <div className="img-overlay"></div>
             </div>
-        </Container>
+        </div>
 
         <Container>
           <Sections>
             <h1>Courses</h1>
-      <StudentCourseWrapper>
+          
+          <StudentCourseWrapper>
             
             {this.renderCourses()}
             </StudentCourseWrapper>

@@ -11,12 +11,12 @@ class AdminHome extends Component {
     render() {
         return(
             <>
-                <Container fluid>
+                <div className="container-fluid">
                     <div className="image-header admin">
                         <h1>Admin</h1>
                         <div className="img-overlay"></div>
                     </div>
-                </Container>
+                </div>
                 <Timers />
                 <Sections>
                     <AdminWrapper>

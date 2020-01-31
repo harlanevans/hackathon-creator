@@ -15,8 +15,8 @@ class Event extends React.Component {
     const event = { id, name, rubric, course_id}
     const { editing } = this.state;
     return (
-      <Card className="events-section" style={{textAlign: "center"}}>
-        <Card.Content>
+      <Card fluid className="events-section" style={{textAlign: "center", padding: "1em"}}>
+        <Card.Content style={{width: "100%"}}>
             
           { 
             editing ? 
