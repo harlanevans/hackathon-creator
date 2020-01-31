@@ -54,19 +54,19 @@ class StudentForm extends Component {
             required
             />
           <Form.Select
-            name='skill_lvl'
-            value={skill_lvl}
-            onChange={this.handleChange}
-            options={lvl_choices}
-            label='Skill Level'
-            required
-            />
-          <Form.Select
             name='effort_lvl'
             value={effort_lvl}
             options={lvl_choices}
             onChange={this.handleChange}
             label='Effort Level'
+            required
+            />
+          <Form.Select
+            name='skill_lvl'
+            value={skill_lvl}
+            onChange={this.handleChange}
+            options={lvl_choices}
+            label='Skill Level'
             required
             />
         </Form.Group>
