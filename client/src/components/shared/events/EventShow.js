@@ -12,12 +12,12 @@ class EventShow extends React.Component {
 
     return(
       <div className="eventshow-wrapper">
-        <Container fluid>
+        <div className="container-fluid">
             <div className="image-header admin">
             <h1> {name}</h1>
                 <div className="img-overlay"></div>
             </div>
-        </Container>
+        </div>
         
         <Sections>
           <Groups course_id={course_id} event_id={id}/>

@@ -71,7 +71,7 @@ class StudentGroup extends Component {
     return(
       <>
         <StudentGroupForm group_id={this.props.group_id} course_id={this.props.course_id} addStudentGroup={this.addStudentGroup}/>
-        <Table structured>
+        <Table structured unstackable>
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell>Name</Table.HeaderCell>

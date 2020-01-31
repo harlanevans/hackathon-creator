@@ -75,7 +75,6 @@ export const PrimaryLink = styled.a`
 export const Sections = styled.div`
   padding: 60px 0;
   position: relative;
-  overflow-x: hidden;
 `
 
 export const StudentHacks = styled.div`

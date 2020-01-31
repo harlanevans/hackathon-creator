@@ -2,7 +2,7 @@ class Api::EventsController < ApplicationController
   before_action :set_course
 
   def index
-    render json: @course.events.order(created_at: :desc) 
+    render json: @course.events.order(:created_at) 
   end
 
   def create

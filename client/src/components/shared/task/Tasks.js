@@ -83,7 +83,7 @@ class Tasks extends Component {
 
   render(){
     return(
-      <Sections>
+     
 
       <div className="tasks" style={{width: "100%"}}>
         <Card.Content>
@@ -134,7 +134,7 @@ class Tasks extends Component {
               }
         </Card.Content>
       </div>
-      </Sections>
+     
     )
   }
 }

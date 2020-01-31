@@ -30,12 +30,13 @@
 
 h1 {
   color: #6E54A3;
-  font-size: 52px !important;
+  /* font-size: 64px; */
+  word-wrap: break-word;
 }
 
 h2 {
   color: #222;
-  font-size: 36px !important;
+  /* font-size: 36px !important; */
 }
 
 .image-header.home .img-overlay {
@@ -225,13 +226,15 @@ i.icon.check.circle:before {
 .admincourse-items {
   display: flex;
   justify-content: flex-start;
-  
+  width: 100%;
 }
 .course-item {
   border: 1px solid #eee;
-  margin: 15px 20px;
-  padding: 1.4em;
   position: relative;
+  margin: 2em;
+  border-radius: 5px;
+  padding: 2em;
+  width: 80%;
 }
 
 .tasks {
@@ -281,5 +284,21 @@ i.icon.check.circle:before {
   }
   .group-cards {
     display: block !important;
+  }
+  .admincourse-items {
+    display: block;
+    width: 100%;
+  }
+  .course-item {
+    width: 100%;
+    margin: 10px auto;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .container-fluid {
+    width: auto !important;
+    margin-left: 0!important;
+    margin-right: 0!important;
   }
 }
